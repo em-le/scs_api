@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService as NestJSService } from '@nestjs/config';
 import { MongooseModuleOptions } from '@nestjs/mongoose';
+import { HTTP_METHOD } from 'src/internal/request/constants';
 
 @Injectable()
 export class ConfigService {
@@ -103,6 +104,7 @@ export class ConfigService {
         prefix: 'v',
         versionPrefix: isEnableVersion ? `v${version}` : '',
       },
+      saltRounds: 10,
     };
   }
 
@@ -114,5 +116,49 @@ export class ConfigService {
 
   get dbDebug(): boolean {
     return this.getBoolean('DATABASE_DEBUG');
+  }
+
+  get logger() {
+    return {
+      writeIntoFile: this.getBoolean('LOGGER_SYSTEM_WRITE_INTO_FILE', 'true'),
+      writeIntoConsole: this.getBoolean(
+        'LOGGER_SYSTEM_WRITE_INTO_CONSOLE',
+        'false',
+      ),
+      maxFile: '30d',
+      maxSize: '20M',
+    };
+  }
+
+  get cors() {
+    return {
+      allowOrigin: '*',
+      allowMethod: [
+        HTTP_METHOD.GET,
+        HTTP_METHOD.POST,
+        HTTP_METHOD.PUT,
+        HTTP_METHOD.DELETE,
+      ],
+      allowedHeaders: [
+        'Accept',
+        'Accept-Language',
+        'Content-Language',
+        'Content-Type',
+        'Origin',
+        'Authorization',
+        'Access-Control-Request-Method',
+        'Access-Control-Request-Headers',
+        'Access-Control-Allow-Headers',
+        'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Methods',
+        'Access-Control-Allow-Credentials',
+        'Access-Control-Expose-Headers',
+        'Access-Control-Max-Age',
+        'Referer',
+        'Host',
+        'language',
+        'user-agent',
+      ],
+    };
   }
 }

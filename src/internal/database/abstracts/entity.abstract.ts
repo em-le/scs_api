@@ -1,4 +1,3 @@
-import { DefaultObjectId } from '../constants';
 import { Prop } from '@nestjs/mongoose';
 import { Types } from 'mongoose';
 import {
@@ -9,15 +8,12 @@ import {
   DB_DELETED_AT_FIELD_NAME,
   DB_DELETED_BY_FIELD_NAME,
   AUTHOR_ENTITY,
+  DefaultObjectId,
 } from '../constants';
-import {
-  IAuthorDBAbstract,
-  IBaseDBAbstract,
-  IDBAbstract,
-} from '../interfaces';
+import { IAuthorDBAbstract, IBaseDBAbstract, IDBAbstract } from '../interfaces';
 
 export abstract class BaseDBAbstractEntity
-  implements IBaseDBAbstract< Types.ObjectId>
+  implements IBaseDBAbstract<Types.ObjectId>
 {
   @Prop({
     type: Types.ObjectId,
@@ -35,7 +31,7 @@ export abstract class BaseDBAbstractEntity
 
 export abstract class AuthorDBAbstractEntity
   extends BaseDBAbstractEntity
-  implements IAuthorDBAbstract< Types.ObjectId>
+  implements IAuthorDBAbstract<Types.ObjectId>
 {
   @Prop({
     type: Date,
@@ -50,7 +46,7 @@ export abstract class AuthorDBAbstractEntity
     required: false,
     default: null,
   })
-  [DB_CREATED_BY_FIELD_NAME]:  Types.ObjectId;
+  [DB_CREATED_BY_FIELD_NAME]: Types.ObjectId;
 
   @Prop({
     type: Date,
@@ -65,12 +61,12 @@ export abstract class AuthorDBAbstractEntity
     required: false,
     default: null,
   })
-  [DB_UPDATED_BY_FIELD_NAME]:  Types.ObjectId;
+  [DB_UPDATED_BY_FIELD_NAME]: Types.ObjectId;
 }
 
 export abstract class DBAbstractEntity
   extends AuthorDBAbstractEntity
-  implements IDBAbstract< Types.ObjectId>
+  implements IDBAbstract<Types.ObjectId>
 {
   @Prop({
     type: Date,
@@ -85,5 +81,5 @@ export abstract class DBAbstractEntity
     required: false,
     default: null,
   })
-  [DB_DELETED_BY_FIELD_NAME]?:  Types.ObjectId;
+  [DB_DELETED_BY_FIELD_NAME]?: Types.ObjectId;
 }

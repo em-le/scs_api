@@ -5,4 +5,4 @@ import { HealthController } from './heath.controller';
   imports: [],
   controllers: [HealthController],
 })
-export class PublicRouterModule {}
+export class PublicRouteModule {}

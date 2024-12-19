@@ -14,19 +14,19 @@ import {
 } from '../constants';
 
 export function MongooseConnection(
-  connectionName: string = PRIMARY_CONNECTION,
+  connName: string = PRIMARY_CONNECTION,
 ): ParameterDecorator {
-  return InjectConnection(connectionName);
+  return InjectConnection(connName);
 }
 
 export function MongooseModel(
   entityName: string,
-  connectionName: string = PRIMARY_CONNECTION,
+  connName = PRIMARY_CONNECTION,
 ): ParameterDecorator {
-  return InjectModel(entityName, connectionName);
+  return InjectModel(entityName, connName);
 }
 
-export function MongooseEntity(
+export function MongooseSchema(
   collectionName: string,
   options?: SchemaOptions,
 ): ClassDecorator {

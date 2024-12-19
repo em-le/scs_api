@@ -1,6 +1,7 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import { RouterModule as NestJSRouterModule } from '@nestjs/core';
-import { PublicRouterModule } from './routes/public/public-route.module';
+import { PublicRouteModule } from './routes/public/public-route.module';
+import { UserRouteModule } from './routes/user/user-route.module';
 
 @Module({})
 export class RouterModule {
@@ -9,11 +10,16 @@ export class RouterModule {
       return {
         module: RouterModule,
         imports: [
-          PublicRouterModule,
+          PublicRouteModule,
+          UserRouteModule,
           NestJSRouterModule.register([
             {
-              module: PublicRouterModule,
+              module: PublicRouteModule,
               path: '',
+            },
+            {
+              module: UserRouteModule,
+              path: 'users',
             },
           ]),
         ],
