@@ -18,7 +18,7 @@ export class MongoDBConfig implements MongooseOptionsFactory {
       ...mongoDBConfig,
       verboseRetryLog: true,
       onConnectionCreate: (conn: Connection) => {
-        console.log(`MongoDB connected with ${conn.readyState} ready state`);
+        console.log(`MongoDB is connection...`);
         return conn;
       },
     };

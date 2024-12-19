@@ -10,4 +10,7 @@ async function bootstrap() {
     'verbose',
   ]);
 }
-bootstrap();
+bootstrap().catch((err) => {
+  console.error('Fatal: ', err);
+  process.exit(1);
+});

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { UserController } from './user.constroller';
-import { UserModule } from 'src/domain/user/user.module';
+import { UserUsecaseModule } from 'src/domain/usecase/user/user-usecase.module';
 
 @Module({
-  imports: [UserModule],
+  imports: [UserUsecaseModule],
   controllers: [UserController],
 })
 export class UserRouteModule {}

@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
+import { UserRepositoryModule } from 'src/infra/repository/user/user-repository.module';
 import { SeederRunner } from './seeder.runner';
 import { seeds } from './seeds';
-import { UserRepositoryModule } from 'src/domain/user/repositories/user-repository.module';
+import { UserUsecaseModule } from 'src/domain/usecase/user/user-usecase.module';
 
 @Module({
-  imports: [UserRepositoryModule],
+  imports: [UserRepositoryModule, UserUsecaseModule],
   providers: [SeederRunner, ...seeds],
   exports: [SeederRunner],
 })

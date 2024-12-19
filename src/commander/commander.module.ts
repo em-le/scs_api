@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { InternalModule } from 'src/internal/internal.module';
-import { HealthRunnerModule } from './commands/heath/heath-runner.module';
 import { SeederRunnerModule } from './commands/seeder/seeder-runner.module';
+import { InternalModule } from 'src/internal/internal.module';
+import { HealthCheckRunner } from './commands/heath-check.runner';
+const commandModules = [SeederRunnerModule];
 
-const commandModules = [HealthRunnerModule, SeederRunnerModule];
 @Module({
   imports: [InternalModule, ...commandModules],
-  providers: [],
+  providers: [HealthCheckRunner],
   exports: [],
 })
 export class CommanderModule {}

@@ -10,7 +10,6 @@ import { PRIMARY_CONNECTION } from './constants';
       useClass: MongoDBConfig,
     }),
   ],
-  providers: [],
-  exports: [],
+  exports: [MongooseModule],
 })
 export class DatabaseModule {}

@@ -7,12 +7,12 @@ import {
   DB_UPDATED_AT_FIELD_NAME,
   DB_DELETED_AT_FIELD_NAME,
   DB_DELETED_BY_FIELD_NAME,
-  AUTHOR_ENTITY,
+  AUTHOR_SCHEMA,
   DefaultObjectId,
 } from '../constants';
 import { IAuthorDBAbstract, IBaseDBAbstract, IDBAbstract } from '../interfaces';
 
-export abstract class BaseDBAbstractEntity
+export abstract class BaseDBAbstractSchema
   implements IBaseDBAbstract<Types.ObjectId>
 {
   @Prop({
@@ -29,8 +29,8 @@ export abstract class BaseDBAbstractEntity
   enabled?: boolean;
 }
 
-export abstract class AuthorDBAbstractEntity
-  extends BaseDBAbstractEntity
+export abstract class AuthorDBAbstractSchema
+  extends BaseDBAbstractSchema
   implements IAuthorDBAbstract<Types.ObjectId>
 {
   @Prop({
@@ -42,7 +42,7 @@ export abstract class AuthorDBAbstractEntity
 
   @Prop({
     type: Types.ObjectId,
-    ref: AUTHOR_ENTITY,
+    ref: AUTHOR_SCHEMA,
     required: false,
     default: null,
   })
@@ -57,15 +57,15 @@ export abstract class AuthorDBAbstractEntity
 
   @Prop({
     type: Types.ObjectId,
-    ref: AUTHOR_ENTITY,
+    ref: AUTHOR_SCHEMA,
     required: false,
     default: null,
   })
   [DB_UPDATED_BY_FIELD_NAME]: Types.ObjectId;
 }
 
-export abstract class DBAbstractEntity
-  extends AuthorDBAbstractEntity
+export abstract class DBAbstractSchema
+  extends AuthorDBAbstractSchema
   implements IDBAbstract<Types.ObjectId>
 {
   @Prop({
@@ -77,7 +77,7 @@ export abstract class DBAbstractEntity
 
   @Prop({
     type: Types.ObjectId,
-    ref: AUTHOR_ENTITY,
+    ref: AUTHOR_SCHEMA,
     required: false,
     default: null,
   })
