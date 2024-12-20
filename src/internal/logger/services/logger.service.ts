@@ -10,39 +10,39 @@ export class LoggerService {
     private readonly logger: WinstonClientLogger,
   ) {}
 
-  info(log: ILog, data?: any): void {
+  info(log: ILog, ctx?: any): void {
     this.logger.info(log.description, {
       class: log.class,
       function: log.function,
       path: log.path,
-      data,
+      ctx,
     });
   }
 
-  error(log: ILog, data?: any): void {
+  error(log: ILog, ctx?: any): void {
     this.logger.error(log.description, {
       class: log.class,
       function: log.function,
       path: log.path,
-      data,
+      ctx,
     });
   }
 
-  warn(log: ILog, data?: any): void {
+  warn(log: ILog, ctx?: any): void {
     this.logger.warn(log.description, {
       class: log.class,
       function: log.function,
       path: log.path,
-      data,
+      ctx,
     });
   }
 
-  debug(log: ILog, data?: any): void {
+  debug(log: ILog, ctx?: any): void {
     this.logger.debug(log.description, {
       class: log.class,
       function: log.function,
       path: log.path,
-      data,
+      ctx,
     });
   }
 }

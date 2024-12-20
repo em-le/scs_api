@@ -31,6 +31,7 @@
     "@nestjs/schedule": "^4.1.2",
     "@nestjs/throttler": "^6.3.0",
     "@types/ua-parser-js": "^0.7.39",
+    "axios": "^1.7.9",
     "bcryptjs": "^2.4.3",
     "cache-manager": "^6.3.1",
     "cache-manager-redis-store": "^3.0.1",

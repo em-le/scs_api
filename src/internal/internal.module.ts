@@ -4,11 +4,13 @@ import { DatabaseModule } from './database/database.module';
 import { HelperModule } from './helper/helper.module';
 import { LoggerModule } from './logger/logger.module';
 import { RequestModule } from './request/request.module';
+import { ClientModule } from './client/client.module';
 
 @Module({
   imports: [
     ConfigModule,
     HelperModule,
+    ClientModule,
     DatabaseModule,
     LoggerModule.forRoot(),
     RequestModule,

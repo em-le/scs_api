@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { HealthController } from './heath.controller';
-import { HeathQueueModule } from 'src/queue/queues/health/health-queue.module';
+import { TextKernelModule } from 'src/infra/textkernel/textkernel.module';
 
 @Module({
-  imports: [HeathQueueModule],
+  imports: [TextKernelModule],
   controllers: [HealthController],
 })
 export class PublicRouteModule {}

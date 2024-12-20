@@ -171,4 +171,12 @@ export class ConfigService {
       db: this.getNumber('REDIS_DATABASE', 0),
     };
   }
+
+  get kxKernel() {
+    return {
+      host: this.getString('TX_HOST'),
+      accountId: this.getString('TX_ACCOUNT_ID'),
+      serviceKey: this.getString('TX_SERVICE_KEY'),
+    };
+  }
 }
