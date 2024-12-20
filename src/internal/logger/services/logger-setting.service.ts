@@ -9,13 +9,9 @@ import { join } from 'path';
 import { ConfigService } from 'src/internal/config/services/config.service';
 
 const LEVEL = Symbol.for('level');
-function filterOnly(level) {
-  return winston.format(function (info) {
-    if (info[LEVEL] === level) {
-      return info;
-    }
-  })();
-}
+const filterOnly = (level: string) => {
+  return winston.format((info) => (info[LEVEL] === level ? info : void 0))();
+};
 
 @Injectable()
 export class LoggerSettingService implements ILoggerOptions {
@@ -25,7 +21,6 @@ export class LoggerSettingService implements ILoggerOptions {
   private readonly maxSize: string = '';
   private readonly maxFile: string = '';
   private readonly systemName: string = 'system';
-  private readonly clientName: string = 'client';
 
   constructor(private readonly configSer: ConfigService) {
     const debuggerConfig = configSer.logger;
@@ -56,6 +51,19 @@ export class LoggerSettingService implements ILoggerOptions {
       transports.push(
         new DailyRotateFile({
           filename: `%DATE%.log`,
+          format: filterOnly('warn'),
+          dirname: `${logDir}/${this.systemName}/warn`,
+          datePattern: 'YYYY-MM-DD',
+          zippedArchive: true,
+          maxSize: this.maxSize,
+          maxFiles: this.maxFile,
+          level: 'warn',
+        }),
+      );
+
+      transports.push(
+        new DailyRotateFile({
+          filename: `%DATE%.log`,
           format: filterOnly('info'),
           dirname: `${logDir}/${this.systemName}/info`,
           datePattern: 'YYYY-MM-DD',
@@ -76,45 +84,6 @@ export class LoggerSettingService implements ILoggerOptions {
           maxSize: this.maxSize,
           maxFiles: this.maxFile,
           level: 'debug',
-        }),
-      );
-
-      transports.push(
-        new DailyRotateFile({
-          filename: `%DATE%.log`,
-          format: filterOnly('postgres'),
-          dirname: `${logDir}/${this.systemName}/postgres`,
-          datePattern: 'YYYY-MM-DD',
-          zippedArchive: true,
-          maxSize: this.maxSize,
-          maxFiles: this.maxFile,
-          level: 'postgres',
-        }),
-      );
-
-      transports.push(
-        new DailyRotateFile({
-          filename: `%DATE%.log`,
-          format: filterOnly('oracle'),
-          dirname: `${logDir}/${this.systemName}/oracle`,
-          datePattern: 'YYYY-MM-DD',
-          zippedArchive: true,
-          maxSize: this.maxSize,
-          maxFiles: this.maxFile,
-          level: 'oracle',
-        }),
-      );
-
-      transports.push(
-        new DailyRotateFile({
-          filename: `%DATE%.log`,
-          format: filterOnly('client'),
-          dirname: `${logDir}/${this.clientName}`,
-          datePattern: 'YYYY-MM-DD',
-          zippedArchive: true,
-          maxSize: this.maxSize,
-          maxFiles: this.maxFile,
-          level: 'client',
         }),
       );
     }

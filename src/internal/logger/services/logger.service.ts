@@ -12,36 +12,36 @@ export class LoggerService {
 
   info(log: ILog, ctx?: any): void {
     this.logger.info(log.description, {
-      class: log.class,
-      function: log.function,
-      path: log.path,
+      class: log.class ?? '',
+      function: log.function ?? '',
+      path: log.path ?? '',
       ctx,
     });
   }
 
   error(log: ILog, ctx?: any): void {
     this.logger.error(log.description, {
-      class: log.class,
-      function: log.function,
-      path: log.path,
+      class: log.class ?? '',
+      function: log.function ?? '',
+      path: log.path ?? '',
       ctx,
     });
   }
 
   warn(log: ILog, ctx?: any): void {
     this.logger.warn(log.description, {
-      class: log.class,
-      function: log.function,
-      path: log.path,
+      class: log.class ?? '',
+      function: log.function ?? '',
+      path: log.path ?? '',
       ctx,
     });
   }
 
   debug(log: ILog, ctx?: any): void {
     this.logger.debug(log.description, {
-      class: log.class,
-      function: log.function,
-      path: log.path,
+      class: log.class ?? '',
+      function: log.function ?? '',
+      path: log.path ?? '',
       ctx,
     });
   }
