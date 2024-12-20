@@ -161,4 +161,14 @@ export class ConfigService {
       ],
     };
   }
+
+  get queueConfig() {
+    return {
+      host: this.getString('REDIS_HOST'),
+      port: this.getNumber('REDIS_PORT'),
+      username: this.getString('REDIS_USERNAME', ''),
+      password: this.getString('REDIS_PASSWORD', ''),
+      db: this.getNumber('REDIS_DATABASE', 0),
+    };
+  }
 }

@@ -3,7 +3,6 @@ import {
   ForwardReference,
   Global,
   Module,
-  Provider,
   Type,
 } from '@nestjs/common';
 import { WinstonModule } from 'nest-winston';
@@ -22,7 +21,6 @@ export class LoggerSettingModule {}
 @Module({})
 export class LoggerModule {
   static forRoot(): DynamicModule {
-    const providers: Provider<any>[] = [];
     const imports: (
       | DynamicModule
       | Type<any>
@@ -46,7 +44,7 @@ export class LoggerModule {
       module: LoggerModule,
       imports: [...imports, LoggerMiddlewareModule],
       providers: [LoggerService],
-      exports: [...providers],
+      exports: [LoggerService],
       controllers: [],
     };
   }

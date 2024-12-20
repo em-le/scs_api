@@ -9,7 +9,7 @@ import {
 
 export interface IBaseDBAbstract<T = any> {
   _id: T;
-  enabled?: boolean;
+  isEnabled?: boolean;
 }
 
 export interface IAuthorDBAbstract<T = any> extends IBaseDBAbstract<T> {
