@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import * as os from 'os';
 import { ConfigService } from './internal/config/services/config.service';
 import { VersioningType } from '@nestjs/common';
+import * as bodyParser from 'body-parser';
 
 process.env.UV_THREADPOOL_SIZE = os.cpus().length.toString();
 declare const module: any;
@@ -16,6 +17,8 @@ async function bootstrap() {
   app.setGlobalPrefix(appConfig.globalPrefix, {
     exclude: [],
   });
+  app.use(bodyParser.json({ limit: '50mb' }));
+  app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
   if (appConfig.versioning.enable) {
     app.enableVersioning({
       type: VersioningType.URI,
