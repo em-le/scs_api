@@ -1,3 +1,4 @@
+import 'src/app.polyfill';
 import { Module } from '@nestjs/common';
 import { InternalModule } from './internal/internal.module';
 import { RouterModule } from './router/router.module';
