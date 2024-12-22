@@ -1,8 +1,8 @@
-import { RecruitmentStatus } from 'src/infra/repository/recruitment/schemas/recruitment.constant';
+import { RecruitmentStatus } from 'src/infra/repository/recruitment/constants/recruitment.constant';
 import {
   IRecruitment,
   IRecruitmentCreation,
-} from 'src/infra/repository/recruitment/schemas/recruitment.interface';
+} from 'src/infra/repository/recruitment/interfaces/recruitment.interface';
 import {
   DateField,
   EnumField,

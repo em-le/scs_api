@@ -1,4 +1,4 @@
-import { RecruitmentStatus } from './recruitment.constant';
+import { RecruitmentStatus } from '../constants/recruitment.constant';
 
 export interface IRecruitmentCreation {
   jobTitle: string;

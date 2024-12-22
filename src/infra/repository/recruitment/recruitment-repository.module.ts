@@ -7,6 +7,12 @@ import {
   Recruitment,
   RecruitmentSchema,
 } from './schemas/recruitment.schema';
+import { ResumeRepository } from './resume.repository';
+import {
+  Resume,
+  ResumeCollectionName,
+  ResumeSchema,
+} from './schemas/resume.schema';
 
 @Module({
   imports: [
@@ -17,11 +23,16 @@ import {
           schema: RecruitmentSchema,
           collection: RecruitmentCollectionName,
         },
+        {
+          name: Resume.name,
+          schema: ResumeSchema,
+          collection: ResumeCollectionName,
+        },
       ],
       PRIMARY_CONNECTION,
     ),
   ],
-  providers: [RecruitmentRepository],
-  exports: [RecruitmentRepository],
+  providers: [RecruitmentRepository, ResumeRepository],
+  exports: [RecruitmentRepository, ResumeRepository],
 })
 export class RecruitmentRepositoryModule {}
