@@ -1,3 +1,4 @@
+import 'src/app.polyfill';
 import { CommandFactory } from 'nest-commander';
 import { CommanderModule } from './commander.module';
 
