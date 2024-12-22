@@ -23,6 +23,10 @@ export const JPT_TIME_ZONE = 9;
 
 @Injectable()
 export class DateHelper {
+  static getDate() {
+    return moment().format('YYYY-MM-DD');
+  }
+
   timFormat(time: string, current: TIME_FORMAT, target: TIME_FORMAT) {
     return moment(time, current).format(target);
   }

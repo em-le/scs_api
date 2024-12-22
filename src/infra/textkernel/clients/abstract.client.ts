@@ -1,43 +1,35 @@
+import { V10 } from '../openapi/V10';
 import { ITXKernelBaseConfig } from './tx-kernel.interface';
-import { AxiosError } from 'axios';
 
-export class TxAbstractClient {
+export class TxAbstractClient extends V10 {
   protected authHeaderKeys: Record<string, string>;
-  protected url: string;
-  private readonly version = 'v10';
 
-  constructor(baseConfig: ITXKernelBaseConfig, uri: string) {
-    this.setAuthHeader(baseConfig);
-    this.setUrl(baseConfig.host, uri);
+  constructor(baseConfig: ITXKernelBaseConfig) {
+    const { host, accountId, serviceKey } = baseConfig;
+    super({
+      baseUrl: host,
+      baseApiParams: {
+        headers: {
+          'Tx-AccountId': accountId,
+          'Tx-ServiceKey': serviceKey,
+        },
+      },
+    });
   }
 
-  protected getClientErrCtx(err: AxiosError): any {
-    const { url, method, headers, data } = err.config;
-    const response = err.response;
+  protected getClientErrCtx(err): any {
+    const { url, headers, data } = err;
     return {
       request: {
         url,
-        method,
         headers,
         data,
       },
       response: {
-        status: response.status,
-        statusText: response.statusText,
-        data: response.data,
+        status: err.status,
+        statusText: err.statusText,
+        data: err.data,
       },
     };
-  }
-
-  private setAuthHeader(baseConfig: ITXKernelBaseConfig) {
-    const { accountId, serviceKey } = baseConfig;
-    this.authHeaderKeys = {
-      'Tx-AccountId': accountId,
-      'Tx-ServiceKey': serviceKey,
-    };
-  }
-
-  private setUrl(host: string, uri: string) {
-    this.url = `${host}\\${this.version}\\${uri}`;
   }
 }
