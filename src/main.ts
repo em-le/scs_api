@@ -2,7 +2,7 @@ import { NestApplication, NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as os from 'os';
 import { ConfigService } from './internal/config/services/config.service';
-import { VersioningType } from '@nestjs/common';
+import { RequestMethod, VersioningType } from '@nestjs/common';
 
 process.env.UV_THREADPOOL_SIZE = os.cpus().length.toString();
 declare const module: any;
@@ -13,8 +13,16 @@ async function bootstrap() {
   });
   const apiConfigSer: ConfigService = app.get(ConfigService);
   const appConfig = apiConfigSer.app;
+  const versionPrefix = appConfig.versioning.enable
+    ? `${appConfig.versioning.prefix}${appConfig.versioning.version}`
+    : '';
   app.setGlobalPrefix(appConfig.globalPrefix, {
-    exclude: [],
+    exclude: [
+      {
+        path: `${versionPrefix}/publish/resume/:short_link`,
+        method: RequestMethod.GET,
+      },
+    ],
   });
   if (appConfig.versioning.enable) {
     app.enableVersioning({

@@ -13,6 +13,18 @@ import {
   ResumeCollectionName,
   ResumeSchema,
 } from './schemas/resume.schema';
+import {
+  Parser,
+  ParserCollectionName,
+  ParserSchema,
+} from './schemas/parser.schema';
+import {
+  Matcher,
+  MatcherCollectionName,
+  MatcherSchema,
+} from './schemas/matcher.schema';
+import { MatcherRepository } from './matcher.repository';
+import { ParserRepository } from './parser.repository';
 
 @Module({
   imports: [
@@ -28,11 +40,31 @@ import {
           schema: ResumeSchema,
           collection: ResumeCollectionName,
         },
+        {
+          name: Parser.name,
+          schema: ParserSchema,
+          collection: ParserCollectionName,
+        },
+        {
+          name: Matcher.name,
+          schema: MatcherSchema,
+          collection: MatcherCollectionName,
+        },
       ],
       PRIMARY_CONNECTION,
     ),
   ],
-  providers: [RecruitmentRepository, ResumeRepository],
-  exports: [RecruitmentRepository, ResumeRepository],
+  providers: [
+    RecruitmentRepository,
+    ResumeRepository,
+    MatcherRepository,
+    ParserRepository,
+  ],
+  exports: [
+    RecruitmentRepository,
+    ResumeRepository,
+    MatcherRepository,
+    ParserRepository,
+  ],
 })
 export class RecruitmentRepositoryModule {}

@@ -30,6 +30,6 @@ export function FileName() {
     callback: (error: Error | null, filename: string) => void,
   ) => {
     const fileExtName = extname(file.originalname);
-    callback(null, `$${uuidv4()}${fileExtName}`);
+    callback(null, `${uuidv4()}${fileExtName}`);
   };
 }
