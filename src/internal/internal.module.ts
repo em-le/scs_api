@@ -5,6 +5,7 @@ import { HelperModule } from './helper/helper.module';
 import { LoggerModule } from './logger/logger.module';
 import { RequestModule } from './request/request.module';
 import { ClientModule } from './client/client.module';
+import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ClientModule } from './client/client.module';
     DatabaseModule,
     LoggerModule.forRoot(),
     RequestModule,
+    FileModule,
   ],
   providers: [],
 })

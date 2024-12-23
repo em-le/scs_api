@@ -2,6 +2,7 @@ import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import * as fsPromise from 'fs/promises';
 import * as fs from 'fs';
 import { join } from 'path';
+import bytes from 'bytes';
 
 @Injectable()
 export class FileHelper {
@@ -13,6 +14,10 @@ export class FileHelper {
         message: error?.message,
       });
     }
+  }
+
+  convertToBytes(megabytes: string): number {
+    return bytes(megabytes);
   }
 
   asyncRead(path: string): Promise<Buffer> {

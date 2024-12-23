@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService as NestJSService } from '@nestjs/config';
 import { MongooseModuleOptions } from '@nestjs/mongoose';
 import { HTTP_METHOD } from 'src/internal/request/constants';
+import * as bytes from 'bytes';
 
 @Injectable()
 export class ConfigService {
@@ -177,6 +178,15 @@ export class ConfigService {
       host: this.getString('TX_HOST'),
       accountId: this.getString('TX_ACCOUNT_ID'),
       serviceKey: this.getString('TX_SERVICE_KEY'),
+    };
+  }
+
+  get file() {
+    return {
+      pdf: {
+        maxFile: 10,
+        maxFileSize: bytes('10mb'),
+      },
     };
   }
 }
