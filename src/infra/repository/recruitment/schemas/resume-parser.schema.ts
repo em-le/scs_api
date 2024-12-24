@@ -204,12 +204,6 @@ export class ResumeParser
     required: true,
   })
   ResumeData: ResumeData;
-
-  @Prop({
-    type: ResumeDataImpl,
-    required: true,
-  })
-  RedactedResumeData: ResumeData;
 }
 
 export const ResumeParserSchema = SchemaFactory.createForClass(ResumeParser);

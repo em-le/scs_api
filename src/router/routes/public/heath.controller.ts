@@ -27,7 +27,6 @@ export class HealthController {
       JSON.parse(jsonData);
     const data: IResumeParserCreation = {
       ResumeData: resumeParsingTransaction.Value.ResumeData,
-      RedactedResumeData: resumeParsingTransaction.Value.RedactedResumeData,
     };
     this.resumeParserRepo.create(data);
   }
