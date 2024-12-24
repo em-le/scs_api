@@ -2,7 +2,8 @@ import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
 import { ResumeParserRepository } from 'src/infra/repository/recruitment/resume-parser.repository';
 import * as fs from 'fs';
 import * as path from 'path';
-import { ResumeParsingTransaction } from 'src/infra/textkernel/openapi/data-contracts';
+import { ResumeParsingTransactionStructuredResponseModel } from 'src/infra/textkernel/openapi/data-contracts';
+import { IResumeParserCreation } from 'src/infra/repository/recruitment/interfaces';
 
 @Controller({
   path: 'health',
@@ -22,8 +23,12 @@ export class HealthController {
     );
     const jsonData = fs.readFileSync(filePath, 'utf-8');
 
-    const resumeParsingTransaction: ResumeParsingTransaction =
+    const resumeParsingTransaction: ResumeParsingTransactionStructuredResponseModel =
       JSON.parse(jsonData);
-    this.resumeParserRepo.create(resumeParsingTransaction.ResumeData);
+    const data: IResumeParserCreation = {
+      ResumeData: resumeParsingTransaction.Value.ResumeData,
+      RedactedResumeData: resumeParsingTransaction.Value.RedactedResumeData,
+    };
+    this.resumeParserRepo.create(data);
   }
 }

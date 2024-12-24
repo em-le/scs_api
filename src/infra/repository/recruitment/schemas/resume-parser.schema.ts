@@ -1,7 +1,7 @@
 import { AuthorDBAbstractSchema } from 'src/internal/database/abstracts/schema.abstract';
 import { MongooseSchema } from 'src/internal/database/decorators/database.decorator';
 import { IResumeParser } from '../interfaces';
-import { Prop, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 import {
   Association,
@@ -14,6 +14,7 @@ import {
   LicenseDetail,
   MilitaryDetails,
   PersonalAttributes,
+  ResumeData,
   ResumeMetadata,
   ResumeTaxonomyRoot,
   SecurityCredential,
@@ -40,11 +41,8 @@ import {
 
 export const ResumeParserCollectionName = 'resume_parsers';
 
-@MongooseSchema(ResumeParserCollectionName)
-export class ResumeParser
-  extends AuthorDBAbstractSchema
-  implements IResumeParser
-{
+@Schema()
+export class ResumeDataImpl implements ResumeData {
   @Prop({
     type: ContactInformationImpl,
     required: false,
@@ -194,6 +192,24 @@ export class ResumeParser
     required: false,
   })
   UserDefinedTags?: string[] | null;
+}
+
+@MongooseSchema(ResumeParserCollectionName)
+export class ResumeParser
+  extends AuthorDBAbstractSchema
+  implements IResumeParser
+{
+  @Prop({
+    type: ResumeDataImpl,
+    required: true,
+  })
+  ResumeData: ResumeData;
+
+  @Prop({
+    type: ResumeDataImpl,
+    required: true,
+  })
+  RedactedResumeData: ResumeData;
 }
 
 export const ResumeParserSchema = SchemaFactory.createForClass(ResumeParser);
