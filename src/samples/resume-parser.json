@@ -1,0 +1,2052 @@
+{
+    "ResumeData": {
+        "ContactInformation": {
+            "CandidateName": {
+                "FormattedName": "LE VAN HIEN",
+                "GivenName": "LE",
+                "FamilyName": "VAN HIEN"
+            },
+            "Telephones": [
+                {
+                    "Raw": "0399985860",
+                    "Normalized": "+84 399985860",
+                    "InternationalCountryCode": "84",
+                    "SubscriberNumber": "399985860"
+                }
+            ],
+            "EmailAddresses": [
+                "Levanhien84555@gmail.com"
+            ],
+            "Location": {
+                "CountryCode": "VN",
+                "Municipality": "Ho Chi Minh City",
+                "StreetAddressLines": [
+                    "Thu Duc"
+                ]
+            },
+            "WebAddresses": [
+                {
+                    "Address": "https://github.com/ismhac/Jspace_SpringBoot",
+                    "Type": "GitHub"
+                },
+                {
+                    "Address": "https://github.com/ismhac/Jspace_NestJs",
+                    "Type": "GitHub"
+                }
+            ]
+        },
+        "ProfessionalSummary": "Enjoy solving logical problems and developing efficient, secure systems using back-end skills. Stay up-to-date with\nDevOps, new technologies, and methodologies to enhance programming skills.",
+        "Education": {
+            "EducationDetails": [
+                {
+                    "Id": "DEG-1",
+                    "Text": "Ho Chi Minh City University of Technology and Education\t\t2020 - 2024\n\n\nHONORS & REWARDS",
+                    "SchoolName": {
+                        "Raw": "Ho Chi Minh City University of Technology and Education",
+                        "Normalized": "Ho Chi Minh City University of Technology and Education"
+                    },
+                    "SchoolType": "university",
+                    "LastEducationDate": {
+                        "Date": "2024-12-17",
+                        "IsCurrentDate": true,
+                        "FoundYear": true,
+                        "FoundMonth": false,
+                        "FoundDay": false
+                    },
+                    "StartDate": {
+                        "Date": "2020-01-01",
+                        "IsCurrentDate": false,
+                        "FoundYear": true,
+                        "FoundMonth": false,
+                        "FoundDay": false
+                    },
+                    "EndDate": {
+                        "Date": "2024-12-17",
+                        "IsCurrentDate": true,
+                        "FoundYear": true,
+                        "FoundMonth": false,
+                        "FoundDay": false
+                    },
+                    "Graduated": {
+                        "Value": false
+                    }
+                }
+            ]
+        },
+        "EmploymentHistory": {
+            "ExperienceSummary": {
+                "Description": "LE VAN HIEN's skills align with Programmers (Information and Communication Technology). LE also has skills associated with Web Professionals (Information and Communication Technology). LE VAN HIEN appears to be an entry-level candidate, with 22 months of experience.",
+                "MonthsOfWorkExperience": 22,
+                "MonthsOfManagementExperience": 0,
+                "ExecutiveType": "NONE",
+                "AverageMonthsPerEmployer": 22,
+                "FulltimeDirectHirePredictiveIndex": 50,
+                "ManagementStory": "",
+                "CurrentManagementLevel": "",
+                "ManagementScore": 0
+            },
+            "Positions": [
+                {
+                    "Id": "POS-1",
+                    "Employer": {
+                        "Name": {
+                            "Probability": "Confident",
+                            "Raw": "Hitek Software",
+                            "Normalized": "Hitek Software"
+                        }
+                    },
+                    "IsSelfEmployed": false,
+                    "IsCurrent": true,
+                    "JobTitle": {
+                        "Raw": "Backend Engineer",
+                        "Normalized": "Backend Engineer",
+                        "Probability": "Confident"
+                    },
+                    "StartDate": {
+                        "Date": "2023-03-01",
+                        "IsCurrentDate": false,
+                        "FoundYear": true,
+                        "FoundMonth": true,
+                        "FoundDay": false
+                    },
+                    "EndDate": {
+                        "Date": "2024-12-17",
+                        "IsCurrentDate": true,
+                        "FoundYear": true,
+                        "FoundMonth": true,
+                        "FoundDay": false
+                    },
+                    "JobType": "directHire",
+                    "JobLevel": "Entry Level",
+                    "TaxonomyPercentage": 0,
+                    "Description": "ERP Healthcare:\n-   Description: A healthcare project managed between the South Korean government and B2B healthcare\ncenters. Management between health centers and patients, primarily focusing on elderly patients.\n-   Team size: 15\n-   Position in project: Backend Java Developer\n-   My features:\n●   Integration of third-party payment gateways (PayApp Platform)\n●   Integration of SMS/Kakao notifications with third-party services (SolAPI)\n●   Payment management (employee salaries, patient debts)\n●   Schedule management for staff and patients at the centers\n-   Technologies: Java, Spring Boot, Maven, MySQL, Aws (ET3, S3), Docker, Jenkins\n\nBuild KCSC:\n-   Description: Project for managing internal documents in the construction field.\n-   Team size: 5\n-   Position in project: Backend Java Developer\n-   My features:\n●   Restful API\n●   Optimized support for database procedures\n●   Generate PDF file\n-   Technologies: Java, Spring Boot, Gradle, PostgreSQL, Windows Server, Azure Devops, Docker, Jenkins\n\nJspace - Job Search Recruitment (personal project):\n\n-   Github: https://github.com/ismhac/Jspace_NestJs & https://github.com/ismhac/Jspace_SpringBoot\n\n-   Description: A website management project for recruitment and job searching.\n-   Team size: 2\n-   Position in project: Backend Developer\n-   My features:\n●   Database design, Restful APIOptimized support for database procedures\n●   User management: HR, job seekers, company information, and job postings.\n●   Support for job seekers to create a CV repository and manage their job application information.\n-   Technologies: TypeScript, NestJS, MongoDB, Google GCP, Docker, CI/CD with Jenkins, Python Scrapy"
+                }
+            ]
+        },
+        "Skills": {
+            "Raw": [
+                {
+                    "Name": "Agile",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AWS",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Azure",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Azure Devops",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "B2B",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Backend",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "CI/CD",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "construction",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "database",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Database design",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Databases",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "debts",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "DevOps",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SUMMARY"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Docker",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "ERP",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "GitHub",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "GitLab",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Golang",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Google Cloud",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Gradle",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Healthcare",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Information Security",
+                    "FoundIn": [
+                        {
+                            "SectionType": "PERSONAL INTERESTS AND ACCOMPLISHMENTS"
+                        },
+                        {
+                            "SectionType": "TRAINING"
+                        },
+                        {
+                            "SectionType": "EDUCATION"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Java",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Jenkins",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Maven",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "MongoDB",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "MySQL",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "NestJs",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "OOP",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "PostgreSQL",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "programming skills",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SUMMARY"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Python",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Recruitment",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Restful",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Restful API",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "S3",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Scrum methodology",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Spring Boot",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "TypeScript",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "User management",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Version Control",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ]
+                },
+                {
+                    "Name": "website management",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                },
+                {
+                    "Name": "Windows Server",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    }
+                }
+            ],
+            "Normalized": [
+                {
+                    "Name": "Amazon Web Services",
+                    "Id": "KS120FG6YP8PQYYNQY9B",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "AWS"
+                    ]
+                },
+                {
+                    "Name": "Continuous Integration",
+                    "Id": "KS122C775KRX1DK8Q1RQ",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "CI/CD"
+                    ]
+                },
+                {
+                    "Name": "Databases",
+                    "Id": "KS1227H6H5Q5Q3T2NQR5",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        },
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "database",
+                        "Databases"
+                    ]
+                },
+                {
+                    "Name": "Docker",
+                    "Id": "KSY4WFI1S164RQUBSPCC",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Docker"
+                    ]
+                },
+                {
+                    "Name": "Github",
+                    "Id": "KS124CH623PFBJS8T5KM",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "GitHub"
+                    ]
+                },
+                {
+                    "Name": "Java (Programming Language)",
+                    "Id": "KS120076FGP5WGWYMP0F",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Java"
+                    ]
+                },
+                {
+                    "Name": "Jenkins",
+                    "Id": "KSYO45M6II0E15Y5RP67",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Jenkins"
+                    ]
+                },
+                {
+                    "Name": "Microsoft Azure",
+                    "Id": "KS120V86MZWV9Z9LKQY3",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Azure",
+                        "Azure Devops"
+                    ]
+                },
+                {
+                    "Name": "MongoDB",
+                    "Id": "KS126PF6PJY1N0ZX5R0P",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "MongoDB"
+                    ]
+                },
+                {
+                    "Name": "MySQL",
+                    "Id": "KS126QY605N7YVHFYCTW",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "MySQL"
+                    ]
+                },
+                {
+                    "Name": "NestJS",
+                    "Id": "KSSUVCCJI2VPAZ1LKBG5",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "NestJs"
+                    ]
+                },
+                {
+                    "Name": "PostgreSQL",
+                    "Id": "KS125TB6YR6236RKM563",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "PostgreSQL"
+                    ]
+                },
+                {
+                    "Name": "Spring-boot",
+                    "Id": "KSB0O0RTR4GBUS9C1FV7",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Spring Boot"
+                    ]
+                },
+                {
+                    "Name": "TypeScript",
+                    "Id": "KS441LF7187KS0CV4B6Y",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        },
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "TypeScript"
+                    ]
+                },
+                {
+                    "Name": "Amazon S3",
+                    "Id": "KS120FQ6DY31LFDWPJR3",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "S3"
+                    ]
+                },
+                {
+                    "Name": "Apache Maven",
+                    "Id": "KS1267G65F62ZDQ9W3DW",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Maven"
+                    ]
+                },
+                {
+                    "Name": "Backend",
+                    "Id": "KSFFZBDYXH5XA5QE4E7I",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Backend"
+                    ]
+                },
+                {
+                    "Name": "Database Design",
+                    "Id": "KS122QL6NN356RRJT6RV",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Database design"
+                    ]
+                },
+                {
+                    "Name": "Gradle",
+                    "Id": "KS124GS69JDX0HLVZZS3",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Gradle"
+                    ]
+                },
+                {
+                    "Name": "Python (Programming Language)",
+                    "Id": "KS125LS6N7WP4S6SFTCK",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Python"
+                    ]
+                },
+                {
+                    "Name": "Restful APIs",
+                    "Id": "KSTCKINCCLKBAHVAOXO8",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Restful",
+                        "Restful API"
+                    ]
+                },
+                {
+                    "Name": "User Administration",
+                    "Id": "KSYKIMAQ70RR9Q8RDXFJ",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "User management"
+                    ]
+                },
+                {
+                    "Name": "Windows Servers",
+                    "Id": "KS126K06YSWLGCMB6B0Y",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Windows Server"
+                    ]
+                },
+                {
+                    "Name": "Enterprise Resource Planning",
+                    "Id": "KS123KH77136Y0FWRNJY",
+                    "Type": "Professional",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "ERP"
+                    ]
+                },
+                {
+                    "Name": "Business to Business Commerce",
+                    "Id": "KS120VC7108H86J50CYW",
+                    "Type": "Professional",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "B2B"
+                    ]
+                },
+                {
+                    "Name": "Website Management",
+                    "Id": "KS44218665F5T2N553V2",
+                    "Type": "Professional",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "website management"
+                    ]
+                },
+                {
+                    "Name": "Construction",
+                    "Id": "KS1217R6SMDJ0WQHN6LK",
+                    "Type": "Professional",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "construction"
+                    ]
+                },
+                {
+                    "Name": "Accounts Payable",
+                    "Id": "KS1203V5WXB7NG26XSR8",
+                    "Type": "Professional",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "debts"
+                    ]
+                },
+                {
+                    "Name": "Recruitment",
+                    "Id": "KS124QQ77M8G28BFV55X",
+                    "Type": "Professional",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Recruitment"
+                    ]
+                },
+                {
+                    "Name": "Health Care",
+                    "Id": "KS124MR64XLNKRD77HKB",
+                    "Type": "Professional",
+                    "FoundIn": [
+                        {
+                            "SectionType": "WORK HISTORY",
+                            "Id": "POS-1"
+                        }
+                    ],
+                    "MonthsExperience": {
+                        "Value": 22
+                    },
+                    "LastUsed": {
+                        "Value": "2024-12-17"
+                    },
+                    "RawSkills": [
+                        "Healthcare"
+                    ]
+                },
+                {
+                    "Name": "Computer Security",
+                    "Id": "KS122716P0Q9TPWQFJH3",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "PERSONAL INTERESTS AND ACCOMPLISHMENTS"
+                        },
+                        {
+                            "SectionType": "TRAINING"
+                        },
+                        {
+                            "SectionType": "EDUCATION"
+                        }
+                    ],
+                    "RawSkills": [
+                        "Information Security"
+                    ]
+                },
+                {
+                    "Name": "Agile Methodology",
+                    "Id": "KS120B874P2P6BK1MQ0T",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "RawSkills": [
+                        "Agile"
+                    ]
+                },
+                {
+                    "Name": "Computer Programming",
+                    "Id": "KS1227F6831KK9NBB875",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SUMMARY"
+                        }
+                    ],
+                    "RawSkills": [
+                        "programming skills"
+                    ]
+                },
+                {
+                    "Name": "DevOps",
+                    "Id": "KS122W96T2T9J5PZ0VMP",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SUMMARY"
+                        }
+                    ],
+                    "RawSkills": [
+                        "DevOps"
+                    ]
+                },
+                {
+                    "Name": "Gitlab",
+                    "Id": "KSFX6JBNDFS27G78LHSA",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "RawSkills": [
+                        "GitLab"
+                    ]
+                },
+                {
+                    "Name": "Golang",
+                    "Id": "KSZMBZQE9R9E01QYVUYC",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "RawSkills": [
+                        "Golang"
+                    ]
+                },
+                {
+                    "Name": "Google Cloud",
+                    "Id": "KS7G3YQ62YJG4LX9QFZT",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "RawSkills": [
+                        "Google Cloud"
+                    ]
+                },
+                {
+                    "Name": "Object-Oriented Software Development",
+                    "Id": "KS1278W6LG4JDWNMF9C0",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "RawSkills": [
+                        "OOP"
+                    ]
+                },
+                {
+                    "Name": "Scrum Methodology",
+                    "Id": "KS1282N6NQMZ95M1HJ7L",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "RawSkills": [
+                        "Scrum methodology"
+                    ]
+                },
+                {
+                    "Name": "Software Version Control",
+                    "Id": "KSWOF8D931GTF22PFCS4",
+                    "Type": "IT",
+                    "FoundIn": [
+                        {
+                            "SectionType": "SKILLS"
+                        }
+                    ],
+                    "RawSkills": [
+                        "Version Control"
+                    ]
+                }
+            ],
+            "RelatedProfessionClasses": [
+                {
+                    "Name": "Information and Communication Technology",
+                    "Id": "9",
+                    "Percent": 82,
+                    "Groups": [
+                        {
+                            "Name": "Programmers",
+                            "Id": "82",
+                            "Percent": 24,
+                            "NormalizedSkills": [
+                                "KS120B874P2P6BK1MQ0T",
+                                "KS120FQ6DY31LFDWPJR3",
+                                "KS120FG6YP8PQYYNQY9B",
+                                "KS1267G65F62ZDQ9W3DW",
+                                "KSFFZBDYXH5XA5QE4E7I",
+                                "KS1227F6831KK9NBB875",
+                                "KS122C775KRX1DK8Q1RQ",
+                                "KS122QL6NN356RRJT6RV",
+                                "KS1227H6H5Q5Q3T2NQR5",
+                                "KS122W96T2T9J5PZ0VMP",
+                                "KSY4WFI1S164RQUBSPCC",
+                                "KS124CH623PFBJS8T5KM",
+                                "KSFX6JBNDFS27G78LHSA",
+                                "KSZMBZQE9R9E01QYVUYC",
+                                "KS7G3YQ62YJG4LX9QFZT",
+                                "KS124GS69JDX0HLVZZS3",
+                                "KS120076FGP5WGWYMP0F",
+                                "KSYO45M6II0E15Y5RP67",
+                                "KS120V86MZWV9Z9LKQY3",
+                                "KS126PF6PJY1N0ZX5R0P",
+                                "KS126QY605N7YVHFYCTW",
+                                "KSSUVCCJI2VPAZ1LKBG5",
+                                "KS1278W6LG4JDWNMF9C0",
+                                "KS125TB6YR6236RKM563",
+                                "KS125LS6N7WP4S6SFTCK",
+                                "KSTCKINCCLKBAHVAOXO8",
+                                "KS1282N6NQMZ95M1HJ7L",
+                                "KSWOF8D931GTF22PFCS4",
+                                "KSB0O0RTR4GBUS9C1FV7",
+                                "KS441LF7187KS0CV4B6Y"
+                            ]
+                        },
+                        {
+                            "Name": "Web Professionals",
+                            "Id": "77",
+                            "Percent": 16,
+                            "NormalizedSkills": [
+                                "KS1267G65F62ZDQ9W3DW",
+                                "KSFFZBDYXH5XA5QE4E7I",
+                                "KS122C775KRX1DK8Q1RQ",
+                                "KSY4WFI1S164RQUBSPCC",
+                                "KS124CH623PFBJS8T5KM",
+                                "KSFX6JBNDFS27G78LHSA",
+                                "KSZMBZQE9R9E01QYVUYC",
+                                "KS124GS69JDX0HLVZZS3",
+                                "KS120076FGP5WGWYMP0F",
+                                "KS126PF6PJY1N0ZX5R0P",
+                                "KS126QY605N7YVHFYCTW",
+                                "KSSUVCCJI2VPAZ1LKBG5",
+                                "KS1278W6LG4JDWNMF9C0",
+                                "KS125TB6YR6236RKM563",
+                                "KSTCKINCCLKBAHVAOXO8",
+                                "KSWOF8D931GTF22PFCS4",
+                                "KSB0O0RTR4GBUS9C1FV7",
+                                "KS441LF7187KS0CV4B6Y"
+                            ]
+                        },
+                        {
+                            "Name": "System Developers and Analysts",
+                            "Id": "86",
+                            "Percent": 11,
+                            "NormalizedSkills": [
+                                "KS120FQ6DY31LFDWPJR3",
+                                "KS120FG6YP8PQYYNQY9B",
+                                "KS122C775KRX1DK8Q1RQ",
+                                "KS122QL6NN356RRJT6RV",
+                                "KS122W96T2T9J5PZ0VMP",
+                                "KSY4WFI1S164RQUBSPCC",
+                                "KS124CH623PFBJS8T5KM",
+                                "KSFX6JBNDFS27G78LHSA",
+                                "KS7G3YQ62YJG4LX9QFZT",
+                                "KSYO45M6II0E15Y5RP67",
+                                "KS120V86MZWV9Z9LKQY3",
+                                "KS126PF6PJY1N0ZX5R0P",
+                                "KS126QY605N7YVHFYCTW",
+                                "KS125TB6YR6236RKM563",
+                                "KS125LS6N7WP4S6SFTCK",
+                                "KSWOF8D931GTF22PFCS4",
+                                "KSYKIMAQ70RR9Q8RDXFJ",
+                                "KS126K06YSWLGCMB6B0Y"
+                            ]
+                        },
+                        {
+                            "Name": "Database Specialists",
+                            "Id": "79",
+                            "Percent": 9,
+                            "NormalizedSkills": [
+                                "KS120FQ6DY31LFDWPJR3",
+                                "KS120FG6YP8PQYYNQY9B",
+                                "KS122QL6NN356RRJT6RV",
+                                "KS1227H6H5Q5Q3T2NQR5",
+                                "KS7G3YQ62YJG4LX9QFZT",
+                                "KS120V86MZWV9Z9LKQY3",
+                                "KS126PF6PJY1N0ZX5R0P",
+                                "KS126QY605N7YVHFYCTW",
+                                "KS125TB6YR6236RKM563",
+                                "KS125LS6N7WP4S6SFTCK"
+                            ]
+                        },
+                        {
+                            "Name": "Consultants and Specialists",
+                            "Id": "83",
+                            "Percent": 8,
+                            "NormalizedSkills": [
+                                "KS120FQ6DY31LFDWPJR3",
+                                "KS120FG6YP8PQYYNQY9B",
+                                "KS122716P0Q9TPWQFJH3",
+                                "KS122C775KRX1DK8Q1RQ",
+                                "KS122W96T2T9J5PZ0VMP",
+                                "KSY4WFI1S164RQUBSPCC",
+                                "KS123KH77136Y0FWRNJY",
+                                "KS124CH623PFBJS8T5KM",
+                                "KSFX6JBNDFS27G78LHSA",
+                                "KS7G3YQ62YJG4LX9QFZT",
+                                "KSYO45M6II0E15Y5RP67",
+                                "KS120V86MZWV9Z9LKQY3",
+                                "KS1282N6NQMZ95M1HJ7L",
+                                "KSYKIMAQ70RR9Q8RDXFJ",
+                                "KS126K06YSWLGCMB6B0Y"
+                            ]
+                        },
+                        {
+                            "Name": "Information and Communication Technology (other)",
+                            "Id": "291",
+                            "Percent": 7,
+                            "NormalizedSkills": [
+                                "KS120FQ6DY31LFDWPJR3",
+                                "KS120FG6YP8PQYYNQY9B",
+                                "KS1267G65F62ZDQ9W3DW",
+                                "KS122C775KRX1DK8Q1RQ",
+                                "KS122W96T2T9J5PZ0VMP",
+                                "KSY4WFI1S164RQUBSPCC",
+                                "KS124CH623PFBJS8T5KM",
+                                "KSFX6JBNDFS27G78LHSA",
+                                "KSZMBZQE9R9E01QYVUYC",
+                                "KS124GS69JDX0HLVZZS3",
+                                "KSYO45M6II0E15Y5RP67",
+                                "KSWOF8D931GTF22PFCS4",
+                                "KS126K06YSWLGCMB6B0Y"
+                            ]
+                        },
+                        {
+                            "Name": "IT Coordinators",
+                            "Id": "81",
+                            "Percent": 3,
+                            "NormalizedSkills": [
+                                "KSZMBZQE9R9E01QYVUYC",
+                                "KS7G3YQ62YJG4LX9QFZT",
+                                "KSSUVCCJI2VPAZ1LKBG5",
+                                "KS1282N6NQMZ95M1HJ7L",
+                                "KSB0O0RTR4GBUS9C1FV7",
+                                "KS441LF7187KS0CV4B6Y"
+                            ]
+                        },
+                        {
+                            "Name": "System and Application Administrators",
+                            "Id": "85",
+                            "Percent": 2,
+                            "NormalizedSkills": [
+                                "KSYKIMAQ70RR9Q8RDXFJ",
+                                "KS126K06YSWLGCMB6B0Y"
+                            ]
+                        },
+                        {
+                            "Name": "Support Staff",
+                            "Id": "84",
+                            "Percent": 2,
+                            "NormalizedSkills": [
+                                "KSYKIMAQ70RR9Q8RDXFJ",
+                                "KS126K06YSWLGCMB6B0Y"
+                            ]
+                        },
+                        {
+                            "Name": "IT R&D Professionals",
+                            "Id": "29",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS7G3YQ62YJG4LX9QFZT",
+                                "KS125LS6N7WP4S6SFTCK"
+                            ]
+                        },
+                        {
+                            "Name": "Network Specialists",
+                            "Id": "78",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS126K06YSWLGCMB6B0Y"
+                            ]
+                        },
+                        {
+                            "Name": "IT Testers",
+                            "Id": "28",
+                            "Percent": 0,
+                            "NormalizedSkills": [
+                                "KSYO45M6II0E15Y5RP67"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Communication, Marketing and Public Relations",
+                    "Id": "23",
+                    "Percent": 4,
+                    "Groups": [
+                        {
+                            "Name": "Communication, Marketing and Public Relations Managers",
+                            "Id": "208",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS120VC7108H86J50CYW",
+                                "KS44218665F5T2N553V2"
+                            ]
+                        },
+                        {
+                            "Name": "Communication, Marketing and Public Relations (other)",
+                            "Id": "305",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS44218665F5T2N553V2"
+                            ]
+                        },
+                        {
+                            "Name": "Marketing and Advertising Personnel",
+                            "Id": "243",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS44218665F5T2N553V2"
+                            ]
+                        },
+                        {
+                            "Name": "Information and Public Relations Personnel",
+                            "Id": "211",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS44218665F5T2N553V2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Construction and Mining",
+                    "Id": "3",
+                    "Percent": 4,
+                    "Groups": [
+                        {
+                            "Name": "Construction Project Leaders",
+                            "Id": "279",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS1217R6SMDJ0WQHN6LK"
+                            ]
+                        },
+                        {
+                            "Name": "Construction Finishers",
+                            "Id": "248",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS1217R6SMDJ0WQHN6LK"
+                            ]
+                        },
+                        {
+                            "Name": "Construction Contractors",
+                            "Id": "24",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS1217R6SMDJ0WQHN6LK"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Sales and Trading",
+                    "Id": "21",
+                    "Percent": 3,
+                    "Groups": [
+                        {
+                            "Name": "Sales Managers",
+                            "Id": "209",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS120VC7108H86J50CYW"
+                            ]
+                        },
+                        {
+                            "Name": "Articles and Products Representives",
+                            "Id": "205",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS120VC7108H86J50CYW"
+                            ]
+                        },
+                        {
+                            "Name": "Business Services Account Managers",
+                            "Id": "203",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS120VC7108H86J50CYW"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Insurance and Finance",
+                    "Id": "24",
+                    "Percent": 2,
+                    "Groups": [
+                        {
+                            "Name": "Accountants",
+                            "Id": "218",
+                            "Percent": 2,
+                            "NormalizedSkills": [
+                                "KS1203V5WXB7NG26XSR8",
+                                "KS123KH77136Y0FWRNJY"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Legal, Human Resources and Social Services",
+                    "Id": "19",
+                    "Percent": 1,
+                    "Groups": [
+                        {
+                            "Name": "Personnel and Labor Experts",
+                            "Id": "223",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS124QQ77M8G28BFV55X"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Healthcare",
+                    "Id": "6",
+                    "Percent": 1,
+                    "Groups": [
+                        {
+                            "Name": "Specialized Nurses",
+                            "Id": "48",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS124MR64XLNKRD77HKB"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Procurement and Warehouse Management",
+                    "Id": "22",
+                    "Percent": 1,
+                    "Groups": [
+                        {
+                            "Name": "Buyers",
+                            "Id": "224",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS123KH77136Y0FWRNJY"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Name": "Administration and Customer Service",
+                    "Id": "1",
+                    "Percent": 1,
+                    "Groups": [
+                        {
+                            "Name": "Financial-administrative Personnel",
+                            "Id": "1",
+                            "Percent": 1,
+                            "NormalizedSkills": [
+                                "KS1203V5WXB7NG26XSR8"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "LanguageCompetencies": [
+            {
+                "Language": "Korean",
+                "LanguageCode": "ko",
+                "FoundInContext": "project managed between the South Korean government and B2B healthcare"
+            },
+            {
+                "Language": "English",
+                "LanguageCode": "en",
+                "FoundInContext": "[RESUME_LANGUAGE]"
+            }
+        ],
+        "Achievements": [
+            "HONORS & REWARDS",
+            "First prize: HCMUTE \"Student With Information Security\" Academic Competition, 1st\tin 2022"
+        ],
+        "Training": {
+            "Text": "First prize: HCMUTE \"Student With Information Security\" Academic Competition, 1st\tin 2022",
+            "Trainings": [
+                {
+                    "Text": "First prize: HCMUTE \"Student With Information Security\" Academic Competition, 1st\tin 2022",
+                    "Entity": "HCMUTE \"Student With Information Security\"",
+                    "EndDate": {
+                        "Date": "2022-01-01",
+                        "IsCurrentDate": false,
+                        "FoundYear": true,
+                        "FoundMonth": false,
+                        "FoundDay": false
+                    }
+                }
+            ]
+        },
+        "QualificationsSummary": "TECHNICAL SKILL\nPrograming Languages: Java, TypeScript, Golang\nFrameworks/Platforms: Spring Boot, NestJs\nDatabases: PostgreSQL, MySQL, MongoDB\nVersion Control: GitHub, GitLab, Azure Repos\nKnowledge: Agile Scrum methodology, OOP methodology, AWS, Google Cloud, Jenkins, Docker, CI/CD",
+        "ResumeMetadata": {
+            "FoundSections": [
+                {
+                    "FirstLineNumber": 7,
+                    "LastLineNumber": 10,
+                    "SectionType": "SUMMARY",
+                    "HeaderTextFound": "SUMMARY"
+                },
+                {
+                    "FirstLineNumber": 11,
+                    "LastLineNumber": 17,
+                    "SectionType": "SKILLS",
+                    "HeaderTextFound": "TECHNICAL SKILL"
+                },
+                {
+                    "FirstLineNumber": 18,
+                    "LastLineNumber": 56,
+                    "SectionType": "WORK HISTORY",
+                    "HeaderTextFound": "WORK EXPERIENCE"
+                },
+                {
+                    "FirstLineNumber": 57,
+                    "LastLineNumber": 62,
+                    "SectionType": "EDUCATION",
+                    "HeaderTextFound": "EDUCATION"
+                }
+            ],
+            "ResumeQuality": [
+                {
+                    "Level": "Major Issues Found",
+                    "Findings": [
+                        {
+                            "QualityCode": "300",
+                            "Message": "You should not use the PDF format for your resume. Due to inherent limitations with text extraction from PDFs, you are less likely to get a job when using a PDF resume."
+                        }
+                    ]
+                },
+                {
+                    "Level": "Data Missing",
+                    "Findings": [
+                        {
+                            "QualityCode": "231",
+                            "SectionIdentifiers": [
+                                {
+                                    "SectionType": "DEG-1"
+                                }
+                            ],
+                            "Message": "Every degree in a resume should have a name or type associated with it, such as 'B.S.' or 'M.S.'."
+                        }
+                    ]
+                },
+                {
+                    "Level": "Suggested Improvements",
+                    "Findings": [
+                        {
+                            "QualityCode": "112",
+                            "Message": "The following section was identified as a skills section type: 'TECHNICAL SKILL'. Skills should not be in a separate section, but instead, each skill should be included in the descriptions of work history or education. THIS IS INCREDIBLY IMPORTANT FOR AI MATCHING ALGORITHMS"
+                        }
+                    ]
+                }
+            ],
+            "ReservedData": {
+                "Phones": [
+                    "Phone: 0399985860",
+                    "0399985860"
+                ],
+                "Names": [
+                    "LE",
+                    "LE VAN HIEN"
+                ],
+                "EmailAddresses": [
+                    "Levanhien84555@gmail.com"
+                ],
+                "Urls": [
+                    "https://github.com/ismhac/Jspace_SpringBoot",
+                    "https://github.com/ismhac/Jspace_NestJs"
+                ]
+            },
+            "PlainText": "LE VAN HIEN\nBACKEND DEVELOPER (JAVA)\n\nAddress: Thu Duc, Ho Chi Minh City\nPhone: 0399985860\nEmail: Levanhien84555@gmail.com\n\nSUMMARY\nEnjoy solving logical problems and developing efficient, secure systems using back-end skills. Stay up-to-date with\nDevOps, new technologies, and methodologies to enhance programming skills.\n\nTECHNICAL SKILL\nPrograming Languages: Java, TypeScript, Golang\nFrameworks/Platforms: Spring Boot, NestJs\nDatabases: PostgreSQL, MySQL, MongoDB\nVersion Control: GitHub, GitLab, Azure Repos\nKnowledge: Agile Scrum methodology, OOP methodology, AWS, Google Cloud, Jenkins, Docker, CI/CD\n\nWORK EXPERIENCE\nHitek Software\t\t\tMarch 2023 - Present\nBackend Engineer\nERP Healthcare:\n-   Description: A healthcare project managed between the South Korean government and B2B healthcare\ncenters. Management between health centers and patients, primarily focusing on elderly patients.\n-   Team size: 15\n-   Position in project: Backend Java Developer\n-   My features:\n●   Integration of third-party payment gateways (PayApp Platform)\n●   Integration of SMS/Kakao notifications with third-party services (SolAPI)\n●   Payment management (employee salaries, patient debts)\n●   Schedule management for staff and patients at the centers\n-   Technologies: Java, Spring Boot, Maven, MySQL, Aws (ET3, S3), Docker, Jenkins\n\nBuild KCSC:\n\n-   Description: Project for managing internal documents in the construction field.\n-   Team size: 5\n-   Position in project: Backend Java Developer\n-   My features:\n●   Restful API\n●   Optimized support for database procedures\n●   Generate PDF file\n-   Technologies: Java, Spring Boot, Gradle, PostgreSQL, Windows Server, Azure Devops, Docker, Jenkins\n\nJspace - Job Search Recruitment (personal project):\n\n-   Github: https://github.com/ismhac/Jspace_NestJs & https://github.com/ismhac/Jspace_SpringBoot\n\n-   Description: A website management project for recruitment and job searching.\n-   Team size: 2\n-   Position in project: Backend Developer\n-   My features:\n●   Database design, Restful APIOptimized support for database procedures\n●   User management: HR, job seekers, company information, and job postings.\n●   Support for job seekers to create a CV repository and manage their job application information.\n-   Technologies: TypeScript, NestJS, MongoDB, Google GCP, Docker, CI/CD with Jenkins, Python Scrapy\n\nEDUCATION\nHo Chi Minh City University of Technology and Education\t\t2020 - 2024\n\n\nHONORS & REWARDS\nFirst prize: HCMUTE \"Student With Information Security\" Academic Competition, 1st\tin 2022",
+            "DocumentLanguage": "en",
+            "DocumentCulture": "en-US",
+            "ParserSettings": "Coverage.PersonalAttributes = True; Coverage.Training = True; Culture.CountryCodeForUnitedKingdomIsUK = True; Culture.DefaultCountryCode = VN; Culture.Language = English; Culture.PreferEnglishVersionIfTwoLanguagesInDocument = False; Data.NormalizeSkills = True; Data.UserDefinedParsing = False; Data.UseV2SkillsTaxonomy = True; OutputFormat.AssumeCompanyNameFromPrecedingJob = False; OutputFormat.ContactMethod.PackStyle = Split; OutputFormat.DateOutputStyle = ExplicitlyKnownDateInfoOnly; OutputFormat.NestJobsBasedOnDateRanges = True; OutputFormat.NormalizeRegions = False; OutputFormat.SimpleCustomLinkedIn = False; OutputFormat.SkillsStyle = Default; OutputFormat.StripParsedDataFromPositionHistoryDescription = True; OutputFormat.TelcomNumber.Style = Raw; OutputFormat.XmlFormat = HrXmlResume25",
+            "DocumentLastModified": "2024-12-17"
+        }
+    },
+    "PreferredCategoryWeights": {
+        "JobTitles": 0.3,
+        "Skills": 0.5,
+        "Industries": 0.2
+    },
+    "Take": 10,
+    "FilterCriteria": {
+        "SearchExpression": {
+            "AND": [
+                {
+                    "field": "skill",
+                    "term": "ruby"
+                },
+                {
+                    "field": "experienceLevel",
+                    "term": "low"
+                }
+            ]
+        }
+    },
+    "Settings": {
+        "PositionTitlesMustHaveAnExactMatch": true,
+        "PositionTitlesIgnoreSingleWordVariations": true,
+        "NormalizeJobTitles": true,
+        "NormalizeJobTitlesLanguage": "string"
+    },
+    "IndexIdsToSearchInto": [
+        "uby"
+    ]
+}

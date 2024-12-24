@@ -20,7 +20,23 @@ import {
   TrainingHistory,
   V2SkillsDataResume,
 } from 'src/infra/textkernel/openapi/data-contracts';
-import { AssociationImpl, LanguageCompetencyImpl } from './common.schema';
+import {
+  AssociationImpl,
+  CandidateReferenceImpl,
+  CertificationImpl,
+  ContactInformationImpl,
+  EducationHistoryImpl,
+  EmploymentHistoryImpl,
+  LanguageCompetencyImpl,
+  LicenseDetailImpl,
+  MilitaryDetailsImpl,
+  PersonalAttributesImpl,
+  ResumeMetadataImpl,
+  ResumeTaxonomyRootImpl,
+  SecurityCredentialImpl,
+  TrainingHistoryImpl,
+  V2SkillsDataResumeImpl,
+} from './common.schema';
 
 export const ResumeParserCollectionName = 'resume_parsers';
 
@@ -29,6 +45,10 @@ export class ResumeParser
   extends AuthorDBAbstractSchema
   implements IResumeParser
 {
+  @Prop({
+    type: ContactInformationImpl,
+    required: false,
+  })
   ContactInformation?: ContactInformation;
 
   @Prop({
@@ -49,18 +69,46 @@ export class ResumeParser
   })
   CoverLetter?: string | null;
 
+  @Prop({
+    type: PersonalAttributesImpl,
+    required: false,
+  })
   PersonalAttributes?: PersonalAttributes;
 
+  @Prop({
+    type: EducationHistoryImpl,
+    required: false,
+  })
   Education?: EducationHistory;
 
+  @Prop({
+    type: EmploymentHistoryImpl,
+    required: false,
+  })
   EmploymentHistory?: EmploymentHistory;
 
+  @Prop({
+    type: [ResumeTaxonomyRootImpl],
+    required: false,
+  })
   SkillsData?: ResumeTaxonomyRoot[] | null;
 
+  @Prop({
+    type: V2SkillsDataResumeImpl,
+    required: false,
+  })
   Skills?: V2SkillsDataResume;
 
+  @Prop({
+    type: [CertificationImpl],
+    required: false,
+  })
   Certifications?: Certification[] | null;
 
+  @Prop({
+    type: [LicenseDetailImpl],
+    required: false,
+  })
   Licenses?: LicenseDetail[] | null;
 
   @Prop({
@@ -75,18 +123,34 @@ export class ResumeParser
   })
   LanguageCompetencies?: LanguageCompetency[] | null;
 
+  @Prop({
+    type: [MilitaryDetailsImpl],
+    required: false,
+  })
   MilitaryExperience?: MilitaryDetails[] | null;
 
+  @Prop({
+    type: [SecurityCredentialImpl],
+    required: false,
+  })
   SecurityCredentials?: SecurityCredential[] | null;
 
+  @Prop({
+    type: [CandidateReferenceImpl],
+    required: false,
+  })
   References?: CandidateReference[] | null;
 
   @Prop({
-    type: String,
+    type: [String],
     required: false,
   })
   Achievements?: string[] | null;
 
+  @Prop({
+    type: TrainingHistoryImpl,
+    required: false,
+  })
   Training?: TrainingHistory;
 
   @Prop({
@@ -119,6 +183,10 @@ export class ResumeParser
   })
   SpeakingEngagements?: string | null;
 
+  @Prop({
+    type: ResumeMetadataImpl,
+    required: false,
+  })
   ResumeMetadata?: ResumeMetadata;
 
   @Prop({
