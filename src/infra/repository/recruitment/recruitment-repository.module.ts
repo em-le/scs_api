@@ -13,6 +13,25 @@ import {
   ResumeCollectionName,
   ResumeSchema,
 } from './schemas/resume.schema';
+import {
+  ResumeParser,
+  ResumeParserSchema,
+  ResumeParserCollectionName,
+} from './schemas/resume-parser.schema';
+import { JobParserRepository } from './job-parser.repository';
+import { ResumeParserRepository } from './resume-parser.repository';
+import {
+  JobParser,
+  JobParserCollectionName,
+  JobParserSchema,
+} from './schemas/job-parser.schema';
+
+const repositories = [
+  RecruitmentRepository,
+  ResumeRepository,
+  ResumeParserRepository,
+  JobParserRepository,
+];
 
 @Module({
   imports: [
@@ -28,11 +47,21 @@ import {
           schema: ResumeSchema,
           collection: ResumeCollectionName,
         },
+        {
+          name: ResumeParser.name,
+          schema: ResumeParserSchema,
+          collection: ResumeParserCollectionName,
+        },
+        {
+          name: JobParser.name,
+          schema: JobParserSchema,
+          collection: JobParserCollectionName,
+        },
       ],
       PRIMARY_CONNECTION,
     ),
   ],
-  providers: [RecruitmentRepository, ResumeRepository],
-  exports: [RecruitmentRepository, ResumeRepository],
+  providers: repositories,
+  exports: repositories,
 })
 export class RecruitmentRepositoryModule {}

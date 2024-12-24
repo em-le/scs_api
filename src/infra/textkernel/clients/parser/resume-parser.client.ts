@@ -2,7 +2,11 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { ConfigService } from 'src/internal/config/services/config.service';
 import { LoggerService } from 'src/internal/logger/services/logger.service';
 import { TxAbstractClient } from '../abstract.client';
-import { StructuredParseResumeRequest } from '../../openapi/data-contracts';
+import {
+  ResumeParsingTransactionStructuredResponseModel,
+  StructuredParseResumeRequest,
+} from '../../openapi/data-contracts';
+import { HttpResponse } from '../../openapi/http-client';
 
 @Injectable()
 export class TxResumeParserClient extends TxAbstractClient {
@@ -13,7 +17,9 @@ export class TxResumeParserClient extends TxAbstractClient {
     super(configSer.kxKernel);
   }
 
-  async call(data: StructuredParseResumeRequest) {
+  async call(
+    data: StructuredParseResumeRequest,
+  ): Promise<HttpResponse<ResumeParsingTransactionStructuredResponseModel>> {
     return this.parserParseResume(data).catch((err) => {
       this.loggerSer.error(
         {

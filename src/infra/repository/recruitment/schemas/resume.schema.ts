@@ -1,6 +1,6 @@
 import { AuthorDBAbstractSchema } from 'src/internal/database/abstracts/schema.abstract';
 import { MongooseSchema } from 'src/internal/database/decorators/database.decorator';
-import { Prop, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 import {
   IFileMetaData,
@@ -10,6 +10,44 @@ import {
 import { ResumeFormat, StorageType } from '../constants';
 
 export const ResumeCollectionName = 'resumes';
+
+@Schema()
+class FileMetaData implements IFileMetaData {
+  @Prop({
+    type: Number,
+    required: true,
+  })
+  size: number;
+
+  @Prop({
+    type: String,
+    enum: ResumeFormat,
+    default: ResumeFormat.PDF,
+  })
+  format: ResumeFormat;
+
+  @Prop({
+    type: Number,
+    default: 0,
+  })
+  pages: number;
+}
+@Schema()
+class Storage implements IStorage {
+  @Prop({
+    type: String,
+    required: true,
+  })
+  location: string;
+
+  @Prop({
+    type: String,
+    enum: StorageType,
+    default: StorageType.LOCAL,
+  })
+  storageType: StorageType;
+}
+
 @MongooseSchema(ResumeCollectionName)
 export class Resume extends AuthorDBAbstractSchema implements IResume {
   @Prop({
@@ -19,24 +57,13 @@ export class Resume extends AuthorDBAbstractSchema implements IResume {
   fileName: string;
 
   @Prop({
-    type: {
-      size: { type: Number, required: true },
-      format: { type: String, enum: ResumeFormat, default: ResumeFormat.PDF },
-      pages: { type: Number, default: 0 },
-    },
+    type: FileMetaData,
     required: true,
   })
   fileMetaData: IFileMetaData;
 
   @Prop({
-    type: {
-      location: { type: String, required: true },
-      storage_type: {
-        type: String,
-        enum: StorageType,
-        default: StorageType.LOCAL,
-      },
-    },
+    type: Storage,
     required: true,
   })
   storage: IStorage;
