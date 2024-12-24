@@ -17,7 +17,7 @@ import {
   V2SkillsDataResume,
 } from 'src/infra/textkernel/openapi/data-contracts';
 
-export interface IParserCreation extends ResumeData {
+export interface IResumeParserCreation extends ResumeData {
   ContactInformation?: ContactInformation;
   ProfessionalSummary?: string | null;
   Objective?: string | null;
@@ -45,4 +45,4 @@ export interface IParserCreation extends ResumeData {
   UserDefinedTags?: string[] | null;
 }
 
-export interface IParser extends IParserCreation {}
+export interface IResumeParser extends IResumeParserCreation {}

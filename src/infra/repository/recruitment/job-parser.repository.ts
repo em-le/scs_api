@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { MongooseRepositoryAbstract } from 'src/internal/database/abstracts/repository.abstract';
-import { ParserDocument, Parser } from './schemas/parser.schema';
 import { MongooseModel } from 'src/internal/database/decorators/database.decorator';
+import { JobParser, JobParserDocument } from './schemas/job-parser.schema';
 
 @Injectable()
-export class ParserRepository extends MongooseRepositoryAbstract<ParserDocument> {
+export class JobParserRepository extends MongooseRepositoryAbstract<JobParserDocument> {
   constructor(
-    @MongooseModel(Parser.name)
-    private readonly parserModel: Model<ParserDocument>,
+    @MongooseModel(JobParser.name)
+    private readonly jobParserModel: Model<JobParserDocument>,
   ) {
-    super(parserModel);
+    super(jobParserModel);
   }
 
   //

@@ -1,6 +1,6 @@
 import { AuthorDBAbstractSchema } from 'src/internal/database/abstracts/schema.abstract';
 import { MongooseSchema } from 'src/internal/database/decorators/database.decorator';
-import { IParser } from '../interfaces';
+import { IResumeParser } from '../interfaces';
 import { Prop, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 import {
@@ -22,10 +22,13 @@ import {
 } from 'src/infra/textkernel/openapi/data-contracts';
 import { AssociationImpl, LanguageCompetencyImpl } from './common.schema';
 
-export const ParserCollectionName = 'parsers';
+export const ResumeParserCollectionName = 'resume_parsers';
 
-@MongooseSchema(ParserCollectionName)
-export class Parser extends AuthorDBAbstractSchema implements IParser {
+@MongooseSchema(ResumeParserCollectionName)
+export class ResumeParser
+  extends AuthorDBAbstractSchema
+  implements IResumeParser
+{
   ContactInformation?: ContactInformation;
 
   @Prop({
@@ -125,5 +128,5 @@ export class Parser extends AuthorDBAbstractSchema implements IParser {
   UserDefinedTags?: string[] | null;
 }
 
-export const ParserSchema = SchemaFactory.createForClass(Parser);
-export type ParserDocument = HydratedDocument<Parser>;
+export const ResumeParserSchema = SchemaFactory.createForClass(ResumeParser);
+export type ResumeParserDocument = HydratedDocument<ResumeParser>;
