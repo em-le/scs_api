@@ -15,15 +15,14 @@ export class TxJobParserClient extends TxAbstractClient {
 
   async call(data: StructuredParseJobOrderRequest) {
     return this.parserParseJobOrder(data).catch((err) => {
-      console.log(err);
-      // this.loggerSer.error(
-      //   {
-      //     class: TxJobParserClient.name,
-      //     function: this.call.name,
-      //     description: err.response?.statusText ?? '',
-      //   },
-      //   this.getClientErrCtx(err),
-      // );
+      this.loggerSer.error(
+        {
+          class: TxJobParserClient.name,
+          function: this.call.name,
+          description: err.response?.statusText ?? '',
+        },
+        this.getClientErrCtx(err),
+      );
       throw new HttpException(err.response?.statusText, err.response?.status);
     });
   }
