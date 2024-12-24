@@ -2,10 +2,13 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { ConfigService } from 'src/internal/config/services/config.service';
 import { LoggerService } from 'src/internal/logger/services/logger.service';
 import { TxAbstractClient, TxClientResponse } from '../abstract.client';
-import { StructuredMatchResponseStructuredResponseModel } from '../../openapi/data-contracts';
+import {
+  ResumeBimetricMatchRequest,
+  StructuredBimetricMatchResponseStructuredResponseModel,
+} from '../../openapi/data-contracts';
 
 @Injectable()
-export class TxAccountClient extends TxAbstractClient {
+export class TxResumeBimetricClient extends TxAbstractClient {
   constructor(
     private readonly configSer: ConfigService,
     private readonly loggerSer: LoggerService,
@@ -13,11 +16,13 @@ export class TxAccountClient extends TxAbstractClient {
     super(configSer.kxKernel);
   }
 
-  async call(): TxClientResponse<StructuredMatchResponseStructuredResponseModel> {
-    return this.accountGet().catch((err) => {
+  async call(
+    data: ResumeBimetricMatchRequest,
+  ): TxClientResponse<StructuredBimetricMatchResponseStructuredResponseModel> {
+    return this.scorerBimetricScoreResume(data).catch((err) => {
       this.loggerSer.error(
         {
-          class: TxAccountClient.name,
+          class: TxResumeBimetricClient.name,
           function: this.call.name,
           description: err.response?.statusText ?? '',
         },

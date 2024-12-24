@@ -83,7 +83,7 @@ export abstract class MongooseRepositoryAbstract<T extends Document>
       });
     }
 
-    if (options?.limit !== void 0 && options.skip !== void 0) {
+    if (options?.limit !== void 0 && options?.skip !== void 0) {
       pipeline.push({
         $skip: options.skip,
       });
@@ -228,9 +228,9 @@ export abstract class MongooseRepositoryAbstract<T extends Document>
 
     pipeline.push({
       $group: {
-        _id: options.field ? options.field : null,
+        _id: options?.field ? options.field : null,
         count: {
-          $sum: options.sumField ? options.sumField : 1,
+          $sum: options?.sumField ? options.sumField : 1,
         },
       },
     });
@@ -251,7 +251,7 @@ export abstract class MongooseRepositoryAbstract<T extends Document>
   ): Promise<boolean> {
     const exist = this._repository.exists({
       _id: {
-        $nin: options.excludeId ? [options.excludeId] : [],
+        $nin: options?.excludeId ? [options.excludeId] : [],
       },
       ...find,
     });
@@ -311,7 +311,7 @@ export abstract class MongooseRepositoryAbstract<T extends Document>
     }
 
     const create = await this._repository.create([dataCreate], {
-      session: options ? options.session : void 0,
+      session: options?.session ? options.session : void 0,
     });
 
     return create[0];

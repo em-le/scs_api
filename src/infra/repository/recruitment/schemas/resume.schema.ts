@@ -76,18 +76,10 @@ export class Resume extends AuthorDBAbstractSchema implements IResume {
   tags: string[];
 
   @Prop({
-    type: Date,
-    default: null,
-    required: false,
+    type: Boolean,
+    default: false,
   })
-  lastestParseDate: Date | null;
-
-  @Prop({
-    type: Date,
-    default: null,
-    required: false,
-  })
-  lastestMatchDate: Date | null;
+  isParsed: boolean;
 }
 
 export const ResumeSchema = SchemaFactory.createForClass(Resume);

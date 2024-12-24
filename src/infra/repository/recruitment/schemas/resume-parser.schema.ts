@@ -2,7 +2,7 @@ import { AuthorDBAbstractSchema } from 'src/internal/database/abstracts/schema.a
 import { MongooseSchema } from 'src/internal/database/decorators/database.decorator';
 import { IResumeParser } from '../interfaces';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument, Types } from 'mongoose';
 import {
   Association,
   CandidateReference,
@@ -38,6 +38,7 @@ import {
   TrainingHistoryImpl,
   V2SkillsDataResumeImpl,
 } from './common.schema';
+import { Resume } from './resume.schema';
 
 export const ResumeParserCollectionName = 'resume_parsers';
 
@@ -199,6 +200,14 @@ export class ResumeParser
   extends AuthorDBAbstractSchema
   implements IResumeParser
 {
+  @Prop({
+    type: Types.ObjectId,
+    required: true,
+    _id: false,
+    ref: Resume.name,
+  })
+  resume: Types.ObjectId;
+
   @Prop({
     type: ResumeDataImpl,
     required: true,

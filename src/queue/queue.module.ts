@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { BullModule, BullRootModuleOptions } from '@nestjs/bull';
 import { ConfigService } from 'src/internal/config/services/config.service';
+import { ParserQueueModule } from './queues/parser/parser-queue.module';
+import { HeathQueueModule } from './queues/health/health-queue.module';
 
-const queues = [];
+const queues = [HeathQueueModule, ParserQueueModule];
 @Module({
   imports: [
     BullModule.forRootAsync({

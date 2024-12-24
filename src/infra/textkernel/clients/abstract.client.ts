@@ -1,6 +1,8 @@
+import { HttpResponse } from '../openapi/http-client';
 import { V10 } from '../openapi/V10';
 import { ITXKernelBaseConfig } from './tx-kernel.interface';
 
+export type TxClientResponse<T = any, E = any> = Promise<HttpResponse<T, E>>;
 export class TxAbstractClient extends V10 {
   protected authHeaderKeys: Record<string, string>;
 

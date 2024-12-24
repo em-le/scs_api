@@ -19,6 +19,5 @@ export interface IResumeCreation {
 }
 
 export interface IResume extends IResumeCreation {
-  lastestParseDate: Date | null;
-  lastestMatchDate: Date | null;
+  isParsed: boolean;
 }
