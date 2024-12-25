@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  Body,
   Controller,
   Get,
   HttpCode,
@@ -20,6 +21,7 @@ import { ResumeSerialization } from './serializations/resume.serialization';
 import { plainToInstance } from 'class-transformer';
 import { BookResumeParseUseCase } from 'src/domain/usecase/recruitment/book-parse-resume.usecase';
 import { UploadResumeZipUseCase } from 'src/domain/usecase/recruitment/upload-resume-zip.usecase';
+import { BookMutilpleResumeParseUseCase } from 'src/domain/usecase/recruitment/book-multiple-parse-resume.usecase';
 
 @Controller()
 export class ResumeUploadController {
@@ -28,6 +30,7 @@ export class ResumeUploadController {
     private readonly bookResumeParseUseCase: BookResumeParseUseCase,
     private readonly uploadResumeUseCase: UploadResumeUseCase,
     private readonly uploadResumeZipUseCase: UploadResumeZipUseCase,
+    private readonly bookMutilpleResumeParseUseCase: BookMutilpleResumeParseUseCase,
   ) {}
 
   @HttpCode(HttpStatus.OK)
@@ -38,7 +41,9 @@ export class ResumeUploadController {
       throw new BadRequestException('The resume is not found');
     }
 
-    return plainToInstance(ResumeSerialization, resume);
+    return plainToInstance(ResumeSerialization, resume, {
+      excludeExtraneousValues: true,
+    });
   }
 
   @HttpCode(HttpStatus.OK)
@@ -59,7 +64,9 @@ export class ResumeUploadController {
   ): Promise<ResumeSerialization> {
     try {
       const resume = await this.uploadResumeUseCase.execute(file);
-      return plainToInstance(ResumeSerialization, resume);
+      return plainToInstance(ResumeSerialization, resume, {
+        excludeExtraneousValues: true,
+      });
     } catch (error) {
       throw new ServiceUnavailableException(error.message);
     }
@@ -70,5 +77,17 @@ export class ResumeUploadController {
   @UploadFileSingle('file', 'resumes')
   async uploadZIP(@UploadZipFileParam() file: IFile): Promise<void> {
     await this.uploadResumeZipUseCase.execute(file);
+  }
+
+  @HttpCode(HttpStatus.OK)
+  @Post('/parser')
+  async bookresumesParse(@Body('ids') ids: string[]): Promise<void> {
+    try {
+      this.bookMutilpleResumeParseUseCase.execute(
+        ids.map((id) => id._ObjectId()),
+      );
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
   }
 }

@@ -89,6 +89,10 @@ export class ResumePaserService {
     const parserRequest: StructuredParseResumeRequest = {
       DocumentAsBase64String: resume.toString('base64'),
       DocumentLastModified: new Date().toISOString().split('T')[0],
+      SkillsSettings: {
+        Normalize: true,
+        TaxonomyVersion: 'v2',
+      },
       ProfessionsSettings: {
         Normalize: true,
         Version: {

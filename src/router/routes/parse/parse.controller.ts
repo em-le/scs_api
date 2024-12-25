@@ -42,7 +42,7 @@ export class ParseController {
       },
     };
     const job = await this.txJobParserClient.call(data);
-    if (job && job.data && job.data.Value && job.data.Value.JobData) {
+    if (job?.data?.Value?.JobData) {
       const jobData = {
         JobData: job.data.Value.JobData,
       };
@@ -92,12 +92,7 @@ export class ParseController {
       },
     };
     const resume = await this.txResumeParserClient.call(data);
-    if (
-      resume &&
-      resume.data &&
-      resume.data.Value &&
-      resume.data.Value.ResumeData
-    ) {
+    if (resume?.data?.Value?.ResumeData) {
       const resumeData = {
         ResumeData: resume.data.Value.ResumeData,
       };
