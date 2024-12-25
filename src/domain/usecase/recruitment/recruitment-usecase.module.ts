@@ -8,7 +8,7 @@ import { GetResumeUseCase } from './get-resume.usecase';
 import { BookResumeParseUseCase } from './book-parse-resume.usecase';
 import { ParserQueueModule } from 'src/queue/queues/parser/parser-queue.module';
 import { UploadResumeZipUseCase } from './upload-resume-zip.usecase';
-import { BookMutilpleResumeParseUseCase } from './book-multiple-parse-resume.usecase';
+import { BookMultipleResumeParseUseCase } from './book-multiple-parse-resume.usecase';
 const usecases = [
   GetRecruitmentUseCase,
   CreateRecruitmentUseCase,
@@ -17,7 +17,7 @@ const usecases = [
   UploadResumeUseCase,
   BookResumeParseUseCase,
   UploadResumeZipUseCase,
-  BookMutilpleResumeParseUseCase,
+  BookMultipleResumeParseUseCase,
 ];
 @Module({
   imports: [RecruitmentRepositoryModule, ParserQueueModule],

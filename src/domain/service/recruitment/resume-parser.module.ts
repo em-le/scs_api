@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ResumePaserService } from './resume-parser.service';
+import { ResumeParserService } from './resume-parser.service';
 import { RecruitmentRepositoryModule } from 'src/infra/repository/recruitment/recruitment-repository.module';
 import { TextKernelModule } from 'src/infra/textkernel/textkernel.module';
 
-const services = [ResumePaserService];
+const services = [ResumeParserService];
 @Module({
   imports: [RecruitmentRepositoryModule, TextKernelModule],
   providers: services,

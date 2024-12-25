@@ -5,7 +5,7 @@ import { ResumeRepository } from 'src/infra/repository/recruitment/resume.reposi
 import { ParserProducer } from 'src/queue/queues/parser/parser.producer';
 
 @Injectable()
-export class BookMutilpleResumeParseUseCase {
+export class BookMultipleResumeParseUseCase {
   constructor(
     private readonly resumeRepo: ResumeRepository,
     private readonly parserProducer: ParserProducer,

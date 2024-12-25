@@ -17,7 +17,7 @@ import { MongooseConnection } from 'src/internal/database/decorators/database.de
 import { FileHelper } from 'src/internal/helper/services/file.helper';
 
 @Injectable()
-export class ResumePaserService {
+export class ResumeParserService {
   constructor(
     @MongooseConnection(PRIMARY_CONNECTION)
     private readonly connection: Connection,
@@ -28,6 +28,7 @@ export class ResumePaserService {
   ) {}
 
   async parseResume(id: Types.ObjectId): Promise<void> {
+    console.log('Parsing resume', id);
     const resume = await this.resumeRepo.findOne({
       _id: id,
       parseStatus: ResumeParseStatus.NOT_YET,
@@ -42,10 +43,10 @@ export class ResumePaserService {
     });
     try {
       const file = this.fileHelper.read(resume.storage.location);
-      const parserReponse = await this.executePaserRequest(file);
+      const parserResponse = await this.executeParserRequest(file);
       return await this.updateResumeParser(
         resume._id,
-        parserReponse.data.Value,
+        parserResponse.data.Value,
       );
     } catch (err) {
       await this.resumeRepo.updateOneById(resume._id, {
@@ -83,7 +84,7 @@ export class ResumePaserService {
     }
   }
 
-  private async executePaserRequest(
+  private async executeParserRequest(
     resume: Buffer,
   ): TxClientResponse<ResumeParsingTransactionStructuredResponseModel> {
     const parserRequest: StructuredParseResumeRequest = {
