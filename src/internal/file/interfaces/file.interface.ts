@@ -12,3 +12,7 @@ export type IExtractedFile<T = Record<string, any>> = IFile & {
 };
 
 export type IFileTypes = FILE_IMAGE_MIME[] | FILE_PDF_MIME[];
+export interface IReadFile {
+  originalName: string;
+  path: string;
+}

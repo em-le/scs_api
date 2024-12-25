@@ -7,3 +7,7 @@ export enum FILE_IMAGE_MIME {
 export enum FILE_PDF_MIME {
   PDF = 'application/pdf',
 }
+
+export enum ZIP_PDF_MIME {
+  PDF = 'application/zip',
+}

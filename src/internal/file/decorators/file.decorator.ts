@@ -20,8 +20,11 @@ import { FileDestination, FileName } from '../constants/file.constant';
 import {
   FileRequiredPipe,
   MaxPDFFilePipe,
+  MaxZipFilePipe,
   PDFFileSizePipe,
   PDFFileTypePipe,
+  ZipFileSizePipe,
+  ZipFileTypePipe,
 } from '../pipes';
 import {
   FileSizeInterceptor,
@@ -119,6 +122,29 @@ export function UploadPDFFileParam(
   }
   if (options?.checkMaxFiles || options?.checkMaxFiles === void 0) {
     pipes.push(MaxPDFFilePipe);
+  }
+
+  if (options?.multiple) {
+    return UploadedFiles(...pipes);
+  }
+  return UploadedFile(...pipes);
+}
+
+export function UploadZipFileParam(
+  options?: IUploadFileOptions,
+): ParameterDecorator {
+  const pipes = [];
+  if (options?.required || options?.required === void 0) {
+    pipes.push(FileRequiredPipe);
+  }
+  if (options?.checkSize || options?.checkSize === void 0) {
+    pipes.push(ZipFileSizePipe);
+  }
+  if (options?.checkType || options?.checkType === void 0) {
+    pipes.push(ZipFileTypePipe);
+  }
+  if (options?.checkMaxFiles || options?.checkMaxFiles === void 0) {
+    pipes.push(MaxZipFilePipe);
   }
 
   if (options?.multiple) {

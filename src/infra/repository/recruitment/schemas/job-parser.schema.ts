@@ -4,7 +4,6 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
 import { IJobParser } from '../interfaces/job-parser.interface';
-import { JobData } from 'src/infra/textkernel/openapi/data-contracts';
 import {
   ApplicationDetails,
   DateTimeSovrenPrimitive,
@@ -17,6 +16,7 @@ import {
   PayRange,
   SovrenLocation,
   V2SkillsDataJob,
+  JobData,
 } from 'src/infra/textkernel/openapi/data-contracts';
 import {
   ApplicationDetailsImpl,

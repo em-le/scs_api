@@ -13,11 +13,13 @@ import { GetResumeUseCase } from 'src/domain/usecase/recruitment/get-resume.usec
 import {
   UploadFileSingle,
   UploadPDFFileParam,
+  UploadZipFileParam,
 } from 'src/internal/file/decorators/file.decorator';
 import { IFile } from 'src/internal/file/interfaces/file.interface';
 import { ResumeSerialization } from './serializations/resume.serialization';
 import { plainToInstance } from 'class-transformer';
 import { BookResumeParseUseCase } from 'src/domain/usecase/recruitment/book-parse-resume.usecase';
+import { UploadResumeZipUseCase } from 'src/domain/usecase/recruitment/upload-resume-zip.usecase';
 
 @Controller()
 export class ResumeUploadController {
@@ -25,6 +27,7 @@ export class ResumeUploadController {
     private readonly getResumeUsecase: GetResumeUseCase,
     private readonly bookResumeParseUseCase: BookResumeParseUseCase,
     private readonly uploadResumeUseCase: UploadResumeUseCase,
+    private readonly uploadResumeZipUseCase: UploadResumeZipUseCase,
   ) {}
 
   @HttpCode(HttpStatus.OK)
@@ -64,7 +67,8 @@ export class ResumeUploadController {
 
   @HttpCode(HttpStatus.CREATED)
   @Post('/zip')
-  async uploadZIP(): Promise<void> {
-    return;
+  @UploadFileSingle('file', 'resumes')
+  async uploadZIP(@UploadZipFileParam() file: IFile): Promise<void> {
+    await this.uploadResumeZipUseCase.execute(file);
   }
 }

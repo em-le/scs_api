@@ -38,3 +38,32 @@ export class PDFFileSizePipe implements PipeTransform {
     }
   }
 }
+
+@Injectable({
+  scope: Scope.REQUEST,
+})
+export class ZipFileSizePipe implements PipeTransform {
+  private readonly defaultMaxFileSize: number;
+  constructor(
+    @Inject(REQUEST)
+    private readonly request: Request & { __fileSize: string },
+    private readonly configSer: ConfigService,
+    private readonly fileHelper: FileHelper,
+  ) {
+    this.defaultMaxFileSize = configSer.file.zip.maxFileSize;
+  }
+  async transform(value: IFileValue) {
+    const files = Array.isArray(value) ? value : [value];
+    files.forEach((file) => this.validate(file.size));
+    return value;
+  }
+  validate(fileSize: number): void {
+    const maxFileSizeSet = this.request?.__fileSize
+      ? this.fileHelper.convertToBytes(this.request?.__fileSize)
+      : this.defaultMaxFileSize;
+
+    if (fileSize > maxFileSizeSet) {
+      throw new BadRequestException('file.error.sizeInvalid');
+    }
+  }
+}

@@ -187,6 +187,10 @@ export class ConfigService {
         maxFile: 10,
         maxFileSize: bytes('10mb'),
       },
+      zip: {
+        maxFile: 1,
+        maxFileSize: bytes('100mb'),
+      },
     };
   }
 }
