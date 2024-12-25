@@ -2,6 +2,7 @@ import { NestApplication, NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as os from 'os';
 import { ConfigService } from './internal/config/services/config.service';
+import * as bodyParser from 'body-parser';
 import { RequestMethod, VersioningType } from '@nestjs/common';
 
 process.env.UV_THREADPOOL_SIZE = os.cpus().length.toString();
@@ -24,6 +25,8 @@ async function bootstrap() {
       },
     ],
   });
+  app.use(bodyParser.json({ limit: '50mb' }));
+  app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
   if (appConfig.versioning.enable) {
     app.enableVersioning({
       type: VersioningType.URI,

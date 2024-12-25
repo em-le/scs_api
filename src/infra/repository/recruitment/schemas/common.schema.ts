@@ -1,5 +1,6 @@
 import { Prop, Schema } from '@nestjs/mongoose';
 import {
+  ApplicationDetails,
   Association,
   BooleanSovrenPrimitive,
   Bullet,
@@ -12,6 +13,7 @@ import {
   EducationDetails,
   EducationHistory,
   Employer,
+  EmployerNames,
   EmploymentHistory,
   ExperienceSummary,
   Finding,
@@ -20,7 +22,13 @@ import {
   Int32NormalizedProfessionClassification,
   Int32SovrenPrimitive,
   Int32VersionedNormalizedProfessionClassification,
+  JobDegree,
+  JobSkill,
+  JobSubTaxonomy,
+  JobTaxonomy,
+  JobTaxonomyRoot,
   JobTitle,
+  JobTitles,
   LanguageCompetency,
   LicenseDetail,
   MilitaryDetails,
@@ -29,6 +37,7 @@ import {
   NationalIdentity,
   NormalizedDegree,
   NormalizedProfession,
+  PayRange,
   PersonalAttributes,
   PersonName,
   Position,
@@ -1730,4 +1739,231 @@ export class ResumeMetadataImpl implements ResumeMetadata {
     required: false,
   })
   DocumentLastModified?: string;
+}
+
+@Schema()
+export class ApplicationDetailsImpl implements ApplicationDetails {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  ApplicationDescription?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  ContactPerson?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  ContactPhone?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  ContactEmail?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Website?: string | null;
+
+  @Prop({
+    type: DateTimeSovrenPrimitiveImpl,
+    required: false,
+  })
+  ApplicationDeadline?: DateTimeSovrenPrimitive;
+
+  @Prop({
+    type: DateTimeSovrenPrimitiveImpl,
+    required: false,
+  })
+  PostedDate?: DateTimeSovrenPrimitive;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  ReferenceNumber?: string | null;
+}
+
+@Schema()
+export class JobTitlesImpl implements JobTitles {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  MainJobTitle?: string | null;
+
+  @Prop({
+    type: [String],
+    required: false,
+  })
+  JobTitle?: string[] | null;
+
+  @Prop({
+    type: NormalizedProfessionImpl,
+    required: false,
+  })
+  NormalizedProfession?: NormalizedProfession;
+}
+
+@Schema()
+export class EmployerNamesImpl implements EmployerNames {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  MainEmployerName?: string | null;
+
+  @Prop({
+    type: [String],
+    required: false,
+  })
+  EmployerName?: string[] | null;
+}
+
+@Schema()
+export class JobDegreeImpl implements JobDegree {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Name?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Type?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  LocalEducationLevel?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  InternationalEducationLevel?: string | null;
+}
+
+@Schema()
+export class PayRangeImpl implements PayRange {
+  @Prop({
+    type: Int32SovrenPrimitiveImpl,
+    required: false,
+  })
+  Minimum?: Int32SovrenPrimitive;
+
+  @Prop({
+    type: Int32SovrenPrimitiveImpl,
+    required: false,
+  })
+  Maximum?: Int32SovrenPrimitive;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  RawMinimum?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  RawMaximum?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Currency?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  TimeScale?: string | null;
+}
+
+@Schema()
+export class JobSubTaxonomyImpl implements JobSubTaxonomy {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  SubTaxonomyId?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  SubTaxonomyName?: string | null;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  PercentOfOverall?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  PercentOfParent?: number;
+
+  @Prop({
+    required: false,
+  })
+  Skills?: JobSkill[] | null;
+}
+
+@Schema()
+export class JobTaxonomyImpl implements JobTaxonomy {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Id?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Name?: string | null;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  PercentOfOverall?: number;
+
+  @Prop({
+    type: [JobSubTaxonomyImpl],
+    required: false,
+  })
+  SubTaxonomies?: JobSubTaxonomy[] | null;
+}
+
+@Schema()
+export class JobTaxonomyRootImpl implements JobTaxonomyRoot {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Root?: string | null;
+
+  @Prop({
+    type: [JobTaxonomyImpl],
+    required: false,
+  })
+  Taxonomies?: JobTaxonomy[] | null;
 }

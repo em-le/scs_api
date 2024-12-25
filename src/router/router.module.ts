@@ -2,6 +2,7 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { RouterModule as NestJSRouterModule } from '@nestjs/core';
 import { PublicRouteModule } from './routes/public/public-route.module';
 import { UserRouteModule } from './routes/user/user-route.module';
+import { ParseModule } from './routes/parse/parse.module';
 import { RecruitmentRouteModule } from './routes/recruitment/recruitment-route.module';
 import { ResumeRouteModule } from './routes/resume/resume-route.module';
 
@@ -14,6 +15,7 @@ export class RouterModule {
         imports: [
           PublicRouteModule,
           UserRouteModule,
+          ParseModule,
           RecruitmentRouteModule,
           ResumeRouteModule,
           NestJSRouterModule.register([
@@ -26,8 +28,12 @@ export class RouterModule {
               path: 'users',
             },
             {
+              module: ParseModule,
+              path: 'parse',
+            },
+            {
               module: RecruitmentRouteModule,
-              path: 'recruitments',
+              path: 'recruitment',
             },
             {
               module: ResumeRouteModule,
