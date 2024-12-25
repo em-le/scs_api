@@ -1,4 +1,4 @@
-import { ResumeFormat, StorageType } from '../constants';
+import { ResumeFormat, ResumeParseStatus, StorageType } from '../constants';
 
 export interface IFileMetaData {
   size: number;
@@ -19,5 +19,5 @@ export interface IResumeCreation {
 }
 
 export interface IResume extends IResumeCreation {
-  isParsed: boolean;
+  parseStatus: ResumeParseStatus;
 }

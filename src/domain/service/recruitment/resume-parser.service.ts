@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { Connection, Types } from 'mongoose';
+import { ResumeParseStatus } from 'src/infra/repository/recruitment/constants';
 import { IResumeParserCreation } from 'src/infra/repository/recruitment/interfaces';
 import { ResumeParserRepository } from 'src/infra/repository/recruitment/resume-parser.repository';
 import { ResumeRepository } from 'src/infra/repository/recruitment/resume.repository';
+import { ResumeDocument } from 'src/infra/repository/recruitment/schemas/resume.schema';
 import { TxClientResponse } from 'src/infra/textkernel/clients/abstract.client';
 import { TxResumeParserClient } from 'src/infra/textkernel/clients/parser/resume-parser.client';
 import {
@@ -28,13 +30,29 @@ export class ResumePaserService {
   async parseResume(id: Types.ObjectId): Promise<void> {
     const resume = await this.resumeRepo.findOne({
       _id: id,
-      isParsed: false,
+      parseStatus: ResumeParseStatus.NOT_YET,
     });
     if (!resume) return;
+    await this.tryToParseResume(resume);
+  }
 
-    const file = this.fileHelper.read(resume.storage.location);
-    const parserReponse = await this.executePaserRequest(file);
-    return await this.updateResumeParser(id, parserReponse.data.Value);
+  private async tryToParseResume(resume: ResumeDocument): Promise<void> {
+    await this.resumeRepo.updateOneById(resume._id, {
+      parseStatus: ResumeParseStatus.PARSING,
+    });
+    try {
+      const file = this.fileHelper.read(resume.storage.location);
+      const parserReponse = await this.executePaserRequest(file);
+      return await this.updateResumeParser(
+        resume._id,
+        parserReponse.data.Value,
+      );
+    } catch (err) {
+      await this.resumeRepo.updateOneById(resume._id, {
+        parseStatus: ResumeParseStatus.FAILED,
+      });
+      throw err;
+    }
   }
 
   private async updateResumeParser(
@@ -47,14 +65,15 @@ export class ResumePaserService {
       ResumeData: ResumeData,
       RedactedResumeData: RedactedResumeData,
     };
-
     const session = await this.connection.startSession();
     session.startTransaction();
     try {
-      this.resumeParserRepo.create(resumeParserData);
-      this.resumeRepo.updateOneById(resumeId, {
-        isParsed: true,
-      });
+      await Promise.all([
+        this.resumeParserRepo.create(resumeParserData),
+        this.resumeRepo.updateOneById(resumeId, {
+          parseStatus: ResumeParseStatus.PARSED,
+        }),
+      ]);
       await session.commitTransaction();
     } catch (error) {
       await session.abortTransaction();
