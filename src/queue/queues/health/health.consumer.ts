@@ -11,6 +11,7 @@ import {
 import {
   IQueueData,
   IUpdateExecuteQueueOptions,
+  BullData,
 } from 'src/queue/abstracts/queue.interface';
 
 export interface IHeathData {
@@ -31,7 +32,7 @@ export class HealthConsumer extends AbstractQueueConsumer {
   @Process({
     name: HEATH_CHECK_QUEUE_CONSUMER.HEATH,
   })
-  async runHeath(job: Job<IQueueData<IHeathData>>): Promise<void> {
+  async runHeath(job: BullData<IHeathData>): Promise<void> {
     return this.tryToCheckHeath(job);
   }
 

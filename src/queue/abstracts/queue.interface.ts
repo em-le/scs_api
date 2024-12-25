@@ -1,3 +1,4 @@
+import { Job } from 'bull';
 import { Types } from 'mongoose';
 
 export type IQueueData<T = Record<string, any>> = T & {
@@ -12,3 +13,5 @@ export interface JobOptions {
 export interface IUpdateExecuteQueueOptions {
   failedReason?: string;
 }
+
+export type BullData<T = any> = Job<IQueueData<T>>;

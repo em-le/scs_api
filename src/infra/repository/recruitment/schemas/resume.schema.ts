@@ -7,7 +7,7 @@ import {
   IResume,
   IStorage,
 } from '../interfaces/resume.interface';
-import { ResumeFormat, StorageType } from '../constants';
+import { ResumeFormat, ResumeParseStatus, StorageType } from '../constants';
 
 export const ResumeCollectionName = 'resumes';
 
@@ -76,18 +76,11 @@ export class Resume extends AuthorDBAbstractSchema implements IResume {
   tags: string[];
 
   @Prop({
-    type: Date,
-    default: null,
-    required: false,
+    type: String,
+    enum: ResumeParseStatus,
+    default: ResumeParseStatus.NOT_YET,
   })
-  lastestParseDate: Date | null;
-
-  @Prop({
-    type: Date,
-    default: null,
-    required: false,
-  })
-  lastestMatchDate: Date | null;
+  parseStatus: ResumeParseStatus;
 }
 
 export const ResumeSchema = SchemaFactory.createForClass(Resume);

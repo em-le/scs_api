@@ -34,7 +34,7 @@ export class UploadResumeUseCase {
       };
 
       return await this.createResume({
-        fileName: resume.filename,
+        fileName: resume.originalname,
         fileMetaData: metaData,
         storage: storage,
         // TODO: Add tags in order to easy to find
@@ -46,7 +46,6 @@ export class UploadResumeUseCase {
   }
 
   private async createResume(data: IResumeCreation): Promise<ResumeDocument> {
-    console.log(data);
     return await this.resumeRepo.create(data);
   }
 }

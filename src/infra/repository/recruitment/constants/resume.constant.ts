@@ -7,3 +7,10 @@ export enum ResumeFormat {
   PDF = 'PDF',
   DOC = 'DOC',
 }
+
+export enum ResumeParseStatus {
+  NOT_YET = 'not-yet',
+  PARSING = 'parsing',
+  PARSED = 'parsed',
+  FAILED = 'failed',
+}

@@ -5,7 +5,7 @@
   "compilerOptions": {
     "assets": [
       {
-        "include": "samples/*",
+        "include": "infra/textkernel/samples/*",
         "outDir": "dist/"
       }
     ],

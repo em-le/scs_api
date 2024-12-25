@@ -1,8 +1,11 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { ConfigService } from 'src/internal/config/services/config.service';
 import { LoggerService } from 'src/internal/logger/services/logger.service';
-import { TxAbstractClient } from '../abstract.client';
-import { MatchResumeRequest } from '../../openapi/data-contracts';
+import { TxAbstractClient, TxClientResponse } from '../abstract.client';
+import {
+  MatchResumeRequest,
+  StructuredMatchResponseStructuredResponseModel,
+} from '../../openapi/data-contracts';
 
 @Injectable()
 export class TxResumeMatcherClient extends TxAbstractClient {
@@ -13,7 +16,9 @@ export class TxResumeMatcherClient extends TxAbstractClient {
     super(configSer.kxKernel);
   }
 
-  async call(data: MatchResumeRequest) {
+  async call(
+    data: MatchResumeRequest,
+  ): TxClientResponse<StructuredMatchResponseStructuredResponseModel> {
     return this.matcherResume(data).catch((err) => {
       this.loggerSer.error(
         {

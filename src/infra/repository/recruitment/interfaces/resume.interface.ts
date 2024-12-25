@@ -1,4 +1,4 @@
-import { ResumeFormat, StorageType } from '../constants';
+import { ResumeFormat, ResumeParseStatus, StorageType } from '../constants';
 
 export interface IFileMetaData {
   size: number;
@@ -19,6 +19,5 @@ export interface IResumeCreation {
 }
 
 export interface IResume extends IResumeCreation {
-  lastestParseDate: Date | null;
-  lastestMatchDate: Date | null;
+  parseStatus: ResumeParseStatus;
 }
