@@ -25,11 +25,14 @@ import {
   JobParserCollectionName,
   JobParserSchema,
 } from './schemas/job-parser.schema';
+import { JobRepository } from './job.repository';
+import { Job, JobCollectionName, JobSchema } from './schemas/job.schema';
 
 const repositories = [
   RecruitmentRepository,
   ResumeRepository,
   ResumeParserRepository,
+  JobRepository,
   JobParserRepository,
 ];
 
@@ -51,6 +54,11 @@ const repositories = [
           name: ResumeParser.name,
           schema: ResumeParserSchema,
           collection: ResumeParserCollectionName,
+        },
+        {
+          name: Job.name,
+          schema: JobSchema,
+          collection: JobCollectionName,
         },
         {
           name: JobParser.name,

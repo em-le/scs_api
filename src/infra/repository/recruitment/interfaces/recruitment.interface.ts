@@ -1,4 +1,19 @@
-import { RecruitmentStatus } from '../constants/recruitment.constant';
+import {
+  RecruitmentStatus,
+  ResumeFormat,
+  StorageType,
+} from '../constants/recruitment.constant';
+
+export interface IFileMetaData {
+  size: number;
+  format: ResumeFormat;
+  pages: number;
+}
+
+export interface IStorage {
+  location: string;
+  storageType: StorageType;
+}
 
 export interface IRecruitmentCreation {
   jobTitle: string;

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Types } from 'mongoose';
-import { ResumeParseStatus } from 'src/infra/repository/recruitment/constants';
+import { ParseStatus } from 'src/infra/repository/recruitment/constants';
 import { ResumeRepository } from 'src/infra/repository/recruitment/resume.repository';
 import { ParserProducer } from 'src/queue/queues/parser/parser.producer';
 
@@ -14,7 +14,7 @@ export class BookResumeParseUseCase {
   async execute(id: Types.ObjectId): Promise<void> {
     const isExists = await this.resumeRepo.exists({
       _id: id,
-      parseStatus: ResumeParseStatus.NOT_YET,
+      parseStatus: ParseStatus.NOT_YET,
     });
     if (!isExists) {
       throw new Error('The resume is not found');

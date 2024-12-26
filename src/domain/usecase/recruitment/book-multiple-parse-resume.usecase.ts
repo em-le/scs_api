@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Types } from 'mongoose';
-import { ResumeParseStatus } from 'src/infra/repository/recruitment/constants';
+import { ParseStatus } from 'src/infra/repository/recruitment/constants';
 import { ResumeRepository } from 'src/infra/repository/recruitment/resume.repository';
 import { ParserProducer } from 'src/queue/queues/parser/parser.producer';
 
@@ -14,7 +14,7 @@ export class BookMutilpleResumeParseUseCase {
   async execute(ids: Types.ObjectId[]): Promise<void> {
     const resumes = await this.resumeRepo.findAll({
       _id: { $in: ids },
-      parseStatus: ResumeParseStatus.NOT_YET,
+      parseStatus: ParseStatus.NOT_YET,
     });
     if (!resumes || resumes.length != ids.length) {
       throw new Error('Some resumes are not found');

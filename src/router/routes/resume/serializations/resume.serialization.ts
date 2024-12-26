@@ -1,6 +1,6 @@
 import { Exclude, Expose, Transform, Type } from 'class-transformer';
 import { Types } from 'mongoose';
-import { ResumeParseStatus } from 'src/infra/repository/recruitment/constants';
+import { ParseStatus } from 'src/infra/repository/recruitment/constants';
 import {
   IFileMetaData,
   IResume,
@@ -35,5 +35,5 @@ export class ResumeSerialization implements IResume {
 
   @Expose()
   @Type(() => String)
-  parseStatus: ResumeParseStatus;
+  parseStatus: ParseStatus;
 }

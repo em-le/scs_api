@@ -66,6 +66,45 @@ import {
   V2SkillsDataResume,
   WebAddress,
 } from 'src/infra/textkernel/openapi/data-contracts';
+import { ResumeFormat, StorageType } from '../constants';
+import { IFileMetaData, IStorage } from '../interfaces';
+
+@Schema()
+export class FileMetaData implements IFileMetaData {
+  @Prop({
+    type: Number,
+    required: true,
+  })
+  size: number;
+
+  @Prop({
+    type: String,
+    enum: ResumeFormat,
+    default: ResumeFormat.PDF,
+  })
+  format: ResumeFormat;
+
+  @Prop({
+    type: Number,
+    default: 0,
+  })
+  pages: number;
+}
+@Schema()
+export class Storage implements IStorage {
+  @Prop({
+    type: String,
+    required: true,
+  })
+  location: string;
+
+  @Prop({
+    type: String,
+    enum: StorageType,
+    default: StorageType.LOCAL,
+  })
+  storageType: StorageType;
+}
 
 @Schema()
 export class AssociationImpl implements Association {

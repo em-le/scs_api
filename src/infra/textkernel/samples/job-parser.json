@@ -1,0 +1,550 @@
+{
+    "Info": {
+        "Code": "Success",
+        "Message": "Successful transaction",
+        "TransactionId": "53b0d6fa-ce8c-437a-b9ad-b1de348ce523",
+        "EngineVersion": "9.19.14.0",
+        "ApiVersion": "10.11.0.0",
+        "TotalElapsedMilliseconds": 4884,
+        "TransactionCost": 1.15,
+        "CustomerDetails": {
+            "AccountId": "47159613",
+            "Name": "Ventura",
+            "IPAddress": "118.69.34.46",
+            "Region": "ap-southeast-2",
+            "CreditsRemaining": 409,
+            "CreditsUsed": 89,
+            "ExpirationDate": "2025-03-20",
+            "MaximumConcurrentRequests": 5
+        }
+    },
+    "Value": {
+        "ParsingResponse": {
+            "Code": "Success",
+            "Message": "Successful transaction"
+        },
+        "JobData": {
+            "CurrentJobIsManagement": false,
+            "HighestManagementScore": {
+                "Value": 0
+            },
+            "ManagementLevel": "None",
+            "ExecutiveType": "NONE",
+            "JobDescription": "Job Description:               This position reports to the Human Resources (HR) director and\n                                interfaces with company managers and HR staff. Company XYZ is\n                                committed to an employee-orientated, high performance culture that\n                                emphasizes empowerment, quality, continuous improvement, and the\n                                recruitment and ongoing development of a superior workforce., Specific responsibilities:     -         Employee orientation and training logistics and recordkeeping\n                                -        Company-wide committee facilitation and participation\n                                -        Employee safety, welfare, wellness and health reporting\n                                -        Provide direct support to employees during implementation of HR\n                                         services, policies and programs\n\n\nWhat skills will the\nintern learn:                   -        Active participation in strategic planning process, including\n                                         developing goals, objectives and processes\n                                -        How to engage professionally in HR meetings and seminars with\n                                         other HR professionals in the region\n                                -        Gain experience with Human Resources Information system (HRIS)\n                                         database management and record keeping\n                                -        Application of HR law and compliance with governmental regulations",
+            "JobRequirements": "Qualifications:                 -        Proficient with Microsoft Word and Excel\n                                -        General knowledge of employment law and practices\n                                -        Able to maintain a high level of confidentiality\n                                -        Effective oral and written management communication skills",
+            "JobTitles": {
+                "MainJobTitle": "Human Resources Assistant",
+                "JobTitle": [
+                    "Job Title: Human Resources Assistant"
+                ]
+            },
+            "EmployerNames": {
+                "MainEmployerName": "Xyz",
+                "EmployerName": [
+                    "Xyz"
+                ]
+            },
+            "WorkingHours": "regular",
+            "IsRemote": false,
+            "EmploymentType": "fulltime",
+            "ContractType": "unspecified",
+            "Skills": {
+                "Raw": [
+                    {
+                        "Name": "committed",
+                        "Required": false
+                    },
+                    {
+                        "Name": "communication skills",
+                        "Required": true
+                    },
+                    {
+                        "Name": "confidentiality",
+                        "Required": true
+                    },
+                    {
+                        "Name": "continuous improvement",
+                        "Required": false
+                    },
+                    {
+                        "Name": "database management",
+                        "Required": false
+                    },
+                    {
+                        "Name": "Employee safety",
+                        "Required": false
+                    },
+                    {
+                        "Name": "employment law",
+                        "Required": true
+                    },
+                    {
+                        "Name": "empowerment",
+                        "Required": false
+                    },
+                    {
+                        "Name": "Excel",
+                        "Required": false
+                    },
+                    {
+                        "Name": "General knowledge",
+                        "Required": false
+                    },
+                    {
+                        "Name": "Human Resources",
+                        "Required": true
+                    },
+                    {
+                        "Name": "Human Resources (HR)",
+                        "Required": true
+                    },
+                    {
+                        "Name": "Human Resources Information system (HRIS)",
+                        "Required": false
+                    },
+                    {
+                        "Name": "logistics",
+                        "Required": false
+                    },
+                    {
+                        "Name": "Microsoft Word",
+                        "Required": false
+                    },
+                    {
+                        "Name": "record keeping",
+                        "Required": false
+                    },
+                    {
+                        "Name": "recordkeeping",
+                        "Required": false
+                    },
+                    {
+                        "Name": "recruitment",
+                        "Required": false
+                    },
+                    {
+                        "Name": "strategic planning",
+                        "Required": false
+                    },
+                    {
+                        "Name": "welfare",
+                        "Required": false
+                    }
+                ],
+                "Normalized": [
+                    {
+                        "Name": "Communication Skills",
+                        "Id": "KS122556LMQ829GZCCRV",
+                        "Type": "Soft",
+                        "Required": true,
+                        "RawSkills": [
+                            "communication skills"
+                        ]
+                    },
+                    {
+                        "Name": "Confidentiality",
+                        "Id": "KS1228M6S0Q13JW8NV10",
+                        "Type": "Professional",
+                        "Required": true,
+                        "RawSkills": [
+                            "confidentiality"
+                        ]
+                    },
+                    {
+                        "Name": "Human Resources",
+                        "Id": "KS124TG6C6GQ3RGYBJ3G",
+                        "Type": "Professional",
+                        "Required": true,
+                        "RawSkills": [
+                            "Human Resources",
+                            "Human Resources (HR)"
+                        ]
+                    },
+                    {
+                        "Name": "Knowledge of Labour Laws",
+                        "Id": "KS123J36CN950KHKWC4T",
+                        "Type": "Professional",
+                        "Required": true,
+                        "RawSkills": [
+                            "employment law"
+                        ]
+                    },
+                    {
+                        "Name": "Business Process Improvement",
+                        "Id": "KS121966TYHFTSKSFV8R",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "continuous improvement"
+                        ]
+                    },
+                    {
+                        "Name": "Database Administration",
+                        "Id": "KSY1LLUGSJ9NKD1MVTAP",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "database management"
+                        ]
+                    },
+                    {
+                        "Name": "Empowerment Skills",
+                        "Id": "KS123B25WWFY25Z5S42X",
+                        "Type": "Soft",
+                        "Required": false,
+                        "RawSkills": [
+                            "empowerment"
+                        ]
+                    },
+                    {
+                        "Name": "General Knowledge",
+                        "Id": "KSRN1CYKMZ39EZSKFWDF",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "General knowledge"
+                        ]
+                    },
+                    {
+                        "Name": "Hard Work and Dedication",
+                        "Id": "KSL5ONJ9QGJZ4G96PTIB",
+                        "Type": "Soft",
+                        "Required": false,
+                        "RawSkills": [
+                            "committed"
+                        ]
+                    },
+                    {
+                        "Name": "Human Resources Information System (HRIS)",
+                        "Id": "KS123CQ6YWBJJH0NDXJK",
+                        "Type": "IT",
+                        "Required": false,
+                        "RawSkills": [
+                            "Human Resources Information system (HRIS)"
+                        ]
+                    },
+                    {
+                        "Name": "Logistics Operations",
+                        "Id": "KSODOAFGVZRLYFVY64HR",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "logistics"
+                        ]
+                    },
+                    {
+                        "Name": "Microsoft Excel",
+                        "Id": "KS1200H6XYN1CR0G5NZ0",
+                        "Type": "IT",
+                        "Required": false,
+                        "RawSkills": [
+                            "Excel"
+                        ]
+                    },
+                    {
+                        "Name": "Microsoft Word",
+                        "Id": "KS1200365FTR9X0M96T9",
+                        "Type": "IT",
+                        "Required": false,
+                        "RawSkills": [
+                            "Microsoft Word"
+                        ]
+                    },
+                    {
+                        "Name": "Occupational Safety and Health",
+                        "Id": "KS123J07373VSJ0QY7BN",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "Employee safety"
+                        ]
+                    },
+                    {
+                        "Name": "Records Management",
+                        "Id": "KS123FM6FGKFC3195NL3",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "recordkeeping",
+                            "record keeping"
+                        ]
+                    },
+                    {
+                        "Name": "Recruitment",
+                        "Id": "KS124QQ77M8G28BFV55X",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "recruitment"
+                        ]
+                    },
+                    {
+                        "Name": "Social Work",
+                        "Id": "KS121FC62SMJJD40TYZ4",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "welfare"
+                        ]
+                    },
+                    {
+                        "Name": "Strategic Management",
+                        "Id": "KS121996C1P31W0YZVNF",
+                        "Type": "Professional",
+                        "Required": false,
+                        "RawSkills": [
+                            "strategic planning"
+                        ]
+                    }
+                ],
+                "RelatedProfessionClasses": [
+                    {
+                        "Name": "Legal, Human Resources and Social Services",
+                        "Id": "19",
+                        "Percent": 43,
+                        "Groups": [
+                            {
+                                "Name": "Personnel and Labor Experts",
+                                "Id": "223",
+                                "Percent": 19,
+                                "NormalizedSkills": [
+                                    "KS124QQ77M8G28BFV55X",
+                                    "KS1200365FTR9X0M96T9",
+                                    "KS124TG6C6GQ3RGYBJ3G",
+                                    "KS1228M6S0Q13JW8NV10",
+                                    "KS123CQ6YWBJJH0NDXJK",
+                                    "KS123J36CN950KHKWC4T"
+                                ]
+                            },
+                            {
+                                "Name": "Labor Managers",
+                                "Id": "281",
+                                "Percent": 11,
+                                "NormalizedSkills": [
+                                    "KS124TG6C6GQ3RGYBJ3G",
+                                    "KS1228M6S0Q13JW8NV10",
+                                    "KS123CQ6YWBJJH0NDXJK",
+                                    "KS123J36CN950KHKWC4T"
+                                ]
+                            },
+                            {
+                                "Name": "Occupational Health Experts and Inspectors",
+                                "Id": "51",
+                                "Percent": 9,
+                                "NormalizedSkills": [
+                                    "KS123J07373VSJ0QY7BN"
+                                ]
+                            },
+                            {
+                                "Name": "Social Workers",
+                                "Id": "191",
+                                "Percent": 4,
+                                "NormalizedSkills": [
+                                    "KS121FC62SMJJD40TYZ4"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Administration and Customer Service",
+                        "Id": "1",
+                        "Percent": 11,
+                        "Groups": [
+                            {
+                                "Name": "Administrative Personnel",
+                                "Id": "234",
+                                "Percent": 9,
+                                "NormalizedSkills": [
+                                    "KS1200365FTR9X0M96T9",
+                                    "KS1228M6S0Q13JW8NV10",
+                                    "KS123FM6FGKFC3195NL3"
+                                ]
+                            },
+                            {
+                                "Name": "Personnel and Salaries Administrators",
+                                "Id": "6",
+                                "Percent": 2,
+                                "NormalizedSkills": [
+                                    "KS1228M6S0Q13JW8NV10",
+                                    "KS123CQ6YWBJJH0NDXJK",
+                                    "KS123J36CN950KHKWC4T"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Information and Communication Technology",
+                        "Id": "9",
+                        "Percent": 9,
+                        "Groups": [
+                            {
+                                "Name": "Database Specialists",
+                                "Id": "79",
+                                "Percent": 9,
+                                "NormalizedSkills": [
+                                    "KSY1LLUGSJ9NKD1MVTAP"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Procurement and Warehouse Management",
+                        "Id": "22",
+                        "Percent": 8,
+                        "Groups": [
+                            {
+                                "Name": "Heads of Procurement and Warehouse Management",
+                                "Id": "245",
+                                "Percent": 4,
+                                "NormalizedSkills": [
+                                    "KSODOAFGVZRLYFVY64HR"
+                                ]
+                            },
+                            {
+                                "Name": "Warehouse Staff and Box Fillers",
+                                "Id": "112",
+                                "Percent": 4,
+                                "NormalizedSkills": [
+                                    "KSODOAFGVZRLYFVY64HR"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Production",
+                        "Id": "18",
+                        "Percent": 8,
+                        "Groups": [
+                            {
+                                "Name": "Production Managers",
+                                "Id": "170",
+                                "Percent": 8,
+                                "NormalizedSkills": [
+                                    "KS121966TYHFTSKSFV8R"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Insurance and Finance",
+                        "Id": "24",
+                        "Percent": 8,
+                        "Groups": [
+                            {
+                                "Name": "Accountants",
+                                "Id": "218",
+                                "Percent": 8,
+                                "NormalizedSkills": [
+                                    "KS1200H6XYN1CR0G5NZ0"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Management, Policy and Governance",
+                        "Id": "2",
+                        "Percent": 7,
+                        "Groups": [
+                            {
+                                "Name": "Governance and Industry Policy Managers",
+                                "Id": "275",
+                                "Percent": 3,
+                                "NormalizedSkills": [
+                                    "KS121996C1P31W0YZVNF"
+                                ]
+                            },
+                            {
+                                "Name": "General Directors",
+                                "Id": "11",
+                                "Percent": 3,
+                                "NormalizedSkills": [
+                                    "KS121996C1P31W0YZVNF"
+                                ]
+                            },
+                            {
+                                "Name": "Management, Policy and Governance (other)",
+                                "Id": "284",
+                                "Percent": 1,
+                                "NormalizedSkills": [
+                                    "KS1200365FTR9X0M96T9",
+                                    "KSRN1CYKMZ39EZSKFWDF"
+                                ]
+                            },
+                            {
+                                "Name": "Management Analysts and Consultants",
+                                "Id": "225",
+                                "Percent": 1,
+                                "NormalizedSkills": [
+                                    "KS1200365FTR9X0M96T9"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Healthcare",
+                        "Id": "6",
+                        "Percent": 2,
+                        "Groups": [
+                            {
+                                "Name": "Psychologists and Educational Consultants",
+                                "Id": "55",
+                                "Percent": 2,
+                                "NormalizedSkills": [
+                                    "KS121FC62SMJJD40TYZ4"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Personal Services",
+                        "Id": "16",
+                        "Percent": 1,
+                        "Groups": [
+                            {
+                                "Name": "Personal Services (other)",
+                                "Id": "298",
+                                "Percent": 1,
+                                "NormalizedSkills": [
+                                    "KSRN1CYKMZ39EZSKFWDF"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Communication, Marketing and Public Relations",
+                        "Id": "23",
+                        "Percent": 1,
+                        "Groups": [
+                            {
+                                "Name": "Communication, Marketing and Public Relations Managers",
+                                "Id": "208",
+                                "Percent": 1,
+                                "NormalizedSkills": [
+                                    "KS121996C1P31W0YZVNF"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "JobMetadata": {
+                "PlainText": "\r\n  Sample Job Description\r\n\r\n\r\n\r\n\r\n  Job Title:                      Human Resources Assistant\r\n\r\n  Job Description:               This position reports to the Human Resources (HR) director and\r\n  interfaces with company managers and HR staff. Company XYZ is\r\n  committed to an employee-orientated, high performance culture that\r\n  emphasizes empowerment, quality, continuous improvement, and the\r\n  recruitment and ongoing development of a superior workforce.\r\n\r\n  The intern will gain exposure\r\n  to these functional areas:     HR Information Systems; Employee           relations; Training and development;\r\n  Benefits; Compensation; Organization development; Employment\r\n\r\n\r\n  Specific responsibilities:     -         Employee orientation and training logistics and recordkeeping\r\n  -        Company-wide committee facilitation and participation\r\n  -        Employee safety, welfare, wellness and health reporting\r\n  -        Provide direct support to employees during implementation of HR\r\n  services, policies and programs\r\n\r\n\r\n  What skills will the\r\n  intern learn:                   -        Active participation in strategic planning process, including\r\n  developing goals, objectives and processes\r\n  -        How to engage professionally in HR meetings and seminars with\r\n  other HR professionals in the region\r\n  -        Gain experience with Human Resources Information system (HRIS)\r\n  database management and record keeping\r\n  -        Application of HR law and compliance with governmental regulations\r\n\r\n\r\n\r\n  Qualifications:                 -        Proficient with Microsoft Word and Excel\r\n  -        General knowledge of employment law and practices\r\n  -        Able to maintain a high level of confidentiality\r\n  -        Effective oral and written management communication skills",
+                "DocumentLanguage": "en",
+                "DocumentCulture": "en-US",
+                "ParserSettings": "Coverage.PersonalAttributes = True; Coverage.Training = True; Culture.CountryCodeForUnitedKingdomIsUK = False; Culture.DefaultCountryCode = US; Culture.Language = English; Culture.PreferEnglishVersionIfTwoLanguagesInDocument = False; Data.NormalizeSkills = True; Data.UserDefinedParsing = False; Data.UseV2SkillsTaxonomy = True; OutputFormat.AssumeCompanyNameFromPrecedingJob = False; OutputFormat.ContactMethod.PackStyle = Split; OutputFormat.DateOutputStyle = ExplicitlyKnownDateInfoOnly; OutputFormat.NestJobsBasedOnDateRanges = True; OutputFormat.NormalizeRegions = False; OutputFormat.SimpleCustomLinkedIn = True; OutputFormat.SkillsStyle = Default; OutputFormat.StripParsedDataFromPositionHistoryDescription = True; OutputFormat.TelcomNumber.Style = Raw; OutputFormat.XmlFormat = HrXmlResume25",
+                "DocumentLastModified": "2024-12-25"
+            }
+        },
+        "ConversionMetadata": {
+            "DetectedType": "Pdf",
+            "SuggestedFileExtension": "pdf",
+            "OutputValidityCode": "ovIsProbablyValid",
+            "ElapsedMilliseconds": 0,
+            "DocumentHash": "085DE8498A26C4C12B15C6936A3AB82A"
+        },
+        "ParsingMetadata": {
+            "ElapsedMilliseconds": 4743,
+            "TimedOut": false
+        }
+    }
+}

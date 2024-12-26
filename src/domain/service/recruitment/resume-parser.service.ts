@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Connection, Types } from 'mongoose';
-import { ResumeParseStatus } from 'src/infra/repository/recruitment/constants';
+import { ParseStatus } from 'src/infra/repository/recruitment/constants';
 import { IResumeParserCreation } from 'src/infra/repository/recruitment/interfaces';
 import { ResumeParserRepository } from 'src/infra/repository/recruitment/resume-parser.repository';
 import { ResumeRepository } from 'src/infra/repository/recruitment/resume.repository';
@@ -30,7 +30,7 @@ export class ResumePaserService {
   async parseResume(id: Types.ObjectId): Promise<void> {
     const resume = await this.resumeRepo.findOne({
       _id: id,
-      parseStatus: ResumeParseStatus.NOT_YET,
+      parseStatus: ParseStatus.NOT_YET,
     });
     if (!resume) return;
     await this.tryToParseResume(resume);
@@ -38,7 +38,7 @@ export class ResumePaserService {
 
   private async tryToParseResume(resume: ResumeDocument): Promise<void> {
     await this.resumeRepo.updateOneById(resume._id, {
-      parseStatus: ResumeParseStatus.PARSING,
+      parseStatus: ParseStatus.PARSING,
     });
     try {
       const file = this.fileHelper.read(resume.storage.location);
@@ -49,7 +49,7 @@ export class ResumePaserService {
       );
     } catch (err) {
       await this.resumeRepo.updateOneById(resume._id, {
-        parseStatus: ResumeParseStatus.FAILED,
+        parseStatus: ParseStatus.FAILED,
       });
       throw err;
     }
@@ -71,7 +71,7 @@ export class ResumePaserService {
       await Promise.all([
         this.resumeParserRepo.create(resumeParserData),
         this.resumeRepo.updateOneById(resumeId, {
-          parseStatus: ResumeParseStatus.PARSED,
+          parseStatus: ParseStatus.PARSED,
         }),
       ]);
       await session.commitTransaction();

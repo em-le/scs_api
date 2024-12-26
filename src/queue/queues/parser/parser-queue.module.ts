@@ -4,7 +4,7 @@ import { PARSER_QUEUE_NAME } from './parser.constant';
 import { QueueRepositoryModule } from 'src/infra/repository/queue/queue-repository.module';
 import { ParserConsumer } from './parser.consumer';
 import { ParserProducer } from './parser.producer';
-import { RecruitmentServiceModule } from 'src/domain/service/recruitment/resume-parser.module';
+import { RecruitmentServiceModule } from 'src/domain/service/recruitment/recruitment-service.module';
 
 @Module({
   imports: [

@@ -1,7 +1,7 @@
 import { AuthorDBAbstractSchema } from 'src/internal/database/abstracts/schema.abstract';
 import { MongooseSchema } from 'src/internal/database/decorators/database.decorator';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument, Types } from 'mongoose';
 
 import { IJobParser } from '../interfaces/job-parser.interface';
 import {
@@ -29,6 +29,7 @@ import {
   PayRangeImpl,
   SovrenLocationImpl,
 } from './common.schema';
+import { Job } from './job.schema';
 
 export const JobParserCollectionName = 'job_parsers';
 
@@ -223,6 +224,14 @@ export class JobDataImpl implements JobData {
 
 @MongooseSchema(JobParserCollectionName)
 export class JobParser extends AuthorDBAbstractSchema implements IJobParser {
+  @Prop({
+    type: Types.ObjectId,
+    required: true,
+    _id: false,
+    ref: Job.name,
+  })
+  job: Types.ObjectId;
+
   @Prop({
     type: JobDataImpl,
     required: true,

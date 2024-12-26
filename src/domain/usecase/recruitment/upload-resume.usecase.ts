@@ -22,7 +22,6 @@ export class UploadResumeUseCase {
 
   private async tryToUploadResume(resume: IFile): Promise<ResumeDocument> {
     try {
-      // TODO: ParsePDF to get metdada
       const metaData: IFileMetaData = {
         size: 0,
         format: ResumeFormat.PDF,
@@ -37,7 +36,6 @@ export class UploadResumeUseCase {
         fileName: resume.originalname,
         fileMetaData: metaData,
         storage: storage,
-        // TODO: Add tags in order to easy to find
         tags: [],
       });
     } catch (error) {

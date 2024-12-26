@@ -1,0 +1,362 @@
+{
+    "Info": {
+        "Code": "Success",
+        "Message": "Successful transaction",
+        "TransactionId": "08606137-2819-439d-8455-424c6b1aaa30",
+        "EngineVersion": "9.19.14.0",
+        "ApiVersion": "10.11.0.0",
+        "TotalElapsedMilliseconds": 55,
+        "TransactionCost": 1,
+        "CustomerDetails": {
+            "AccountId": "47159613",
+            "Name": "Ventura",
+            "IPAddress": "118.69.34.46",
+            "Region": "ap-southeast-2",
+            "CreditsRemaining": 408,
+            "CreditsUsed": 90,
+            "ExpirationDate": "2025-03-20",
+            "MaximumConcurrentRequests": 5
+        }
+    },
+    "Value": {
+        "Matches": [
+            {
+                "Id": "6768048fbe2dd167aebb039d",
+                "WeightedScore": 5,
+                "EnrichedScoreData": {
+                    "Taxonomies": {
+                        "ActualTaxonomies": {
+                            "Primary": {
+                                "Taxonomy": {
+                                    "Name": "Information and Communication Technology",
+                                    "Id": "9",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Programmers",
+                                    "Id": "82",
+                                    "Matched": false
+                                }
+                            },
+                            "Secondary": {
+                                "Taxonomy": {
+                                    "Name": "Communication, Marketing and Public Relations",
+                                    "Id": "23",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Communication, Marketing and Public Relations Managers",
+                                    "Id": "208",
+                                    "Matched": false
+                                }
+                            }
+                        },
+                        "DesiredTaxonomies": {
+                            "Primary": {
+                                "Taxonomy": {
+                                    "Name": "Legal, Human Resources and Social Services",
+                                    "Id": "19",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Personnel and Labor Experts",
+                                    "Id": "223",
+                                    "Matched": false
+                                }
+                            },
+                            "Secondary": {
+                                "Taxonomy": {
+                                    "Name": "Administration and Customer Service",
+                                    "Id": "1",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Administrative Personnel",
+                                    "Id": "234",
+                                    "Matched": false
+                                }
+                            }
+                        },
+                        "UnweightedScore": 0,
+                        "Evidence": [
+                            {
+                                "Fact": "The candidate lacks experience in Legal, Human Resources and Social Services",
+                                "Type": "Negative"
+                            },
+                            {
+                                "Fact": "The candidate lacks experience in Administration and Customer Service",
+                                "Type": "Negative"
+                            }
+                        ]
+                    },
+                    "JobTitles": {
+                        "Found": [],
+                        "NotFound": [
+                            "Human Resources Assistant"
+                        ],
+                        "UnweightedScore": 0,
+                        "Evidence": [
+                            {
+                                "Fact": "Did not find job title 'Human Resources Assistant'",
+                                "Type": "Negative"
+                            }
+                        ]
+                    },
+                    "Skills": {
+                        "Found": [
+                            {
+                                "Skill": "Recruitment",
+                                "IsCurrent": true
+                            }
+                        ],
+                        "NotFound": [
+                            "Business Process Improvement",
+                            "Database Administration",
+                            "Empowerment Skills",
+                            "General Knowledge",
+                            "Hard Work and Dedication",
+                            "Human Resources Information System (HRIS)",
+                            "Logistics Operations",
+                            "Microsoft Excel",
+                            "Microsoft Word",
+                            "Occupational Safety and Health",
+                            "Records Management",
+                            "Social Work",
+                            "Strategic Management",
+                            "Communication Skills",
+                            "Confidentiality",
+                            "Human Resources",
+                            "Knowledge of Labour Laws"
+                        ],
+                        "UnweightedScore": 22.94,
+                        "Evidence": [
+                            {
+                                "Fact": "The candidate has current experience with the following mentioned skills:\r\nRecruitment",
+                                "Type": "Positive"
+                            },
+                            {
+                                "Fact": "Found no evidence that the candidate has experience with the following skills:\r\nBusiness Process Improvement\r\nCommunication Skills\r\nConfidentiality\r\nDatabase Administration\r\nEmpowerment Skills\r\nGeneral Knowledge\r\nHard Work and Dedication\r\nHuman Resources\r\nHuman Resources Information System (HRIS)\r\nKnowledge of Labour Laws\r\nLogistics Operations\r\nMicrosoft Excel\r\nMicrosoft Word\r\nOccupational Safety and Health\r\nRecords Management\r\nSocial Work\r\nStrategic Management",
+                                "Type": "Negative"
+                            }
+                        ]
+                    },
+                    "ManagementLevel": {
+                        "Actual": "None",
+                        "Desired": "None",
+                        "AmountOfExperienceMatches": true,
+                        "UnweightedScore": 100,
+                        "Evidence": [
+                            {
+                                "Fact": "No management experience mentioned in job",
+                                "Type": "Positive"
+                            }
+                        ]
+                    }
+                },
+                "EnrichedRCSScoreData": {
+                    "Languages": {
+                        "Found": [],
+                        "NotFound": [
+                            "ko"
+                        ],
+                        "UnweightedScore": 0,
+                        "Evidence": [
+                            {
+                                "Fact": "No proficiency in ko",
+                                "Type": "Negative"
+                            }
+                        ]
+                    },
+                    "Taxonomies": {
+                        "ActualTaxonomies": {
+                            "Primary": {
+                                "Taxonomy": {
+                                    "Name": "Legal, Human Resources and Social Services",
+                                    "Id": "19",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Personnel and Labor Experts",
+                                    "Id": "223",
+                                    "Matched": false
+                                }
+                            },
+                            "Secondary": {
+                                "Taxonomy": {
+                                    "Name": "Administration and Customer Service",
+                                    "Id": "1",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Administrative Personnel",
+                                    "Id": "234",
+                                    "Matched": false
+                                }
+                            }
+                        },
+                        "DesiredTaxonomies": {
+                            "Primary": {
+                                "Taxonomy": {
+                                    "Name": "Information and Communication Technology",
+                                    "Id": "9",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Programmers",
+                                    "Id": "82",
+                                    "Matched": false
+                                }
+                            },
+                            "Secondary": {
+                                "Taxonomy": {
+                                    "Name": "Communication, Marketing and Public Relations",
+                                    "Id": "23",
+                                    "Matched": false
+                                },
+                                "Subtaxonomy": {
+                                    "Name": "Communication, Marketing and Public Relations Managers",
+                                    "Id": "208",
+                                    "Matched": false
+                                }
+                            }
+                        },
+                        "UnweightedScore": 0,
+                        "Evidence": [
+                            {
+                                "Fact": "The industry is not Information and Communication Technology",
+                                "Type": "Negative"
+                            },
+                            {
+                                "Fact": "The industry is not Communication, Marketing and Public Relations",
+                                "Type": "Negative"
+                            }
+                        ]
+                    },
+                    "JobTitles": {
+                        "Found": [],
+                        "NotFound": [
+                            "Backend Engineer"
+                        ],
+                        "UnweightedScore": 0,
+                        "Evidence": [
+                            {
+                                "Fact": "Did not find job title 'Backend Engineer'",
+                                "Type": "Negative"
+                            }
+                        ]
+                    },
+                    "Skills": {
+                        "Found": [
+                            {
+                                "Skill": "Recruitment",
+                                "IsCurrent": true
+                            }
+                        ],
+                        "NotFound": [
+                            "Amazon Web Services",
+                            "Continuous Integration",
+                            "Databases",
+                            "Docker",
+                            "Github",
+                            "Java (Programming Language)",
+                            "Jenkins",
+                            "Microsoft Azure",
+                            "MongoDB",
+                            "MySQL",
+                            "NestJS",
+                            "PostgreSQL",
+                            "Spring-boot",
+                            "TypeScript",
+                            "Amazon S3",
+                            "Apache Maven",
+                            "Backend",
+                            "Database Design",
+                            "Gradle",
+                            "Python (Programming Language)",
+                            "Restful APIs",
+                            "User Administration",
+                            "Windows Servers",
+                            "Enterprise Resource Planning",
+                            "Business to Business Commerce",
+                            "Website Management",
+                            "Construction",
+                            "Accounts Payable",
+                            "Health Care",
+                            "Computer Security",
+                            "Agile Methodology",
+                            "Computer Programming",
+                            "DevOps",
+                            "Gitlab",
+                            "Golang",
+                            "Google Cloud",
+                            "Object-Oriented Software Development",
+                            "Scrum Methodology",
+                            "Software Version Control"
+                        ],
+                        "UnweightedScore": 16.67,
+                        "Evidence": [
+                            {
+                                "Fact": "The job mentions the following skills that the candidate has experience with:\r\nRecruitment",
+                                "Type": "Positive"
+                            },
+                            {
+                                "Fact": "The job does not mention the following skills that the candidate has experience with:\r\nAccounts Payable\r\nAgile Methodology\r\nAmazon S3\r\nAmazon Web Services\r\nApache Maven\r\nBackend\r\nBusiness to Business Commerce\r\nComputer Programming\r\nComputer Security\r\nConstruction\r\nContinuous Integration\r\nDatabase Design\r\nDatabases\r\nDevOps\r\nDocker\r\nEnterprise Resource Planning\r\nGithub\r\nGitlab\r\nGolang\r\nGoogle Cloud\r\nGradle\r\nHealth Care\r\nJava (Programming Language)\r\nJenkins\r\nMicrosoft Azure\r\nMongoDB\r\nMySQL\r\nNestJS\r\nObject-Oriented Software Development\r\nPostgreSQL\r\nPython (Programming Language)\r\nRestful APIs\r\nScrum Methodology\r\nSoftware Version Control\r\nSpring-boot\r\nTypeScript\r\nUser Administration\r\nWebsite Management\r\nWindows Servers",
+                                "Type": "Negative"
+                            }
+                        ]
+                    },
+                    "ManagementLevel": {
+                        "Actual": "None",
+                        "Desired": "None",
+                        "AmountOfExperienceMatches": true,
+                        "UnweightedScore": 100,
+                        "Evidence": [
+                            {
+                                "Fact": "No management experience mentioned in the job",
+                                "Type": "Positive"
+                            }
+                        ]
+                    }
+                },
+                "ReverseCompatibilityScore": 4,
+                "SovScore": 1
+            }
+        ],
+        "SuggestedCategoryWeights": {
+            "Education": 0,
+            "JobTitles": 0.3636,
+            "Skills": 0.3636,
+            "Industries": 0.1818,
+            "Languages": 0,
+            "Certifications": 0,
+            "ExecutiveType": 0,
+            "ManagementLevel": 0.0909,
+            "EducationHasData": true,
+            "JobTitlesHasData": true,
+            "SkillsHasData": true,
+            "IndustriesHasData": true,
+            "LanguagesHasData": true,
+            "CertificationsHasData": true,
+            "ExecutiveTypeHasData": true,
+            "ManagementLevelHasData": true
+        },
+        "AppliedCategoryWeights": {
+            "Education": 0.1429,
+            "JobTitles": 0.1429,
+            "Skills": 0.2143,
+            "Industries": 0.2857,
+            "Languages": 0.0714,
+            "Certifications": 0.1429,
+            "ExecutiveType": 0,
+            "ManagementLevel": 0,
+            "EducationHasData": true,
+            "JobTitlesHasData": true,
+            "SkillsHasData": true,
+            "IndustriesHasData": true,
+            "LanguagesHasData": true,
+            "CertificationsHasData": true,
+            "ExecutiveTypeHasData": false,
+            "ManagementLevelHasData": false
+        }
+    }
+}

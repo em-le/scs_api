@@ -5,6 +5,7 @@ import { UserRouteModule } from './routes/user/user-route.module';
 import { ParseModule } from './routes/parse/parse.module';
 import { RecruitmentRouteModule } from './routes/recruitment/recruitment-route.module';
 import { ResumeRouteModule } from './routes/resume/resume-route.module';
+import { JobRouteModule } from './routes/job/job-route.module';
 
 @Module({})
 export class RouterModule {
@@ -18,6 +19,7 @@ export class RouterModule {
           ParseModule,
           RecruitmentRouteModule,
           ResumeRouteModule,
+          JobRouteModule,
           NestJSRouterModule.register([
             {
               module: PublicRouteModule,
@@ -38,6 +40,10 @@ export class RouterModule {
             {
               module: ResumeRouteModule,
               path: 'resumes',
+            },
+            {
+              module: JobRouteModule,
+              path: 'jobs',
             },
           ]),
         ],
