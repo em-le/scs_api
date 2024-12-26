@@ -60,7 +60,7 @@ export function UploadFileSingle(
     UseInterceptors(
       FileInterceptor(fieldName, {
         storage: diskStorage({
-          destination: FileDestination(destination),
+          destination: FileDestination(destination, options?.isPublic),
           filename: FileName(),
         }),
       }),

@@ -1,6 +1,7 @@
 import { IFileTypes } from '../interfaces/file.interface';
 
 export interface UploadSingleFileOptions {
+  isPublic: boolean;
   fileSize?: string;
   allowTypes?: IFileTypes;
   maxFiles?: number;

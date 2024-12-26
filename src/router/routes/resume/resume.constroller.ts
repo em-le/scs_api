@@ -24,9 +24,9 @@ import { UploadResumeZipUseCase } from 'src/domain/usecase/recruitment/upload-re
 import { BookMultipleResumeParseUseCase } from 'src/domain/usecase/recruitment/book-multiple-parse-resume.usecase';
 
 @Controller()
-export class ResumeUploadController {
+export class ResumeController {
   constructor(
-    private readonly getResumeUsecase: GetResumeUseCase,
+    private readonly getResumeUseCase: GetResumeUseCase,
     private readonly bookResumeParseUseCase: BookResumeParseUseCase,
     private readonly uploadResumeUseCase: UploadResumeUseCase,
     private readonly uploadResumeZipUseCase: UploadResumeZipUseCase,
@@ -35,15 +35,12 @@ export class ResumeUploadController {
 
   @HttpCode(HttpStatus.OK)
   @Get('/:id')
-  async getResume(@Param('id') id: string): Promise<ResumeSerialization> {
-    const resume = await this.getResumeUsecase.execute(id._ObjectId());
-    if (!resume) {
+  async getResume(@Param('id') id: string) {
+    try {
+      return await this.getResumeUseCase.execute(id._ObjectId());
+    } catch (err) {
       throw new BadRequestException('The resume is not found');
     }
-
-    return plainToInstance(ResumeSerialization, resume, {
-      excludeExtraneousValues: true,
-    });
   }
 
   @HttpCode(HttpStatus.OK)
@@ -56,7 +53,9 @@ export class ResumeUploadController {
     }
   }
 
-  @UploadFileSingle('file', 'resumes')
+  @UploadFileSingle('file', 'resumes', {
+    isPublic: false,
+  })
   @HttpCode(HttpStatus.CREATED)
   @Post('/pdf')
   async uploadPDF(
@@ -74,7 +73,9 @@ export class ResumeUploadController {
 
   @HttpCode(HttpStatus.CREATED)
   @Post('/zip')
-  @UploadFileSingle('file', 'resumes')
+  @UploadFileSingle('file', 'resumes', {
+    isPublic: false,
+  })
   async uploadZIP(@UploadZipFileParam() file: IFile): Promise<void> {
     await this.uploadResumeZipUseCase.execute(file);
   }

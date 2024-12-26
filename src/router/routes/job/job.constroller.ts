@@ -10,7 +10,7 @@ import {
   ServiceUnavailableException,
 } from '@nestjs/common';
 import { AnalyzeJobBimetricUseCase } from 'src/domain/usecase/recruitment/analyze-job-bimetric.usecase';
-import { GetJobAggregateUseCase } from 'src/domain/usecase/recruitment/get-job-aggregate.usecase';
+import { GetJobUseCase } from 'src/domain/usecase/recruitment/get-job.usecase';
 import { UploadJobUseCase } from 'src/domain/usecase/recruitment/upload-job.usecase';
 import {
   UploadFileSingle,
@@ -23,13 +23,15 @@ import { AnalyzeJobBimetrictDto } from './dtos/analyze-job-bimetric.dto';
 export class JobController {
   constructor(
     private readonly uploadJobUseCase: UploadJobUseCase,
-    private readonly getJobAggregateUseCase: GetJobAggregateUseCase,
+    private readonly getJobUseCase: GetJobUseCase,
     private readonly analyzeJobBimetricUseCase: AnalyzeJobBimetricUseCase,
   ) {}
 
   @HttpCode(HttpStatus.CREATED)
   @Post('/pdf')
-  @UploadFileSingle('file', 'jobs')
+  @UploadFileSingle('file', 'jobs', {
+    isPublic: false,
+  })
   async parseJob(@UploadPDFFileParam() file: IFile): Promise<any> {
     try {
       await this.uploadJobUseCase.execute(file);
@@ -42,7 +44,7 @@ export class JobController {
   @Get('/:id/')
   async getJob(@Param('id') id: string) {
     try {
-      return await this.getJobAggregateUseCase.execute(id._ObjectId());
+      return await this.getJobUseCase.execute(id._ObjectId());
     } catch (err) {
       throw new BadRequestException(err.message);
     }

@@ -5,13 +5,13 @@ import { DateHelper } from 'src/internal/helper/services/date.helper';
 import { IFile } from '../interfaces/file.interface';
 import { v4 as uuidv4 } from 'uuid';
 
-export function FileDestination(destination: string) {
+export function FileDestination(destination: string, isPublic: boolean = true) {
   return (
     req: Request,
     file: IFile,
     callback: (error: Error | null, destination: string) => void,
   ) => {
-    const uploadedUrl = `public/upload/${destination}`;
+    const uploadedUrl = `${isPublic ? 'public' : 'storage'}/upload/${destination}`;
 
     const date = DateHelper.getDate();
 

@@ -6,7 +6,7 @@ import { JobRepository } from 'src/infra/repository/recruitment/job.repository';
 import { JobDocument } from 'src/infra/repository/recruitment/schemas/job.schema';
 
 @Injectable()
-export class GetJobAggregateUseCase {
+export class GetJobUseCase {
   constructor(
     private readonly jobRepo: JobRepository,
     private readonly jobParserRepo: JobParserRepository,
@@ -21,7 +21,7 @@ export class GetJobAggregateUseCase {
     return this.getJobAggregate(job);
   }
 
-  async getJobAggregate(job: JobDocument) {
+  private async getJobAggregate(job: JobDocument) {
     if (job.parseStatus != ParseStatus.PARSED) {
       return { job: job, jobParser: null };
     }
