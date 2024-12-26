@@ -22,16 +22,32 @@ import { plainToInstance } from 'class-transformer';
 import { BookResumeParseUseCase } from 'src/domain/usecase/recruitment/book-parse-resume.usecase';
 import { UploadResumeZipUseCase } from 'src/domain/usecase/recruitment/upload-resume-zip.usecase';
 import { BookMultipleResumeParseUseCase } from 'src/domain/usecase/recruitment/book-multiple-parse-resume.usecase';
+import { PaginationQuery } from 'src/internal/pagination/decorators/pagination-query.decorator';
+import { ResumePaginationDto } from './dtos/pagination.dto';
+import { GetResumePaginationUseCase } from 'src/domain/usecase/recruitment/get-resume-pagination.usecase';
+import { PagingResponse } from 'src/internal/response/decorators/paging-response.decorator';
 
 @Controller()
 export class ResumeController {
   constructor(
+    private readonly getResumePaginationUseCase: GetResumePaginationUseCase,
     private readonly getResumeUseCase: GetResumeUseCase,
     private readonly bookResumeParseUseCase: BookResumeParseUseCase,
     private readonly uploadResumeUseCase: UploadResumeUseCase,
     private readonly uploadResumeZipUseCase: UploadResumeZipUseCase,
     private readonly bookMultipleResumeParseUseCase: BookMultipleResumeParseUseCase,
   ) {}
+
+  @PagingResponse()
+  @HttpCode(HttpStatus.OK)
+  @Get()
+  async getAll(@PaginationQuery() queries: ResumePaginationDto) {
+    try {
+      return await this.getResumePaginationUseCase.execute(queries);
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
+  }
 
   @HttpCode(HttpStatus.OK)
   @Get('/:id')

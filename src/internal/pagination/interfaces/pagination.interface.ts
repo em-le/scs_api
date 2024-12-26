@@ -1,6 +1,9 @@
 import { PAGINATION_AVAILABLE_SORT_TYPE } from '../constants/pagination.constant';
 
-export type IPaginationSort = Record<string, PAGINATION_AVAILABLE_SORT_TYPE>;
+export type IPaginationSort<T = any> = Record<
+  keyof T,
+  PAGINATION_AVAILABLE_SORT_TYPE
+>;
 
 export interface IPaginationOptions {
   limit: number;

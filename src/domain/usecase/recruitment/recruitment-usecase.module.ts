@@ -10,6 +10,7 @@ import { UploadJobUseCase } from './upload-job.usecase';
 import { RecruitmentServiceModule } from 'src/domain/service/recruitment/recruitment-service.module';
 import { GetJobUseCase } from './get-job.usecase';
 import { AnalyzeJobBimetricUseCase } from './analyze-job-bimetric.usecase';
+import { GetResumePaginationUseCase } from './get-resume-pagination.usecase';
 const usecases = [
   GetResumeUseCase,
   UploadResumeUseCase,
@@ -19,6 +20,7 @@ const usecases = [
   UploadJobUseCase,
   GetJobUseCase,
   AnalyzeJobBimetricUseCase,
+  GetResumePaginationUseCase,
 ];
 @Module({
   imports: [

@@ -6,6 +6,7 @@ import { LoggerModule } from './logger/logger.module';
 import { RequestModule } from './request/request.module';
 import { ClientModule } from './client/client.module';
 import { FileModule } from './file/file.module';
+import { PaginationModule } from './pagination/pagination.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { FileModule } from './file/file.module';
     LoggerModule.forRoot(),
     RequestModule,
     FileModule,
+    PaginationModule,
   ],
   providers: [],
 })

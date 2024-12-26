@@ -1,5 +1,5 @@
 import { ClientSession } from 'mongoose';
-import { IPaginationOptions } from '../../pagination/interfaces';
+import { IPaginationOptions } from 'src/internal/pagination/interfaces';
 
 export interface IDBFindOneOptions extends Pick<IPaginationOptions, 'sort'> {
   select?: Record<string, number> | Record<string, string>;
