@@ -8,7 +8,7 @@ import { GetResumeUseCase } from './get-resume.usecase';
 import { BookResumeParseUseCase } from './book-parse-resume.usecase';
 import { ParserQueueModule } from 'src/queue/queues/parser/parser-queue.module';
 import { UploadResumeZipUseCase } from './upload-resume-zip.usecase';
-import { BookMutilpleResumeParseUseCase } from './book-multiple-parse-resume.usecase';
+import { BookMultipleResumeParseUseCase } from './book-multiple-parse-resume.usecase';
 import { UploadJobUseCase } from './upload-job.usecase';
 import { RecruitmentServiceModule } from 'src/domain/service/recruitment/recruitment-service.module';
 const usecases = [
@@ -19,7 +19,7 @@ const usecases = [
   UploadResumeUseCase,
   BookResumeParseUseCase,
   UploadResumeZipUseCase,
-  BookMutilpleResumeParseUseCase,
+  BookMultipleResumeParseUseCase,
   UploadJobUseCase,
 ];
 @Module({

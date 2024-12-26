@@ -21,7 +21,7 @@ import { ResumeSerialization } from './serializations/resume.serialization';
 import { plainToInstance } from 'class-transformer';
 import { BookResumeParseUseCase } from 'src/domain/usecase/recruitment/book-parse-resume.usecase';
 import { UploadResumeZipUseCase } from 'src/domain/usecase/recruitment/upload-resume-zip.usecase';
-import { BookMutilpleResumeParseUseCase } from 'src/domain/usecase/recruitment/book-multiple-parse-resume.usecase';
+import { BookMultipleResumeParseUseCase } from 'src/domain/usecase/recruitment/book-multiple-parse-resume.usecase';
 
 @Controller()
 export class ResumeUploadController {
@@ -30,7 +30,7 @@ export class ResumeUploadController {
     private readonly bookResumeParseUseCase: BookResumeParseUseCase,
     private readonly uploadResumeUseCase: UploadResumeUseCase,
     private readonly uploadResumeZipUseCase: UploadResumeZipUseCase,
-    private readonly bookMutilpleResumeParseUseCase: BookMutilpleResumeParseUseCase,
+    private readonly bookMultipleResumeParseUseCase: BookMultipleResumeParseUseCase,
   ) {}
 
   @HttpCode(HttpStatus.OK)
@@ -48,7 +48,7 @@ export class ResumeUploadController {
 
   @HttpCode(HttpStatus.OK)
   @Post('/:id/parser')
-  async bookresumeParser(@Param('id') id: string): Promise<void> {
+  async bookResumeParser(@Param('id') id: string): Promise<void> {
     try {
       this.bookResumeParseUseCase.execute(id._ObjectId());
     } catch (err) {
@@ -81,9 +81,9 @@ export class ResumeUploadController {
 
   @HttpCode(HttpStatus.OK)
   @Post('/parser')
-  async bookresumesParse(@Body('ids') ids: string[]): Promise<void> {
+  async bookResumesParse(@Body('ids') ids: string[]): Promise<void> {
     try {
-      this.bookMutilpleResumeParseUseCase.execute(
+      this.bookMultipleResumeParseUseCase.execute(
         ids.map((id) => id._ObjectId()),
       );
     } catch (err) {

@@ -5,7 +5,7 @@ import { AbstractQueueConsumer } from 'src/queue/abstracts/queue-consumer.abstra
 import { QueueRepository } from 'src/infra/repository/queue/queue.repository';
 import { LoggerService } from 'src/internal/logger/services/logger.service';
 import { BullData } from 'src/queue/abstracts/queue.interface';
-import { ResumePaserService } from 'src/domain/service/recruitment/resume-parser.service';
+import { ResumeParserService } from 'src/domain/service/recruitment/resume-parser.service';
 
 @Processor({
   name: PARSER_QUEUE_NAME,
@@ -15,7 +15,7 @@ export class ParserConsumer extends AbstractQueueConsumer {
   constructor(
     protected readonly queueRepo: QueueRepository,
     protected readonly loggerSer: LoggerService,
-    private readonly resumePaserSer: ResumePaserService,
+    private readonly resumeParserSer: ResumeParserService,
   ) {
     super(queueRepo);
   }
@@ -25,6 +25,6 @@ export class ParserConsumer extends AbstractQueueConsumer {
   })
   async runHeath(bullData: BullData<{ id: string }>): Promise<void> {
     const { id } = bullData.data;
-    this.resumePaserSer.parseResume(id._ObjectId());
+    this.resumeParserSer.parseResume(id._ObjectId());
   }
 }
