@@ -4,3 +4,4 @@ export * from './number-validator.decorator';
 export * from './string-validator.decorator';
 export * from './enum.decorator';
 export * from './date-validator.decorator';
+export * from './mongodb-validator.decorator';

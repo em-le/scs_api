@@ -27,6 +27,12 @@ import {
 } from './schemas/job-parser.schema';
 import { JobRepository } from './job.repository';
 import { Job, JobCollectionName, JobSchema } from './schemas/job.schema';
+import {
+  JobBimetrictMatch,
+  JobBimetrictMatchSchema,
+  JobBimetrictMathCollectionName,
+} from './schemas/job-bimetric-match.schema';
+import { JobBimetricMatchRepository } from './job-bimetric-match.repository copy';
 
 const repositories = [
   RecruitmentRepository,
@@ -34,6 +40,7 @@ const repositories = [
   ResumeParserRepository,
   JobRepository,
   JobParserRepository,
+  JobBimetricMatchRepository,
 ];
 
 @Module({
@@ -64,6 +71,11 @@ const repositories = [
           name: JobParser.name,
           schema: JobParserSchema,
           collection: JobParserCollectionName,
+        },
+        {
+          name: JobBimetrictMatch.name,
+          schema: JobBimetrictMatchSchema,
+          collection: JobBimetrictMathCollectionName,
         },
       ],
       PRIMARY_CONNECTION,

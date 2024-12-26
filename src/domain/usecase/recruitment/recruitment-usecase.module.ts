@@ -11,6 +11,8 @@ import { UploadResumeZipUseCase } from './upload-resume-zip.usecase';
 import { BookMultipleResumeParseUseCase } from './book-multiple-parse-resume.usecase';
 import { UploadJobUseCase } from './upload-job.usecase';
 import { RecruitmentServiceModule } from 'src/domain/service/recruitment/recruitment-service.module';
+import { GetJobAggregateUseCase } from './get-job-aggregate.usecase';
+import { AnalyzeJobBimetricUseCase } from './analyze-job-bimetric.usecase';
 const usecases = [
   GetRecruitmentUseCase,
   CreateRecruitmentUseCase,
@@ -21,6 +23,8 @@ const usecases = [
   UploadResumeZipUseCase,
   BookMultipleResumeParseUseCase,
   UploadJobUseCase,
+  GetJobAggregateUseCase,
+  AnalyzeJobBimetricUseCase,
 ];
 @Module({
   imports: [

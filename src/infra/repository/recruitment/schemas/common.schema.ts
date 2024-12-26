@@ -2,19 +2,27 @@ import { Prop, Schema } from '@nestjs/mongoose';
 import {
   ApplicationDetails,
   Association,
+  BimetricMatchResult,
   BooleanSovrenPrimitive,
   Bullet,
   CandidateReference,
+  CategoryScore,
+  CategoryScoresContainer,
+  CategoryWeights,
   Certification,
   CompanyName,
   ContactInformation,
   DateTimeSovrenPrimitive,
   Degree,
+  EducationCategoryScore,
+  EducationComparison,
   EducationDetails,
   EducationHistory,
   Employer,
   EmployerNames,
   EmploymentHistory,
+  Evidence,
+  EvidenceType,
   ExperienceSummary,
   Finding,
   GeoCoordinate,
@@ -28,9 +36,13 @@ import {
   JobTaxonomy,
   JobTaxonomyRoot,
   JobTitle,
+  JobTitleInfo,
   JobTitles,
+  JobTitlesCategoryScore,
   LanguageCompetency,
   LicenseDetail,
+  ManagementCategoryScore,
+  ManagementLevelType,
   MilitaryDetails,
   MilitaryService,
   NameValue,
@@ -53,9 +65,16 @@ import {
   Salary,
   SectionIdentifier,
   SecurityCredential,
+  SimpleCategoryScore,
+  SkillInfo,
+  SkillsCategoryScore,
   SovrenDateWithParts,
   SovrenLocation,
   StringVersionedNormalizedProfessionClassification,
+  TaxonomiesCategoryScore,
+  TaxonomyEvidence,
+  TaxonomyInfo,
+  TaxonomyMatchInfo,
   Telephone,
   TrainingDetail,
   TrainingHistory,
@@ -2005,4 +2024,500 @@ export class JobTaxonomyRootImpl implements JobTaxonomyRoot {
     required: false,
   })
   Taxonomies?: JobTaxonomy[] | null;
+}
+
+@Schema()
+export class CategoryScoreImpl implements CategoryScore {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Category?: string | null;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  UnweightedScore?: number;
+
+  @Prop({
+    type: [String],
+    required: false,
+  })
+  TermsFound?: string[] | null;
+}
+
+@Schema()
+export class EvidenceImpl implements Evidence {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Fact?: string | null;
+
+  @Prop({
+    type: String,
+    enum: EvidenceType,
+    required: false,
+  })
+  Type?: EvidenceType;
+}
+
+@Schema()
+export class SimpleCategoryScoreImpl implements SimpleCategoryScore {
+  @Prop({
+    type: [String],
+    required: false,
+  })
+  Found?: string[] | null;
+
+  @Prop({
+    type: [String],
+    required: false,
+  })
+  NotFound?: string[] | null;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  UnweightedScore?: number;
+
+  @Prop({
+    type: [EvidenceImpl],
+    required: false,
+  })
+  Evidence?: Evidence[] | null;
+}
+
+@Schema()
+export class EducationCategoryScoreImpl implements EducationCategoryScore {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  ExpectedEducation?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  ActualEducation?: string | null;
+
+  @Prop({
+    type: String,
+    enum: EducationComparison,
+    required: false,
+  })
+  Comparison?: EducationComparison;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  UnweightedScore?: number;
+
+  @Prop({
+    type: [EvidenceImpl],
+    required: false,
+  })
+  Evidence?: Evidence[] | null;
+}
+
+@Schema()
+export class TaxonomyMatchInfoImpl implements TaxonomyMatchInfo {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Name?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Id?: string | null;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  Matched?: boolean;
+}
+
+@Schema()
+export class TaxonomyInfoImpl implements TaxonomyInfo {
+  @Prop({
+    type: TaxonomyMatchInfoImpl,
+    required: false,
+  })
+  Taxonomy?: TaxonomyMatchInfo;
+
+  @Prop({
+    type: TaxonomyMatchInfoImpl,
+    required: false,
+  })
+  Subtaxonomy?: TaxonomyMatchInfo;
+}
+
+@Schema()
+export class TaxonomyEvidenceImpl implements TaxonomyEvidence {
+  @Prop({
+    type: TaxonomyInfoImpl,
+    required: false,
+  })
+  Primary?: TaxonomyInfo;
+
+  @Prop({
+    type: TaxonomyInfoImpl,
+    required: false,
+  })
+  Secondary?: TaxonomyInfo;
+}
+
+@Schema()
+export class TaxonomiesCategoryScoreImpl implements TaxonomiesCategoryScore {
+  @Prop({
+    type: TaxonomyEvidenceImpl,
+    required: false,
+  })
+  ActualTaxonomies?: TaxonomyEvidence;
+
+  @Prop({
+    type: TaxonomyEvidenceImpl,
+    required: false,
+  })
+  DesiredTaxonomies?: TaxonomyEvidence;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  UnweightedScore?: number;
+
+  @Prop({
+    type: [EvidenceImpl],
+    required: false,
+  })
+  Evidence?: Evidence[] | null;
+}
+
+@Schema()
+export class JobTitleInfoImpl implements JobTitleInfo {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  RawTerm?: string | null;
+
+  @Prop({
+    type: String,
+    required: false,
+  })
+  VariationOf?: string | null;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  IsCurrent?: boolean;
+}
+
+@Schema()
+export class JobTitlesCategoryScoreImpl implements JobTitlesCategoryScore {
+  @Prop({
+    type: [JobTitleInfoImpl],
+    required: false,
+  })
+  Found?: JobTitleInfo[] | null;
+
+  @Prop({
+    type: [String],
+    required: false,
+  })
+  NotFound?: string[] | null;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  UnweightedScore?: number;
+
+  @Prop({
+    type: [EvidenceImpl],
+    required: false,
+  })
+  Evidence?: Evidence[] | null;
+}
+
+@Schema()
+export class SkillInfoImpl implements SkillInfo {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Skill?: string | null;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  IsCurrent?: boolean;
+}
+
+@Schema()
+export class SkillsCategoryScoreImpl implements SkillsCategoryScore {
+  @Prop({
+    type: [EvidenceImpl],
+    required: false,
+  })
+  Found?: SkillInfo[] | null;
+
+  @Prop({
+    type: [String],
+    required: false,
+  })
+  NotFound?: string[] | null;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  UnweightedScore?: number;
+
+  @Prop({
+    type: [EvidenceImpl],
+    required: false,
+  })
+  Evidence?: Evidence[] | null;
+}
+
+@Schema()
+export class ManagementCategoryScoreImpl implements ManagementCategoryScore {
+  @Prop({
+    type: String,
+    enum: ManagementLevelType,
+    required: false,
+  })
+  Actual?: ManagementLevelType;
+
+  @Prop({
+    type: String,
+    enum: ManagementLevelType,
+    required: false,
+  })
+  Desired?: ManagementLevelType;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  AmountOfExperienceMatches?: boolean;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  UnweightedScore?: number;
+
+  @Prop({
+    type: [EvidenceImpl],
+    required: false,
+  })
+  Evidence?: Evidence[] | null;
+}
+
+@Schema()
+export class CategoryScoresContainerImpl implements CategoryScoresContainer {
+  @Prop({
+    type: SimpleCategoryScoreImpl,
+    required: false,
+  })
+  Languages?: SimpleCategoryScore;
+
+  @Prop({
+    type: SimpleCategoryScoreImpl,
+    required: false,
+  })
+  Certifications?: SimpleCategoryScore;
+
+  @Prop({
+    type: SimpleCategoryScoreImpl,
+    required: false,
+  })
+  ExecutiveType?: SimpleCategoryScore;
+
+  @Prop({
+    type: EducationCategoryScoreImpl,
+    required: false,
+  })
+  Education?: EducationCategoryScore;
+
+  @Prop({
+    type: TaxonomiesCategoryScoreImpl,
+    required: false,
+  })
+  Taxonomies?: TaxonomiesCategoryScore;
+
+  @Prop({
+    type: JobTitlesCategoryScoreImpl,
+    required: false,
+  })
+  JobTitles?: JobTitlesCategoryScore;
+
+  @Prop({
+    type: SkillsCategoryScoreImpl,
+    required: false,
+  })
+  Skills?: SkillsCategoryScore;
+
+  @Prop({
+    type: ManagementCategoryScoreImpl,
+    required: false,
+  })
+  ManagementLevel?: ManagementCategoryScore;
+}
+
+@Schema()
+export class BimetricMatchResultImpl implements BimetricMatchResult {
+  @Prop({
+    type: String,
+    required: false,
+  })
+  Id?: string | null;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  WeightedScore?: number;
+
+  @Prop({
+    type: [CategoryScoreImpl],
+    required: false,
+  })
+  UnweightedCategoryScores?: CategoryScore[] | null;
+
+  @Prop({
+    type: CategoryScoresContainerImpl,
+    required: false,
+  })
+  EnrichedScoreData?: CategoryScoresContainer;
+
+  @Prop({
+    type: CategoryScoresContainerImpl,
+    required: false,
+  })
+  EnrichedRCSScoreData?: CategoryScoresContainer;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  ReverseCompatibilityScore?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  SovScore?: number;
+}
+
+@Schema()
+export class CategoryWeightsImpl implements CategoryWeights {
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  Education?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  JobTitles?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  Skills?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  Industries?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  Languages?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  Certifications?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  ExecutiveType?: number;
+
+  @Prop({
+    type: Number,
+    required: false,
+  })
+  ManagementLevel?: number;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  EducationHasData?: boolean;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  JobTitlesHasData?: boolean;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  SkillsHasData?: boolean;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  IndustriesHasData?: boolean;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  LanguagesHasData?: boolean;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  CertificationsHasData?: boolean;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  ExecutiveTypeHasData?: boolean;
+
+  @Prop({
+    type: Boolean,
+    required: false,
+  })
+  ManagementLevelHasData?: boolean;
 }
