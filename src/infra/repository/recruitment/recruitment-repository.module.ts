@@ -32,7 +32,7 @@ import {
   JobBimetrictMatchSchema,
   JobBimetrictMathCollectionName,
 } from './schemas/job-bimetric-match.schema';
-import { JobBimetricMatchRepository } from './job-bimetric-match.repository copy';
+import { JobBimetricMatchRepository } from './job-bimetric-match.repository';
 
 const repositories = [
   RecruitmentRepository,

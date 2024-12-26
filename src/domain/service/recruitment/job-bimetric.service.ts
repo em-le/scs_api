@@ -4,7 +4,7 @@ import {
   IJobBimetrictMatchCreation,
   IJobBimetrictMatchTarget,
 } from 'src/infra/repository/recruitment/interfaces';
-import { JobBimetricMatchRepository } from 'src/infra/repository/recruitment/job-bimetric-match.repository copy';
+import { JobBimetricMatchRepository } from 'src/infra/repository/recruitment/job-bimetric-match.repository';
 import { JobBimetrictMatch } from 'src/infra/repository/recruitment/schemas/job-bimetric-match.schema';
 import { JobParserDocument } from 'src/infra/repository/recruitment/schemas/job-parser.schema';
 import { ResumeParser } from 'src/infra/repository/recruitment/schemas/resume-parser.schema';
