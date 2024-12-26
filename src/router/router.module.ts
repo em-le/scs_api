@@ -1,8 +1,6 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import { RouterModule as NestJSRouterModule } from '@nestjs/core';
 import { PublicRouteModule } from './routes/public/public-route.module';
-import { UserRouteModule } from './routes/user/user-route.module';
-import { RecruitmentRouteModule } from './routes/recruitment/recruitment-route.module';
 import { ResumeRouteModule } from './routes/resume/resume-route.module';
 import { JobRouteModule } from './routes/job/job-route.module';
 
@@ -14,9 +12,7 @@ export class RouterModule {
         module: RouterModule,
         imports: [
           PublicRouteModule,
-          UserRouteModule,
           JobRouteModule,
-          RecruitmentRouteModule,
           ResumeRouteModule,
           JobRouteModule,
           NestJSRouterModule.register([
@@ -25,16 +21,8 @@ export class RouterModule {
               path: '',
             },
             {
-              module: UserRouteModule,
-              path: 'users',
-            },
-            {
               module: JobRouteModule,
               path: 'jobs',
-            },
-            {
-              module: RecruitmentRouteModule,
-              path: 'recruitment',
             },
             {
               module: ResumeRouteModule,

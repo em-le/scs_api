@@ -20,7 +20,7 @@ async function bootstrap() {
   app.setGlobalPrefix(appConfig.globalPrefix, {
     exclude: [
       {
-        path: `${versionPrefix}/publish/resume/:short_link`,
+        path: `${versionPrefix}/publish/resume`,
         method: RequestMethod.GET,
       },
     ],

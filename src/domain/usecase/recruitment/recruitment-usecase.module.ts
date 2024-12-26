@@ -1,8 +1,5 @@
 import { Module } from '@nestjs/common';
-import { CreateRecruitmentUseCase } from './create-recruitment.usecase';
 import { RecruitmentRepositoryModule } from 'src/infra/repository/recruitment/recruitment-repository.module';
-import { GetRecruitmentUseCase } from './get-recruitment.usecase';
-import { UpdateRecruitmentUseCase } from './update-recruitment.usecase';
 import { UploadResumeUseCase } from './upload-resume.usecase';
 import { GetResumeUseCase } from './get-resume.usecase';
 import { BookResumeParseUseCase } from './book-parse-resume.usecase';
@@ -14,9 +11,6 @@ import { RecruitmentServiceModule } from 'src/domain/service/recruitment/recruit
 import { GetJobUseCase } from './get-job.usecase';
 import { AnalyzeJobBimetricUseCase } from './analyze-job-bimetric.usecase';
 const usecases = [
-  GetRecruitmentUseCase,
-  CreateRecruitmentUseCase,
-  UpdateRecruitmentUseCase,
   GetResumeUseCase,
   UploadResumeUseCase,
   BookResumeParseUseCase,
