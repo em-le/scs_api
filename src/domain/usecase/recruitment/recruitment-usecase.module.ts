@@ -11,6 +11,7 @@ import { RecruitmentServiceModule } from 'src/domain/service/recruitment/recruit
 import { GetJobUseCase } from './get-job.usecase';
 import { AnalyzeJobBimetricUseCase } from './analyze-job-bimetric.usecase';
 import { GetResumePaginationUseCase } from './get-resume-pagination.usecase';
+import { GetJobPaginationUseCase } from './get-job-pagination.usecase';
 const usecases = [
   GetResumeUseCase,
   UploadResumeUseCase,
@@ -21,6 +22,7 @@ const usecases = [
   GetJobUseCase,
   AnalyzeJobBimetricUseCase,
   GetResumePaginationUseCase,
+  GetJobPaginationUseCase,
 ];
 @Module({
   imports: [

@@ -5,8 +5,10 @@ import {
   StringFieldOptional,
 } from 'src/internal/request/decorators';
 
-export class ResumePaginationDto extends BasePaginationDto {
-  @StringFieldOptional({ isArray: true })
+export class JobPaginationDto extends BasePaginationDto {
+  @StringFieldOptional({
+    isArray: true,
+  })
   tags: string[];
 
   @EnumFieldOptional(() => ParseStatus, { isArray: true })

@@ -63,10 +63,14 @@ export class GetResumePaginationUseCase {
   private getFilterQuery(
     paginationQuery: ResumePaginationDto,
   ): IFilterQueryOption<ResumeDocument> {
-    const { tags, take, skip } = paginationQuery;
+    const { take, skip, tags, parseStatuses } = paginationQuery;
     const find: FilterQuery<ResumeDocument> = {};
     if (tags?.length) {
       find.tags = { $in: tags };
+    }
+
+    if (parseStatuses?.length) {
+      find.parseStatus = { $in: parseStatuses };
     }
 
     const options: IDBFindAllOptions = {

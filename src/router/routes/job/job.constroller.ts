@@ -18,14 +18,30 @@ import {
 } from 'src/internal/file/decorators/file.decorator';
 import { IFile } from 'src/internal/file/interfaces/file.interface';
 import { AnalyzeJobBimetrictDto } from './dtos/analyze-job-bimetric.dto';
+import { PagingResponse } from 'src/internal/response/decorators/paging-response.decorator';
+import { PaginationQuery } from 'src/internal/pagination/decorators/pagination-query.decorator';
+import { GetJobPaginationUseCase } from 'src/domain/usecase/recruitment/get-job-pagination.usecase';
+import { JobPaginationDto } from './dtos/job-pagination.dto';
 
 @Controller()
 export class JobController {
   constructor(
+    private readonly getJobPaginationUseCase: GetJobPaginationUseCase,
     private readonly uploadJobUseCase: UploadJobUseCase,
     private readonly getJobUseCase: GetJobUseCase,
     private readonly analyzeJobBimetricUseCase: AnalyzeJobBimetricUseCase,
   ) {}
+
+  @PagingResponse()
+  @HttpCode(HttpStatus.OK)
+  @Get()
+  async getAll(@PaginationQuery() queries: JobPaginationDto) {
+    try {
+      return await this.getJobPaginationUseCase.execute(queries);
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
+  }
 
   @HttpCode(HttpStatus.CREATED)
   @Post('/pdf')

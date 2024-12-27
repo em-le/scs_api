@@ -3,7 +3,7 @@ import {
   MongooseModuleOptions,
   MongooseOptionsFactory,
 } from '@nestjs/mongoose';
-import mongoose, { Connection } from 'mongoose';
+import mongoose from 'mongoose';
 import { ConfigService } from '../config/services/config.service';
 
 @Injectable()
@@ -17,10 +17,6 @@ export class MongoDBConfig implements MongooseOptionsFactory {
     return {
       ...mongoDBConfig,
       verboseRetryLog: true,
-      onConnectionCreate: (conn: Connection) => {
-        console.log(`MongoDB is connection...`);
-        return conn;
-      },
     };
   }
 }
