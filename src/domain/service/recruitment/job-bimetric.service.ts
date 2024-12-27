@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Types } from 'mongoose';
 import {
   IJobBimetrictMatchCreation,
   IJobBimetrictMatchTarget,
@@ -56,18 +55,14 @@ export class JobBimetrictService {
       resumeParserIds,
     };
 
-    try {
-      const bimitricMatchResponse = await this.executeAnalyzeRequest(
-        sourceJob,
-        targetResumes,
-      );
-      await this.updateJobBimetricMatch(
-        jobBimetrictMatchTarget,
-        bimitricMatchResponse.data.Value,
-      );
-    } catch (err) {
-      throw err;
-    }
+    const bimitricMatchResponse = await this.executeAnalyzeRequest(
+      sourceJob,
+      targetResumes,
+    );
+    return await this.updateJobBimetricMatch(
+      jobBimetrictMatchTarget,
+      bimitricMatchResponse.data.Value,
+    );
   }
 
   private async updateJobBimetricMatch(
@@ -89,7 +84,6 @@ export class JobBimetrictService {
     sourceJob: StructuredParsedJob,
     targetResumes: StructuredParsedResume[],
   ): TxClientResponse<StructuredBimetricMatchResponseStructuredResponseModel> {
-    // TODO: Esimate the suitable Weights;
     const parserRequest: JobBimetricMatchRequest = {
       SourceJob: sourceJob,
       TargetResumes: targetResumes,
@@ -100,12 +94,12 @@ export class JobBimetrictService {
         NormalizeJobTitlesLanguage: 'en',
       },
       PreferredCategoryWeights: {
-        Education: 2,
-        JobTitles: 2,
-        Skills: 3,
-        Industries: 4,
-        Languages: 1,
-        Certifications: 2,
+        Education: 0.8,
+        JobTitles: 0.2,
+        Skills: 0.2,
+        Industries: 0.5,
+        Languages: 0.2,
+        Certifications: 0.5,
         ExecutiveType: 0,
         ManagementLevel: 0,
         EducationHasData: true,

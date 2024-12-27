@@ -9,6 +9,7 @@ import { IDBFindAllOptions } from 'src/internal/database/interfaces';
 import { IFilterQueryOption } from 'src/internal/pagination/interfaces';
 import { PagingService } from 'src/internal/pagination/services/paging.service';
 import { JobPaginationDto } from 'src/router/routes/job/dtos/job-pagination.dto';
+import { IJobAggregate } from './interfaces';
 
 @Injectable()
 export class GetJobPaginationUseCase {
@@ -23,23 +24,27 @@ export class GetJobPaginationUseCase {
     const filterQuery = this.getFilterQuery(paginationQuery);
     const findResult = await this.findAndCount(filterQuery);
 
-    return this.pagingSer.transform<ResumeDocument>(findResult as any, {
+    return this.pagingSer.transform<IJobAggregate>(findResult, {
       page,
       take,
     });
   }
 
-  private async findAndCount(filterQuery: IFilterQueryOption<ResumeDocument>) {
+  private async findAndCount(
+    filterQuery: IFilterQueryOption<ResumeDocument>,
+  ): Promise<[IJobAggregate[], number]> {
     const [jobs, count] = await Promise.all([
       this.jobRepo.findAll(filterQuery.find, filterQuery.options),
       this.jobRepo.getTotal(filterQuery.find, filterQuery.options),
     ]);
-    if (!count) return [jobs, count];
+    if (!count) return [[], count];
 
     return [await this.findJobAggregate(jobs), count];
   }
 
-  private async findJobAggregate(jobs: JobDocument[]) {
+  private async findJobAggregate(
+    jobs: JobDocument[],
+  ): Promise<IJobAggregate[]> {
     const jobIds = jobs.map((resume) => resume._id);
 
     const jobParsers = await this.jobParserRepo.findAll({

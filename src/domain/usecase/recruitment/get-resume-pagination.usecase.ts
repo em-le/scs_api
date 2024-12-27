@@ -8,6 +8,7 @@ import { IDBFindAllOptions } from 'src/internal/database/interfaces';
 import { IFilterQueryOption } from 'src/internal/pagination/interfaces';
 import { PagingService } from 'src/internal/pagination/services/paging.service';
 import { ResumePaginationDto } from 'src/router/routes/resume/dtos/pagination.dto';
+import { IResumeAggregate } from './interfaces';
 
 @Injectable()
 export class GetResumePaginationUseCase {
@@ -22,23 +23,27 @@ export class GetResumePaginationUseCase {
     const filterQuery = this.getFilterQuery(paginationQuery);
     const findResult = await this.findAndCount(filterQuery);
 
-    return this.pagingSer.transform<ResumeDocument>(findResult as any, {
+    return this.pagingSer.transform<IResumeAggregate>(findResult, {
       page,
       take,
     });
   }
 
-  private async findAndCount(filterQuery: IFilterQueryOption<ResumeDocument>) {
+  private async findAndCount(
+    filterQuery: IFilterQueryOption<ResumeDocument>,
+  ): Promise<[IResumeAggregate[], number]> {
     const [resumes, count] = await Promise.all([
       this.resumeRepo.findAll(filterQuery.find, filterQuery.options),
       this.resumeRepo.getTotal(filterQuery.find, filterQuery.options),
     ]);
-    if (!count) return [resumes, count];
+    if (!count) return [[], count];
 
     return [await this.findResumeAggregate(resumes), count];
   }
 
-  private async findResumeAggregate(resumes: ResumeDocument[]) {
+  private async findResumeAggregate(
+    resumes: ResumeDocument[],
+  ): Promise<IResumeAggregate[]> {
     const resumeIds = resumes.map((resume) => resume._id);
 
     const resumeParsers = await this.resumeParserRepo.findAll({

@@ -73,7 +73,7 @@ export class JobController {
     @Body() data: AnalyzeJobBimetrictDto,
   ) {
     try {
-      await this.analyzeJobBimetricUseCase.execute(
+      return await this.analyzeJobBimetricUseCase.execute(
         id._ObjectId(),
         data.ids.map((id) => id._ObjectId()),
       );
