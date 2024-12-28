@@ -26,6 +26,7 @@ import { PaginationQuery } from 'src/internal/pagination/decorators/pagination-q
 import { ResumePaginationDto } from './dtos/pagination.dto';
 import { GetResumePaginationUseCase } from 'src/domain/usecase/recruitment/get-resume-pagination.usecase';
 import { PagingResponse } from 'src/internal/response/decorators/paging-response.decorator';
+import { ResumeDocument } from 'src/infra/repository/recruitment/schemas/resume.schema';
 
 @Controller()
 export class ResumeController {
@@ -92,8 +93,10 @@ export class ResumeController {
   @UploadFileSingle('file', 'resumes', {
     isPublic: false,
   })
-  async uploadZIP(@UploadZipFileParam() file: IFile): Promise<void> {
-    await this.uploadResumeZipUseCase.execute(file);
+  async uploadZIP(
+    @UploadZipFileParam() file: IFile,
+  ): Promise<ResumeDocument[]> {
+    return await this.uploadResumeZipUseCase.execute(file);
   }
 
   @HttpCode(HttpStatus.OK)

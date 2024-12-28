@@ -39,3 +39,7 @@ lerna-debug.log*
 
 # public
 /public/upload
+
+
+# storage
+/storage

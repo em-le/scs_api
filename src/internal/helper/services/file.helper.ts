@@ -25,6 +25,16 @@ export class FileHelper {
     return bytes(megabytes);
   }
 
+  private sanitizeFileName(fileName: string): string {
+    return fileName
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd')
+      .replace(/Đ/g, 'D')
+      .replace(/[<>:"/\\|?*]/g, '_')
+      .trim();
+  }
+
   async extractZipHere(zip: IFile): Promise<IReadFile[]> {
     const admZip = new AdmZip(zip.path);
     const baseName = zip.filename.split('.')[0];
@@ -35,10 +45,14 @@ export class FileHelper {
     await Promise.all(
       zipEntries.map(async (entry: AdmZip.IZipEntry) => {
         if (entry.entryName.startsWith('__MACOSX')) return;
-        const fullPath = join(outputDir, entry.entryName);
+
+        const sanitizedEntryName = this.sanitizeFileName(entry.entryName);
+        const fullPath = join(outputDir, sanitizedEntryName);
+
         if (entry.isDirectory) {
           await fsPromise.mkdir(fullPath, { recursive: true });
         } else {
+          await fsPromise.mkdir(join(fullPath, '..'), { recursive: true });
           await fsPromise.writeFile(fullPath, entry.getData());
         }
       }),

@@ -9,6 +9,7 @@ import {
   IStorage,
 } from 'src/infra/repository/recruitment/interfaces';
 import { ResumeRepository } from 'src/infra/repository/recruitment/resume.repository';
+import { ResumeDocument } from 'src/infra/repository/recruitment/schemas/resume.schema';
 import { IFile, IReadFile } from 'src/internal/file/interfaces/file.interface';
 import { FileHelper } from 'src/internal/helper/services/file.helper';
 
@@ -19,15 +20,15 @@ export class UploadResumeZipUseCase {
     private readonly fileHelper: FileHelper,
   ) {}
 
-  async execute(zip: IFile): Promise<void> {
+  async execute(zip: IFile): Promise<ResumeDocument[]> {
     const readFiles = await this.fileHelper.extractZipHere(zip);
-    await this.tryToUploadResumes(readFiles);
+    return await this.tryToUploadResumes(readFiles);
   }
 
   async tryToUploadResumes(readFiles: IReadFile[]) {
     try {
       const data = readFiles.map((readFile) => this.prepareData(readFile));
-      await this.resumeRepo.createMany(data);
+      return await this.resumeRepo.createManyResumes(data);
     } catch (error) {
       throw new Error(error?.message);
     }
