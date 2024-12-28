@@ -22,6 +22,7 @@ import { PagingResponse } from 'src/internal/response/decorators/paging-response
 import { PaginationQuery } from 'src/internal/pagination/decorators/pagination-query.decorator';
 import { GetJobPaginationUseCase } from 'src/domain/usecase/recruitment/get-job-pagination.usecase';
 import { JobPaginationDto } from './dtos/job-pagination.dto';
+import { GetJobBimetricUseCase } from 'src/domain/usecase/recruitment/get-job-bimetric.usecase';
 
 @Controller()
 export class JobController {
@@ -30,6 +31,7 @@ export class JobController {
     private readonly uploadJobUseCase: UploadJobUseCase,
     private readonly getJobUseCase: GetJobUseCase,
     private readonly analyzeJobBimetricUseCase: AnalyzeJobBimetricUseCase,
+    private readonly getJobBimetricUseCase: GetJobBimetricUseCase,
   ) {}
 
   @PagingResponse()
@@ -61,6 +63,16 @@ export class JobController {
   async getJob(@Param('id') id: string) {
     try {
       return await this.getJobUseCase.execute(id._ObjectId());
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
+  }
+
+  @HttpCode(HttpStatus.OK)
+  @Get('/:id/bimetric')
+  async getBimetric(@Param('id') id: string) {
+    try {
+      return this.getJobBimetricUseCase.execute(id._ObjectId());
     } catch (err) {
       throw new BadRequestException(err.message);
     }

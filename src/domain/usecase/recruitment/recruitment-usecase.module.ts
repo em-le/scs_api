@@ -12,6 +12,7 @@ import { GetJobUseCase } from './get-job.usecase';
 import { AnalyzeJobBimetricUseCase } from './analyze-job-bimetric.usecase';
 import { GetResumePaginationUseCase } from './get-resume-pagination.usecase';
 import { GetJobPaginationUseCase } from './get-job-pagination.usecase';
+import { GetJobBimetricUseCase } from './get-job-bimetric.usecase';
 const usecases = [
   GetResumeUseCase,
   UploadResumeUseCase,
@@ -23,6 +24,7 @@ const usecases = [
   AnalyzeJobBimetricUseCase,
   GetResumePaginationUseCase,
   GetJobPaginationUseCase,
+  GetJobBimetricUseCase,
 ];
 @Module({
   imports: [

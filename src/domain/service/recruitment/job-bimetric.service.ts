@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Types } from 'mongoose';
 import {
   IJobBimetrictMatchCreation,
   IJobBimetrictMatchTarget,
@@ -59,10 +60,20 @@ export class JobBimetrictService {
       sourceJob,
       targetResumes,
     );
-    return await this.updateJobBimetricMatch(
+    await this.updateJobBimetricMatch(
       jobBimetrictMatchTarget,
       bimitricMatchResponse.data.Value,
     );
+
+    return this.getJobBimetrict(jobParser.job);
+  }
+
+  async getJobBimetrict(jobId: Types.ObjectId): Promise<JobBimetrictMatch[]> {
+    const jobBimetricMatchs = this.jobBimetricMatchRepo.findAll({
+      jobId: jobId,
+    });
+
+    return jobBimetricMatchs;
   }
 
   private async updateJobBimetricMatch(
