@@ -12,17 +12,12 @@ export class RouterModule {
         module: RouterModule,
         imports: [
           PublicRouteModule,
-          JobRouteModule,
           ResumeRouteModule,
           JobRouteModule,
           NestJSRouterModule.register([
             {
               module: PublicRouteModule,
               path: '',
-            },
-            {
-              module: JobRouteModule,
-              path: 'jobs',
             },
             {
               module: ResumeRouteModule,

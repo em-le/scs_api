@@ -28,7 +28,6 @@ export class ResumeParserService {
   ) {}
 
   async parseResume(id: Types.ObjectId): Promise<void> {
-    console.log('Parsing resume', id);
     const resume = await this.resumeRepo.findOne({
       _id: id,
       parseStatus: ParseStatus.NOT_YET,

@@ -20,7 +20,7 @@ import {
 import { FileHelper } from 'src/internal/helper/services/file.helper';
 
 @Injectable()
-export class JobBimetrictService {
+export class JobBimetricService {
   constructor(
     private readonly jobBimetricMatchRepo: JobBimetricMatchRepository,
     private readonly txJobBimetricClient: TxJobBimetricClient,

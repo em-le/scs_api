@@ -17,7 +17,7 @@ import { MongooseConnection } from 'src/internal/database/decorators/database.de
 import { FileHelper } from 'src/internal/helper/services/file.helper';
 
 @Injectable()
-export class JobPaserService {
+export class JobParserService {
   constructor(
     @MongooseConnection(PRIMARY_CONNECTION)
     private readonly connection: Connection,

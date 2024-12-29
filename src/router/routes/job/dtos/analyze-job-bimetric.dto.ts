@@ -1,6 +1,6 @@
 import { IsMongoIdFiled } from 'src/internal/request/decorators';
 
-export class AnalyzeJobBimetrictDto {
+export class AnalyzeJobBimetricDto {
   @IsMongoIdFiled({
     isArray: true,
   })

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { JobPaserService } from 'src/domain/service/recruitment/job-parser.service';
+import { JobParserService } from 'src/domain/service/recruitment/job-parser.service';
 import {
   ResumeFormat,
   StorageType,
@@ -17,7 +17,7 @@ import { IFile } from 'src/internal/file/interfaces/file.interface';
 export class UploadJobUseCase {
   constructor(
     private readonly jobRepo: JobRepository,
-    private readonly jobPaserService: JobPaserService,
+    private readonly jobParserService: JobParserService,
   ) {}
   async execute(job: IFile): Promise<any> {
     try {
@@ -37,7 +37,7 @@ export class UploadJobUseCase {
         storage: storage,
         tags: [],
       });
-      await this.jobPaserService.parseJob(jobOrder._id);
+      await this.jobParserService.parseJob(jobOrder._id);
       return jobOrder;
     } catch (error) {
       throw new Error(error?.message);

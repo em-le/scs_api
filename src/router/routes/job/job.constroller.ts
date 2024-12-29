@@ -17,7 +17,7 @@ import {
   UploadPDFFileParam,
 } from 'src/internal/file/decorators/file.decorator';
 import { IFile } from 'src/internal/file/interfaces/file.interface';
-import { AnalyzeJobBimetrictDto } from './dtos/analyze-job-bimetric.dto';
+import { AnalyzeJobBimetricDto } from './dtos/analyze-job-bimetric.dto';
 import { PagingResponse } from 'src/internal/response/decorators/paging-response.decorator';
 import { PaginationQuery } from 'src/internal/pagination/decorators/pagination-query.decorator';
 import { GetJobPaginationUseCase } from 'src/domain/usecase/recruitment/get-job-pagination.usecase';
@@ -82,7 +82,7 @@ export class JobController {
   @Post('/:id/bimetric')
   async analyzeBimetric(
     @Param('id') id: string,
-    @Body() data: AnalyzeJobBimetrictDto,
+    @Body() data: AnalyzeJobBimetricDto,
   ) {
     try {
       return await this.analyzeJobBimetricUseCase.execute(
