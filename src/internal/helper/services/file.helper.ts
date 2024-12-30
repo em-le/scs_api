@@ -44,7 +44,11 @@ export class FileHelper {
     const zipEntries = admZip.getEntries();
     await Promise.all(
       zipEntries.map(async (entry: AdmZip.IZipEntry) => {
-        if (entry.entryName.startsWith('__MACOSX')) return;
+        if (
+          entry.entryName.startsWith('__MACOSX') ||
+          extname(entry.entryName).toLowerCase() !== '.pdf'
+        )
+          return;
 
         const sanitizedEntryName = this.sanitizeFileName(entry.entryName);
         const fullPath = join(outputDir, sanitizedEntryName);
