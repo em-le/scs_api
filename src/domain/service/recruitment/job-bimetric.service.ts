@@ -5,9 +5,13 @@ import {
   IJobBimetrictMatchTarget,
 } from 'src/infra/repository/recruitment/interfaces';
 import { JobBimetricMatchRepository } from 'src/infra/repository/recruitment/job-bimetric-match.repository';
+import { ResumeParserRepository } from 'src/infra/repository/recruitment/resume-parser.repository';
 import { JobBimetrictMatch } from 'src/infra/repository/recruitment/schemas/job-bimetric-match.schema';
 import { JobParserDocument } from 'src/infra/repository/recruitment/schemas/job-parser.schema';
-import { ResumeParser } from 'src/infra/repository/recruitment/schemas/resume-parser.schema';
+import {
+  ResumeParser,
+  ResumeParserDocument,
+} from 'src/infra/repository/recruitment/schemas/resume-parser.schema';
 import { TxClientResponse } from 'src/infra/textkernel/clients/abstract.client';
 import { TxJobBimetricClient } from 'src/infra/textkernel/clients/scorer/job-bimetric.client';
 import {
@@ -23,6 +27,7 @@ import { FileHelper } from 'src/internal/helper/services/file.helper';
 export class JobBimetricService {
   constructor(
     private readonly jobBimetricMatchRepo: JobBimetricMatchRepository,
+    private readonly resumeParserRepo: ResumeParserRepository,
     private readonly txJobBimetricClient: TxJobBimetricClient,
     private readonly fileHelper: FileHelper,
   ) {}
@@ -68,12 +73,30 @@ export class JobBimetricService {
     return this.getJobBimetrict(jobParser.job);
   }
 
-  async getJobBimetrict(jobId: Types.ObjectId): Promise<JobBimetrictMatch[]> {
-    const jobBimetricMatchs = this.jobBimetricMatchRepo.findAll({
+  async getJobBimetrict(jobId: Types.ObjectId) {
+    const jobBimetric = await this.jobBimetricMatchRepo.findOne({
       jobId: jobId,
     });
 
-    return jobBimetricMatchs;
+    const resumeParserIds = jobBimetric.resumeParserIds;
+
+    const resumeParsers = await this.resumeParserRepo.findAll({
+      _id: { $in: resumeParserIds },
+    });
+    const resumeParserMap = new Map();
+    resumeParsers.forEach((resumeParser: ResumeParserDocument) => {
+      resumeParserMap[resumeParser._id.toString()] = resumeParser;
+    });
+
+    const matches = jobBimetric.Matches?.map((match) => {
+      return {
+        ...match,
+        resume: resumeParserMap?.[match.Id]?.resume ?? null,
+        ResumeData: resumeParserMap?.[match.Id]?.ResumeData ?? null,
+      };
+    });
+    jobBimetric.Matches = matches;
+    return jobBimetric;
   }
 
   private async updateJobBimetricMatch(
