@@ -25,6 +25,9 @@ export class AnalyzeJobBimetricUseCase {
       throw new Error('The resumes are invalid');
     }
 
-    await this.jobBimetricService.analyzeResumes(jobParser, resumeParsers);
+    return await this.jobBimetricService.analyzeResumes(
+      jobParser,
+      resumeParsers,
+    );
   }
 }
