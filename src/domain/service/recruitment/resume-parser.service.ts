@@ -51,7 +51,6 @@ export class ResumeParserService {
       await this.resumeRepo.updateOneById(resume._id, {
         parseStatus: ParseStatus.FAILED,
       });
-      throw err;
     }
   }
 

@@ -51,7 +51,6 @@ export class JobParserService {
       await this.jobRepo.updateOneById(job._id, {
         parseStatus: ParseStatus.FAILED,
       });
-      throw err;
     }
   }
 
