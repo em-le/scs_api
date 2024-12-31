@@ -6,7 +6,10 @@ import {
 } from 'src/infra/repository/recruitment/interfaces';
 import { JobBimetricMatchRepository } from 'src/infra/repository/recruitment/job-bimetric-match.repository';
 import { ResumeParserRepository } from 'src/infra/repository/recruitment/resume-parser.repository';
-import { JobBimetrictMatch } from 'src/infra/repository/recruitment/schemas/job-bimetric-match.schema';
+import {
+  JobBimetrictMatch,
+  JobBimetrictMatchDocument,
+} from 'src/infra/repository/recruitment/schemas/job-bimetric-match.schema';
 import { JobParserDocument } from 'src/infra/repository/recruitment/schemas/job-parser.schema';
 import {
   ResumeParser,
@@ -40,6 +43,11 @@ export class JobBimetricService {
       Id: jobParser._id.toString(),
       JobData: jobParser.JobData,
     };
+
+    const jobBimetricMatch = await this.jobBimetricMatchRepo.findOne({
+      jobId: jobParser.job,
+    });
+
     const targetResumes = resumeParsers.map(
       (resumeParser: ResumeParser): StructuredParsedResume => {
         return {
@@ -65,11 +73,18 @@ export class JobBimetricService {
       sourceJob,
       targetResumes,
     );
-    await this.updateJobBimetricMatch(
-      jobBimetrictMatchTarget,
-      bimitricMatchResponse.data.Value,
-    );
-
+    if (jobBimetricMatch) {
+      await this.updateJobBimetricMatch(
+        jobBimetricMatch,
+        jobBimetrictMatchTarget,
+        bimitricMatchResponse.data.Value,
+      );
+    } else {
+      await this.createJobBimetricMatch(
+        jobBimetrictMatchTarget,
+        bimitricMatchResponse.data.Value,
+      );
+    }
     return this.getJobBimetrict(jobParser.job);
   }
 
@@ -103,7 +118,7 @@ export class JobBimetricService {
     return jobBimetric;
   }
 
-  private async updateJobBimetricMatch(
+  private async createJobBimetricMatch(
     target: IJobBimetrictMatchTarget,
     bimetricMatch: StructuredBimetricMatchResponse,
   ): Promise<JobBimetrictMatch> {
@@ -116,6 +131,28 @@ export class JobBimetricService {
       AppliedCategoryWeights: AppliedCategoryWeights,
     };
     return this.jobBimetricMatchRepo.create(data);
+  }
+
+  private async updateJobBimetricMatch(
+    jobBimetricMatch: JobBimetrictMatchDocument,
+    newTarget: IJobBimetrictMatchTarget,
+    bimetricMatch: StructuredBimetricMatchResponse,
+  ): Promise<JobBimetrictMatch> {
+    const { Matches } = bimetricMatch;
+    const data = {
+      resumeIds: [...jobBimetricMatch.resumeIds, ...newTarget.resumeIds],
+      resumeParserIds: [
+        ...jobBimetricMatch.resumeParserIds,
+        ...newTarget.resumeParserIds,
+      ],
+      Matches: [...jobBimetricMatch.Matches, ...Matches],
+    };
+    return await this.jobBimetricMatchRepo.updateOne(
+      {
+        _id: jobBimetricMatch._id,
+      },
+      data,
+    );
   }
 
   private async executeAnalyzeRequest(
