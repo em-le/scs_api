@@ -14,7 +14,7 @@ import { join } from 'path';
     QueueModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'storage'),
-      serveRoot: '/storage',
+      serveRoot: '/api/storage',
     }),
   ],
   controllers: [],
