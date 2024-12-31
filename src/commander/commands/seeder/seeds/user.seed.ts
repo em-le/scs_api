@@ -54,6 +54,6 @@ export class UserSeed extends CommandRunner {
     passedParams: string[], // eslint-disable-line
     options: Opstions,
   ): Promise<void> {
-    this.createUserUsecase.execute(options);
+    await this.createUserUsecase.execute(options);
   }
 }
