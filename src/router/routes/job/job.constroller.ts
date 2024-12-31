@@ -72,7 +72,7 @@ export class JobController {
   @Get('/:id/bimetric')
   async getBimetric(@Param('id') id: string) {
     try {
-      return this.getJobBimetricUseCase.execute(id._ObjectId());
+      return await this.getJobBimetricUseCase.execute(id._ObjectId());
     } catch (err) {
       throw new BadRequestException(err.message);
     }

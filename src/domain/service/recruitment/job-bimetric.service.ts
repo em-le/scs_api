@@ -78,6 +78,10 @@ export class JobBimetricService {
       jobId: jobId,
     });
 
+    if (!jobBimetric) {
+      throw new Error('The job bimetric is not found');
+    }
+
     const resumeParserIds = jobBimetric.resumeParserIds;
 
     const resumeParsers = await this.resumeParserRepo.findAll({
